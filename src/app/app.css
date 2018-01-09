@@ -1,0 +1,60 @@
+@value unit, font, font-size from "@jetbrains/ring-ui/components/global/global.css";
+
+:global(.widget-body) {
+  margin: 0;
+  padding: calc(unit * 2);
+
+  background: #fff;
+
+  font-size: font-size;
+}
+
+.widget {
+  composes: font;
+
+  margin: 0;
+  padding: 0;
+}
+
+.widgetEditForm {
+  margin-left: unit;
+}
+
+.sprintProgress {
+  height: unit;
+  margin-top: unit / 2;
+
+  margin-right: 14px;
+
+  white-space: nowrap;
+}
+
+.sprintProgressBar {
+  position: relative;
+
+  display: inline-block;
+
+  min-width: unit;
+  margin-right: unit;
+
+  cursor: pointer;
+
+  vertical-align: bottom;
+
+  background-color: #d1eefd;
+}
+
+.sprintProgressData {
+  position: absolute;
+  bottom: 0;
+
+  display: inline-block;
+
+  width: 100%;
+
+  background-color: #25b7ff;
+}
+
+.sprintProgressDataOverdue {
+  background-color: #c10000;
+}
