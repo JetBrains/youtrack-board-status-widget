@@ -83,8 +83,15 @@ export function countBoardProgress(boardData) {
     const underdue = (bar.minLimit !== 0) &&
       bar.minLimit && bar.amount < bar.minLimit;
     const overdue = bar.maxLimit && bar.amount > bar.maxLimit;
-    const columnId = bar.columnId;
-    return {height, underdue, title, overdue, columnId};
+
+    return {
+      height,
+      underdue,
+      title,
+      overdue,
+      columnId: bar.columnId,
+      columnName: bar.columnName
+    };
   });
 }
 

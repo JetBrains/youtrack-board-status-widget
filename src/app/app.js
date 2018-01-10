@@ -167,13 +167,16 @@ class Widget extends Component {
 
   renderWidgetBody(selectedBoard, selectedSprint, boardData) {
     const boardProgressBars = countBoardProgress(boardData);
+
     const progressBarWrapperStyle = {
       height: `${MAX_PROGRESS_BAR_HEIGHT}px`
     };
+    const tooltipHeight = 40;
     const plotWidthPercents = 100;
+    const progressBarCSSWidthValue = `calc(${plotWidthPercents / boardProgressBars.length}% - 8px)`;
     const progressBarStyle = {
       height: `${MAX_PROGRESS_BAR_HEIGHT}px`,
-      width: `calc(${plotWidthPercents / boardProgressBars.length}% - 8px)`
+      width: progressBarCSSWidthValue
     };
     const getProgressDataClassName = progressBarData => classNames(
       {
@@ -181,6 +184,7 @@ class Widget extends Component {
         [styles.sprintProgressDataOverdue]: progressBarData.overdue
       }
     );
+
     const homeUrl = this.ytTrackService.homeUrl;
     const getColumnUrl = columnId => {
       const column = (boardData.columns || []).
@@ -196,27 +200,27 @@ class Widget extends Component {
 
     return (
       <div className={styles.widget}>
-        <span
+        <div
           className={styles.sprintProgress}
           style={progressBarWrapperStyle}
         >
           {
             boardProgressBars.map(boardProgressBar => (
-              <Tooltip
-                key={`tooltip-${boardProgressBar.columnId}`}
-                title={boardProgressBar.title}
+              <a
+                key={`link-${boardProgressBar.columnId}`}
+                href={getColumnUrl(boardProgressBar.columnId)}
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <a
-                  key={`link-${boardProgressBar.columnId}`}
-                  href={getColumnUrl(boardProgressBar.columnId)}
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <Tooltip
+                  key={`tooltip-${boardProgressBar.columnId}`}
+                  popupProps={{top: -(MAX_PROGRESS_BAR_HEIGHT + tooltipHeight)}}
+                  title={boardProgressBar.title}
                 >
                   <span
                     key={`bar-${boardProgressBar.columnId}`}
                     className={styles.sprintProgressBar}
                     style={progressBarStyle}
-                    title={boardProgressBar.title}
                   >
                     <span
                       key={`data-${boardProgressBar.columnId}`}
@@ -224,11 +228,26 @@ class Widget extends Component {
                       style={{height: `${boardProgressBar.height}px`}}
                     />
                   </span>
-                </a>
-              </Tooltip>
+                </Tooltip>
+              </a>
             ))
           }
-        </span>
+        </div>
+        <div
+          style={progressBarWrapperStyle}
+        >
+          {
+            boardProgressBars.map(boardProgressBar => (
+              <span
+                key={`bar-label-${boardProgressBar.columnId}`}
+                className={styles.sprintProgressBarLabel}
+                style={{width: progressBarCSSWidthValue}}
+              >
+                {boardProgressBar.columnName}
+              </span>
+            ))
+          }
+        </div>
       </div>
     );
   }

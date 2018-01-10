@@ -1,4 +1,4 @@
-@value unit, font, font-size from "@jetbrains/ring-ui/components/global/global.css";
+@value unit, font, font-size, dark-gray-color from "@jetbrains/ring-ui/components/global/global.css";
 
 :global(.widget-body) {
   margin: 0;
@@ -22,9 +22,7 @@
 
 .sprintProgress {
   height: unit;
-  margin-top: unit / 2;
-
-  margin-right: 14px;
+  margin-top: 16px;
 
   white-space: nowrap;
 }
@@ -37,11 +35,23 @@
   min-width: unit;
   margin-right: unit;
 
-  cursor: pointer;
-
-  vertical-align: bottom;
-
   background-color: #d1eefd;
+}
+
+.sprintProgressBarLabel {
+  position: relative;
+
+  display: inline-block;
+  overflow: hidden;
+
+  min-width: unit;
+  margin-top: unit;
+  margin-right: unit;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: dark-gray-color;
 }
 
 .sprintProgressData {
