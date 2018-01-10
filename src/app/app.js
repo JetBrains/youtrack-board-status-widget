@@ -233,9 +233,7 @@ class Widget extends Component {
             ))
           }
         </div>
-        <div
-          style={progressBarWrapperStyle}
-        >
+        <div>
           {
             boardProgressBars.map(boardProgressBar => (
               <span
