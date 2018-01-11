@@ -21,7 +21,7 @@ import {
   areSprintsEnabled,
   MAX_PROGRESS_BAR_HEIGHT
 } from './agile-board-model';
-import {getYouTrackService, loadBoards, loadSprint} from './resources';
+import {getYouTrackService, loadAgiles, loadExtendedSprintData} from './resources';
 
 
 class Widget extends Component {
@@ -55,11 +55,11 @@ class Widget extends Component {
     this.ytTrackService = await getYouTrackService(fetchHub);
     this.fetchYouTrack = async (url, params) =>
       dashboardApi.fetch(this.ytTrackService.id, url, params);
-    const boards = await loadBoards(this.fetchYouTrack);
+    const agiles = await loadAgiles(this.fetchYouTrack);
     const config = await dashboardApi.readConfig();
-    const selectedBoard = (config && config.selectedBoard) || boards[0];
-    this.changeBoard(selectedBoard);
-    this.setState({boards});
+    const selectedAgile = (config && config.selectedAgile) || agiles[0];
+    this.changeAgile(selectedAgile);
+    this.setState({agiles});
     this.updateTitle();
     this.setLoadingEnabled(false);
   };
@@ -70,8 +70,8 @@ class Widget extends Component {
   }
 
   saveConfig = async () => {
-    const {selectedBoard, selectedSprint} = this.state;
-    await this.props.dashboardApi.storeConfig({selectedBoard, selectedSprint});
+    const {selectedAgile, selectedSprint} = this.state;
+    await this.props.dashboardApi.storeConfig({selectedAgile, selectedSprint});
     await this.loadSelectedSprintData();
     this.setState({isConfiguring: false});
     this.updateTitle();
@@ -83,13 +83,13 @@ class Widget extends Component {
     this.initialize(this.props.dashboardApi);
   };
 
-  changeBoard = selected => {
-    const selectedBoard = selected.model || selected;
-    const sprints = selectedBoard && selectedBoard.sprints || [];
+  changeAgile = selected => {
+    const selectedAgile = selected.model || selected;
+    const sprints = selectedAgile && selectedAgile.sprints || [];
     if (sprints.length) {
       this.changeSprint(sprints[0]);
     }
-    this.setState({selectedBoard});
+    this.setState({selectedAgile});
   };
 
   changeSprint = selected => {
@@ -99,11 +99,11 @@ class Widget extends Component {
   };
 
   updateTitle() {
-    const {selectedBoard, selectedSprint} = this.state;
-    if (selectedBoard) {
-      let title = `Board ${selectedBoard.name}`;
-      let link = `${this.ytTrackService.homeUrl}/agiles/${selectedBoard.id}`;
-      if (selectedSprint && areSprintsEnabled(selectedBoard)) {
+    const {selectedAgile, selectedSprint} = this.state;
+    if (selectedAgile) {
+      let title = `Board ${selectedAgile.name}`;
+      let link = `${this.ytTrackService.homeUrl}/agiles/${selectedAgile.id}`;
+      if (selectedSprint && areSprintsEnabled(selectedAgile)) {
         title += `: ${selectedSprint.name}`;
         link += `/${selectedSprint.id}`;
       }
@@ -113,7 +113,7 @@ class Widget extends Component {
 
   renderConfiguration() {
     const toSelectItem = it => it && {key: it.id, label: it.name, model: it};
-    const {boards, selectedBoard, selectedSprint} = this.state;
+    const {agiles, selectedAgile, selectedSprint} = this.state;
 
     return (
       <div className={styles.widget}>
@@ -123,20 +123,20 @@ class Widget extends Component {
             <div className="ring-form__control ring-form__control_small">
               <Select
                 className="ring-input-size_md"
-                data={boards.map(toSelectItem)}
-                selected={toSelectItem(selectedBoard)}
-                onSelect={this.changeBoard}
+                data={agiles.map(toSelectItem)}
+                selected={toSelectItem(selectedAgile)}
+                onSelect={this.changeAgile}
                 label="Select board"
               />
             </div>
           </div>
-          {areSprintsEnabled(selectedBoard) &&
+          {areSprintsEnabled(selectedAgile) &&
             <div className="ring-form__group">
               <label className="ring-form__label">{'Sprint'}</label>
               <div className="ring-form__control ring-form__control_small">
                 <Select
                   className="ring-input-size_md"
-                  data={(selectedBoard.sprints || []).map(toSelectItem)}
+                  data={(selectedAgile.sprints || []).map(toSelectItem)}
                   selected={toSelectItem(selectedSprint)}
                   onSelect={this.changeSprint}
                   label="Select sprint"
@@ -154,18 +154,19 @@ class Widget extends Component {
   }
 
   async loadSelectedSprintData() {
-    const {selectedBoard, selectedSprint} = this.state;
-    const sprintData = await loadSprint(
-      this.fetchYouTrack, selectedBoard.id, selectedSprint.id
+    const {selectedAgile, selectedSprint} = this.state;
+    const extendedSprintData = await loadExtendedSprintData(
+      this.fetchYouTrack, selectedAgile.id, selectedSprint.id
     );
-    this.setState({sprintData});
+    this.setState({extendedSprintData});
   }
 
   renderLoader() {
     return <LoaderInline/>;
   }
 
-  renderWidgetBody(selectedBoard, selectedSprint, boardData) {
+  renderWidgetBody(selectedAgile, selectedSprint, extendedSprintData) {
+    const boardData = extendedSprintData.board;
     const boardProgressBars = countBoardProgress(boardData);
 
     const progressBarWrapperStyle = {
@@ -193,7 +194,7 @@ class Widget extends Component {
         return '';
       }
       const searchUrl = getColumnSearchUrl(
-        selectedBoard, selectedSprint, column
+        selectedAgile, selectedSprint, column
       );
       return `${homeUrl}/issues?q=${searchUrl}`;
     };
@@ -253,10 +254,10 @@ class Widget extends Component {
   render() {
     const {
       isConfiguring,
-      selectedBoard,
+      selectedAgile,
       selectedSprint,
       isLoading,
-      sprintData
+      extendedSprintData
     } = this.state;
 
     if (isLoading) {
@@ -265,15 +266,17 @@ class Widget extends Component {
     if (isConfiguring) {
       return this.renderConfiguration();
     }
-    if (!selectedBoard || !selectedSprint) {
+    if (!selectedAgile || !selectedSprint) {
       this.props.dashboardApi.enterConfigMode();
       return this.renderConfiguration();
     }
-    if (!sprintData) {
+    if (!extendedSprintData) {
       this.loadSelectedSprintData();
       return this.renderLoader();
     }
-    return this.renderWidgetBody(selectedBoard, selectedSprint, sprintData);
+    return this.renderWidgetBody(
+      selectedAgile, selectedSprint, extendedSprintData
+    );
   }
 }
 
