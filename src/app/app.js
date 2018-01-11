@@ -132,6 +132,7 @@ class Widget extends Component {
                 data={agiles.map(toSelectItem)}
                 selected={toSelectItem(selectedAgile)}
                 onSelect={this.changeAgile}
+                filter="true"
                 label="Select board"
               />
             </div>
@@ -145,6 +146,7 @@ class Widget extends Component {
                   data={(selectedAgile.sprints || []).map(toSelectItem)}
                   selected={toSelectItem(selectedSprint)}
                   onSelect={this.changeSprint}
+                  filter="true"
                   label="Select sprint"
                 />
               </div>
