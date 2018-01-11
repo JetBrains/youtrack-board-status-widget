@@ -220,9 +220,12 @@ class Widget extends Component {
         <div className={styles.sprintCommonInfo}>
           <b>{'Owner:'}</b>&nbsp;
           <SmartUserCardTooltip userDataSource={userSource}>
-            <span className="ring-link ring-link_pseudo">
+            <a
+              className="ring-link ring-link_pseudo"
+              href={`users/${selectedAgile.owner.ringId}`}
+            >
               {selectedAgile.owner.fullName}
-            </span>
+            </a>
           </SmartUserCardTooltip>
         </div>
         <div
