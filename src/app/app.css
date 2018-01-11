@@ -22,7 +22,7 @@
 
 .sprintProgress {
   height: unit;
-  margin-top: 16px;
+  margin-top: 32px;
 
   white-space: nowrap;
 }
@@ -67,4 +67,8 @@
 
 .sprintProgressDataOverdue {
   background-color: #c10000;
+}
+
+.sprintCommonInfo {
+  margin-bottom: unit;
 }

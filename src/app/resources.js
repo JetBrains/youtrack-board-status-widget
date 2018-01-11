@@ -1,4 +1,5 @@
 const SERVICE_FIELDS = 'id,name,applicationName,homeUrl';
+const HUB_USER_FIELDS = 'id,name,login,banned,banReason,profile(email/email,avatar/url)';
 
 const AGILE_FIELDS = 'id,name,sprints(id,name),sprintsSettings(disableSprints,explicitQuery),columnSettings(field(id,name)),owner(id,ringId,fullName)';
 const SPRINT_BOARD_CELL_FIELDS = 'id,column(id),issues(id)';
@@ -20,4 +21,19 @@ export async function getYouTrackService(fetchHub) {
   return (data.services || []).filter(
     service => service.applicationName === 'YouTrack'
   )[0];
+}
+
+export async function getHubUser(fetchHub, userHubId) {
+  const hubUser = await fetchHub(
+    `api/rest/users/${userHubId}?fields=${HUB_USER_FIELDS}`
+  );
+  return {
+    name: hubUser.name,
+    login: hubUser.login,
+    banned: hubUser.banned,
+    banReason: hubUser.banReason,
+    email: hubUser.profile.email && hubUser.profile.email.email,
+    avatarUrl: hubUser.profile.avatar.url,
+    href: `users/${hubUser.id}`
+  };
 }

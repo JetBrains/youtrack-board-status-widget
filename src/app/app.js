@@ -8,6 +8,7 @@ import Panel from '@jetbrains/ring-ui/components/panel/panel';
 import Button from '@jetbrains/ring-ui/components/button/button';
 import LoaderInline from '@jetbrains/ring-ui/components/loader-inline/loader-inline';
 import Tooltip from '@jetbrains/ring-ui/components/tooltip/tooltip';
+import {SmartUserCardTooltip} from '@jetbrains/ring-ui/components/user-card/user-card';
 import classNames from 'classnames';
 
 import '@jetbrains/ring-ui/components/form/form.scss';
@@ -21,7 +22,12 @@ import {
   areSprintsEnabled,
   MAX_PROGRESS_BAR_HEIGHT
 } from './agile-board-model';
-import {getYouTrackService, loadAgiles, loadExtendedSprintData} from './resources';
+import {
+  getYouTrackService,
+  loadAgiles,
+  loadExtendedSprintData,
+  getHubUser
+} from './resources';
 
 
 class Widget extends Component {
@@ -199,8 +205,26 @@ class Widget extends Component {
       return `${homeUrl}/issues?q=${searchUrl}`;
     };
 
+    const dashboardApi = this.props.dashboardApi;
+    const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
+    const userSource = () => getHubUser(fetchHub, selectedAgile.owner.ringId);
+
     return (
       <div className={styles.widget}>
+        {
+          extendedSprintData.goal &&
+          <div className={styles.sprintCommonInfo}>
+            {extendedSprintData.goal}
+          </div>
+        }
+        <div className={styles.sprintCommonInfo}>
+          <b>{'Owner:'}</b>&nbsp;
+          <SmartUserCardTooltip userDataSource={userSource}>
+            <span className="ring-link ring-link_pseudo">
+              {selectedAgile.owner.fullName}
+            </span>
+          </SmartUserCardTooltip>
+        </div>
         <div
           className={styles.sprintProgress}
           style={progressBarWrapperStyle}
