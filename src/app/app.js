@@ -226,7 +226,6 @@ class Widget extends Component {
           <SmartUserCardTooltip userDataSource={userSource}>
             <Link
               href={`${homeUrl}/users/${selectedAgile.owner.ringId}`}
-              target="_parent"
             >
               {selectedAgile.owner.fullName}
             </Link>
@@ -241,7 +240,6 @@ class Widget extends Component {
               <Link
                 key={`link-${boardProgressBar.columnId}`}
                 href={getColumnUrl(boardProgressBar.columnId)}
-                target="_parent"
               >
                 <Tooltip
                   key={`tooltip-${boardProgressBar.columnId}`}

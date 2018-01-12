@@ -1,4 +1,4 @@
-export const MAX_PROGRESS_BAR_HEIGHT = 200;
+export const MAX_PROGRESS_BAR_HEIGHT = 160;
 const PROGRESS_BAR_TOP_MARGIN = 2;
 
 function getIssuesAmountPerColumn(sprint, columnId) {
