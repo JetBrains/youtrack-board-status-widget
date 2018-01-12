@@ -8,6 +8,7 @@ import Panel from '@jetbrains/ring-ui/components/panel/panel';
 import Button from '@jetbrains/ring-ui/components/button/button';
 import LoaderInline from '@jetbrains/ring-ui/components/loader-inline/loader-inline';
 import Tooltip from '@jetbrains/ring-ui/components/tooltip/tooltip';
+import Link from '@jetbrains/ring-ui/components/link/link';
 import {SmartUserCardTooltip} from '@jetbrains/ring-ui/components/user-card/user-card';
 import classNames from 'classnames';
 
@@ -209,7 +210,8 @@ class Widget extends Component {
 
     const dashboardApi = this.props.dashboardApi;
     const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
-    const userSource = () => getHubUser(fetchHub, selectedAgile.owner.ringId);
+    const userSource = () =>
+      getHubUser(fetchHub, selectedAgile.owner.ringId, homeUrl);
 
     return (
       <div className={styles.widget}>
@@ -222,12 +224,12 @@ class Widget extends Component {
         <div className={styles.sprintCommonInfo}>
           <b>{'Owner:'}</b>&nbsp;
           <SmartUserCardTooltip userDataSource={userSource}>
-            <a
-              className="ring-link ring-link_pseudo"
-              href={`users/${selectedAgile.owner.ringId}`}
+            <Link
+              href={`${homeUrl}/users/${selectedAgile.owner.ringId}`}
+              target="_parent"
             >
               {selectedAgile.owner.fullName}
-            </a>
+            </Link>
           </SmartUserCardTooltip>
         </div>
         <div
@@ -236,11 +238,10 @@ class Widget extends Component {
         >
           {
             boardProgressBars.map(boardProgressBar => (
-              <a
+              <Link
                 key={`link-${boardProgressBar.columnId}`}
                 href={getColumnUrl(boardProgressBar.columnId)}
-                rel="noopener noreferrer"
-                target="_blank"
+                target="_parent"
               >
                 <Tooltip
                   key={`tooltip-${boardProgressBar.columnId}`}
@@ -259,7 +260,7 @@ class Widget extends Component {
                     />
                   </span>
                 </Tooltip>
-              </a>
+              </Link>
             ))
           }
         </div>

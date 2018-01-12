@@ -23,7 +23,7 @@ export async function getYouTrackService(fetchHub) {
   )[0];
 }
 
-export async function getHubUser(fetchHub, userHubId) {
+export async function getHubUser(fetchHub, userHubId, profileBaseUrl) {
   const hubUser = await fetchHub(
     `api/rest/users/${userHubId}?fields=${HUB_USER_FIELDS}`
   );
@@ -34,6 +34,6 @@ export async function getHubUser(fetchHub, userHubId) {
     banReason: hubUser.banReason,
     email: hubUser.profile.email && hubUser.profile.email.email,
     avatarUrl: hubUser.profile.avatar.url,
-    href: `users/${hubUser.id}`
+    href: `${profileBaseUrl}/users/${hubUser.id}`
   };
 }

@@ -7,5 +7,9 @@
   "services": {
     "YouTrack": ">=2017.4",
     "Hub": ">=2017.4"
+  },
+  "capabilities": {
+    "popups": true,
+    "topNavigation": true
   }
 }
