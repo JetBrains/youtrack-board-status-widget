@@ -126,31 +126,23 @@ class Widget extends Component {
       <div className={styles.widget}>
         <div className={classNames('ring-form', styles.widgetEditForm)}>
           <div className="ring-form__group">
-            <label className="ring-form__label">{'Board'}</label>
-            <div className="ring-form__control ring-form__control_small">
-              <Select
-                className="ring-input-size_md"
-                data={agiles.map(toSelectItem)}
-                selected={toSelectItem(selectedAgile)}
-                onSelect={this.changeAgile}
-                filter="true"
-                label="Select board"
-              />
-            </div>
+            <Select
+              data={agiles.map(toSelectItem)}
+              selected={toSelectItem(selectedAgile)}
+              onSelect={this.changeAgile}
+              filter="true"
+              label="Select board"
+            />
           </div>
           {areSprintsEnabled(selectedAgile) &&
             <div className="ring-form__group">
-              <label className="ring-form__label">{'Sprint'}</label>
-              <div className="ring-form__control ring-form__control_small">
-                <Select
-                  className="ring-input-size_md"
-                  data={(selectedAgile.sprints || []).map(toSelectItem)}
-                  selected={toSelectItem(selectedSprint)}
-                  onSelect={this.changeSprint}
-                  filter="true"
-                  label="Select sprint"
-                />
-              </div>
+              <Select
+                data={(selectedAgile.sprints || []).map(toSelectItem)}
+                selected={toSelectItem(selectedSprint)}
+                onSelect={this.changeSprint}
+                filter="true"
+                label="Select sprint"
+              />
             </div>
           }
         </div>
