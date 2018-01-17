@@ -29,6 +29,7 @@ import {
   loadExtendedSprintData,
   getHubUser
 } from './resources';
+import ServiceUnavailableScreen from './service-unavailable-screen';
 
 
 class Widget extends Component {
@@ -43,7 +44,8 @@ class Widget extends Component {
 
     this.state = {
       isConfiguring: false,
-      isLoading: true
+      isLoading: true,
+      isLoadDataError: false
     };
 
     registerWidgetApi({
@@ -68,6 +70,7 @@ class Widget extends Component {
     this.changeAgile(selectedAgile);
     this.setState({agiles});
     this.updateTitle();
+    await this.loadSelectedSprintData();
     this.setLoadingEnabled(false);
   };
 
@@ -156,10 +159,14 @@ class Widget extends Component {
 
   async loadSelectedSprintData() {
     const {selectedAgile, selectedSprint} = this.state;
-    const extendedSprintData = await loadExtendedSprintData(
-      this.fetchYouTrack, selectedAgile.id, selectedSprint.id
-    );
-    this.setState({extendedSprintData});
+    try {
+      const extendedSprintData = await loadExtendedSprintData(
+        this.fetchYouTrack, selectedAgile.id, selectedSprint.id
+      );
+      this.setState({extendedSprintData});
+    } catch (err) {
+      this.setState({isLoadDataError: true});
+    }
   }
 
   renderLoader() {
@@ -271,15 +278,27 @@ class Widget extends Component {
     );
   }
 
+  renderLoadDataError() {
+    return (
+      <div className={styles.widget}>
+        <ServiceUnavailableScreen/>
+      </div>
+    );
+  }
+
   render() {
     const {
       isConfiguring,
       selectedAgile,
       selectedSprint,
       isLoading,
-      extendedSprintData
+      extendedSprintData,
+      isLoadDataError
     } = this.state;
 
+    if (isLoadDataError) {
+      return this.renderLoadDataError();
+    }
     if (isLoading) {
       return this.renderLoader();
     }
@@ -291,7 +310,6 @@ class Widget extends Component {
       return this.renderConfiguration();
     }
     if (!extendedSprintData) {
-      this.loadSelectedSprintData();
       return this.renderLoader();
     }
     return this.renderWidgetBody(

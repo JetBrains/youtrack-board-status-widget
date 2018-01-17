@@ -1,0 +1,30 @@
+@value unit, text-color from "@jetbrains/ring-ui/components/global/global.css";
+
+.serviceUnavailableScreen {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+
+  transform: translate(0, -50%);
+}
+
+.serviceUnavailableSmile {
+  text-align: center;
+  white-space: nowrap;
+
+  color: text-color;
+
+  font-size: 19px;
+}
+
+.serviceUnavailableMessage {
+  margin-top: calc(unit * 3);
+
+  text-align: center;
+
+  color: text-color;
+
+  font-size: 13px;
+}
