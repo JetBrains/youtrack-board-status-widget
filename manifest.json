@@ -1,9 +1,10 @@
 {
   "key": "youtrack-board-status-widget",
-  "name": "Agile board status",
+  "name": "Agile Board Status",
   "version": "1.0.0",
   "description": "Shows youtrack agile board status",
   "author": "Ekaterina Zaikina <katriyna@gmail.com>",
+  "applicationName": "YouTrack",
   "services": {
     "YouTrack": ">=2017.4",
     "Hub": ">=2017.4"
