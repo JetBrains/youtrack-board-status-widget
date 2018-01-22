@@ -16,10 +16,20 @@ export async function loadExtendedSprintData(fetchYouTrack, boardId, sprintId) {
   return await fetchYouTrack(`api/agiles/${boardId}/sprints/${sprintId}?fields=${SPRINT_EXTENDED_FIELDS}`);
 }
 
-export async function getYouTrackService(fetchHub) {
+export async function getYouTrackServices(fetchHub) {
   const data = await fetchHub(`api/rest/services?fields=${SERVICE_FIELDS}`);
-  return (data.services || []).filter(
-    service => service.applicationName === 'YouTrack'
+  return data.services || [];
+}
+
+export async function getYouTrackService(fetchHub, youTrackId) {
+  const services = await getYouTrackServices(fetchHub);
+  if (youTrackId) {
+    return services.filter(
+      service => service.id === youTrackId
+    )[0];
+  }
+  return services.filter(
+    service => service.applicationName === 'YouTrack' && !!service.homeUrl
   )[0];
 }
 

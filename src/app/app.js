@@ -58,21 +58,49 @@ class Widget extends Component {
     this.initialize(this.props.dashboardApi);
   }
 
-  initialize = async dashboardApi => {
+  async initialize(dashboardApi) {
     this.setLoadingEnabled(true);
-    const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
-    this.ytTrackService = await getYouTrackService(fetchHub);
-    this.fetchYouTrack = async (url, params) =>
-      dashboardApi.fetch(this.ytTrackService.id, url, params);
-    const agiles = await loadAgiles(this.fetchYouTrack);
     const config = await dashboardApi.readConfig();
-    const selectedAgile = (config && config.selectedAgile) || agiles[0];
-    this.changeAgile(selectedAgile);
-    this.setState({agiles});
+    const youTrackService = await this.getYouTrack(config);
+    if (youTrackService && youTrackService.id) {
+      this.setYouTrack(youTrackService);
+    }
+    if (config && config.selectedAgile) {
+      this.changeAgile(config.selectedAgile);
+    }
+    if (youTrackService) {
+      const agiles = await loadAgiles(this.fetchYouTrack);
+      this.setState({agiles});
+      if (!this.state.selectedAgile) {
+        this.changeAgile(agiles[0]);
+      }
+      await this.loadSelectedSprintData();
+    }
     this.updateTitle();
-    await this.loadSelectedSprintData();
     this.setLoadingEnabled(false);
+  }
+
+  async getYouTrack(config) {
+    const {dashboardApi} = this.props;
+    const configYouTrackId = config && config.youTrack && config.youTrack.id;
+    const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
+    return await getYouTrackService(fetchHub, configYouTrackId);
+  }
+
+  fetchYouTrack = async (url, params) => {
+    const {youTrack} = this.state;
+    const {dashboardApi} = this.props;
+    return dashboardApi.fetch(youTrack.id, url, params);
   };
+
+  setYouTrack(youTrackService) {
+    this.setState({
+      youTrack: {
+        id: youTrackService.id,
+        homeUrl: youTrackService.homeUrl
+      }
+    });
+  }
 
   setLoadingEnabled(isLoading) {
     this.props.dashboardApi.setLoadingAnimationEnabled(isLoading);
@@ -80,8 +108,12 @@ class Widget extends Component {
   }
 
   saveConfig = async () => {
-    const {selectedAgile, selectedSprint} = this.state;
-    await this.props.dashboardApi.storeConfig({selectedAgile, selectedSprint});
+    const {selectedAgile, selectedSprint, youTrack} = this.state;
+    await this.props.dashboardApi.storeConfig({
+      selectedAgile,
+      selectedSprint,
+      youTrack
+    });
     await this.loadSelectedSprintData();
     this.setState({isConfiguring: false});
     this.updateTitle();
@@ -109,10 +141,10 @@ class Widget extends Component {
   };
 
   updateTitle() {
-    const {selectedAgile, selectedSprint} = this.state;
+    const {selectedAgile, selectedSprint, youTrack} = this.state;
     if (selectedAgile) {
       let title = `Board ${selectedAgile.name}`;
-      let link = `${this.ytTrackService.homeUrl}/agiles/${selectedAgile.id}`;
+      let link = `${youTrack.homeUrl}/agiles/${selectedAgile.id}`;
       if (selectedSprint && areSprintsEnabled(selectedAgile)) {
         title += `: ${selectedSprint.name}`;
         link += `/${selectedSprint.id}`;
@@ -133,7 +165,7 @@ class Widget extends Component {
               data={agiles.map(toSelectItem)}
               selected={toSelectItem(selectedAgile)}
               onSelect={this.changeAgile}
-              filter="true"
+              filter={true}
               label="Select board"
             />
           </div>
@@ -143,7 +175,7 @@ class Widget extends Component {
                 data={(selectedAgile.sprints || []).map(toSelectItem)}
                 selected={toSelectItem(selectedSprint)}
                 onSelect={this.changeSprint}
-                filter="true"
+                filter={true}
                 label="Select sprint"
               />
             </div>
@@ -194,7 +226,7 @@ class Widget extends Component {
       }
     );
 
-    const homeUrl = this.ytTrackService.homeUrl;
+    const homeUrl = this.state.youTrack.homeUrl;
     const getColumnUrl = columnId => {
       const column = (boardData.columns || []).
         filter(currentColumn => currentColumn.id === columnId)[0];
