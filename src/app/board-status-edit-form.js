@@ -25,6 +25,13 @@ export default class BoardStatusEditForm extends React.Component {
     youTrackId: PropTypes.string
   };
 
+  static toSelectItem = it => it && {
+    key: it.id,
+    label: it.name,
+    description: it.homeUrl,
+    model: it
+  };
+
   constructor(props) {
     super(props);
 
@@ -137,21 +144,58 @@ export default class BoardStatusEditForm extends React.Component {
     });
   };
 
-  render() {
+  renderNoBoardsMessage() {
+    return (
+      <div className="ring-form__group">
+        {'No sprints found'}
+      </div>
+    );
+  }
+
+  renderBoardsSelectors() {
     const {
       selectedAgile,
       selectedSprint,
+      agiles
+    } = this.state;
+
+    return (
+      <div>
+        <div className="ring-form__group">
+          <Select
+            data={agiles.map(BoardStatusEditForm.toSelectItem)}
+            selected={BoardStatusEditForm.toSelectItem(selectedAgile)}
+            onSelect={this.changeAgile}
+            filter={true}
+            label="Select board"
+          />
+        </div>
+        {
+          areSprintsEnabled(selectedAgile) &&
+          <div className="ring-form__group">
+            <Select
+              data={
+                (selectedAgile.sprints || []).
+                  map(BoardStatusEditForm.toSelectItem)
+              }
+              selected={BoardStatusEditForm.toSelectItem(selectedSprint)}
+              onSelect={this.changeSprint}
+              filter={true}
+              label="Select sprint"
+            />
+          </div>
+        }
+      </div>
+    );
+  }
+
+  render() {
+    const {
+      selectedAgile,
       agiles,
       youTracks,
       selectedYouTrack
     } = this.state;
-
-    const toSelectItem = it => it && {
-      key: it.id,
-      label: it.name,
-      description: it.homeUrl,
-      model: it
-    };
 
     return (
       <div>
@@ -160,8 +204,8 @@ export default class BoardStatusEditForm extends React.Component {
             (youTracks || []).length > 1 &&
             <div className="ring-form__group">
               <Select
-                data={youTracks.map(toSelectItem)}
-                selected={toSelectItem(selectedYouTrack)}
+                data={youTracks.map(BoardStatusEditForm.toSelectItem)}
+                selected={BoardStatusEditForm.toSelectItem(selectedYouTrack)}
                 onSelect={this.changeYouTrack}
                 filter={true}
                 label="Select YouTrack Server"
@@ -169,34 +213,9 @@ export default class BoardStatusEditForm extends React.Component {
             </div>
           }
           {
-            (agiles || []).length > 0 &&
-            <div className="ring-form__group">
-              <Select
-                data={agiles.map(toSelectItem)}
-                selected={toSelectItem(selectedAgile)}
-                onSelect={this.changeAgile}
-                filter={true}
-                label="Select board"
-              />
-            </div>
-          }
-          {
-            !(agiles || []).length &&
-            <div className="ring-form__group">
-              {'No sprints found'}
-            </div>
-          }
-          {
-            areSprintsEnabled(selectedAgile) &&
-            <div className="ring-form__group">
-              <Select
-                data={(selectedAgile.sprints || []).map(toSelectItem)}
-                selected={toSelectItem(selectedSprint)}
-                onSelect={this.changeSprint}
-                filter={true}
-                label="Select sprint"
-              />
-            </div>
+            ((agiles || []).length > 0)
+              ? this.renderBoardsSelectors()
+              : this.renderNoBoardsMessage()
           }
         </div>
         <Panel>
