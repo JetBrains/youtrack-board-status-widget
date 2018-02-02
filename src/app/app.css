@@ -1,4 +1,4 @@
-@value unit, font, font-size, dark-gray-color from "@jetbrains/ring-ui/components/global/global.css";
+@value unit, font, font-size, dark-gray-color, error-color from "@jetbrains/ring-ui/components/global/global.css";
 
 :global(.widget-body) {
   margin: 0;
@@ -71,4 +71,10 @@
 
 .sprintCommonInfo {
   margin-bottom: unit;
+}
+
+.formPanelError {
+  margin-bottom: unit;
+
+  color: error-color;
 }

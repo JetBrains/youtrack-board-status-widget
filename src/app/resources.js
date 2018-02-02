@@ -18,7 +18,9 @@ export async function loadExtendedSprintData(fetchYouTrack, boardId, sprintId) {
 
 export async function getYouTrackServices(fetchHub) {
   const data = await fetchHub(`api/rest/services?fields=${SERVICE_FIELDS}`);
-  return data.services || [];
+  return (data.services || []).filter(
+    service => service.applicationName === 'YouTrack' && !!service.homeUrl
+  );
 }
 
 export async function getYouTrackService(fetchHub, youTrackId) {
@@ -28,9 +30,7 @@ export async function getYouTrackService(fetchHub, youTrackId) {
       service => service.id === youTrackId
     )[0];
   }
-  return services.filter(
-    service => service.applicationName === 'YouTrack' && !!service.homeUrl
-  )[0];
+  return services[0];
 }
 
 export async function getHubUser(fetchHub, userHubId, profileBaseUrl) {

@@ -5,7 +5,7 @@
   "description": "Shows youtrack agile board status",
   "author": "Ekaterina Zaikina <katriyna@gmail.com>",
   "applicationName": "YouTrack",
-  "services": {
+  "dependencies": {
     "YouTrack": ">=2017.4",
     "Hub": ">=2017.4"
   },

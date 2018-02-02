@@ -3,9 +3,6 @@ import DashboardAddons from 'hub-dashboard-addons';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {render} from 'react-dom';
-import Select from '@jetbrains/ring-ui/components/select/select';
-import Panel from '@jetbrains/ring-ui/components/panel/panel';
-import Button from '@jetbrains/ring-ui/components/button/button';
 import LoaderInline from '@jetbrains/ring-ui/components/loader-inline/loader-inline';
 import Tooltip from '@jetbrains/ring-ui/components/tooltip/tooltip';
 import Link from '@jetbrains/ring-ui/components/link/link';
@@ -25,11 +22,11 @@ import {
 } from './agile-board-model';
 import {
   getYouTrackService,
-  loadAgiles,
   loadExtendedSprintData,
   getHubUser
 } from './resources';
 import ServiceUnavailableScreen from './service-unavailable-screen';
+import BoardStatusEditForm from './board-status-edit-form';
 
 
 class Widget extends Component {
@@ -65,16 +62,11 @@ class Widget extends Component {
     if (youTrackService && youTrackService.id) {
       this.setYouTrack(youTrackService);
     }
-    if (config && config.selectedAgile) {
-      this.changeAgile(config.selectedAgile);
-    }
-    if (youTrackService) {
-      const agiles = await loadAgiles(this.fetchYouTrack);
-      this.setState({agiles});
-      if (!this.state.selectedAgile) {
-        this.changeAgile(agiles[0]);
+    if (config && config.agile) {
+      this.specifyBoard(config.agile, config.sprint);
+      if (youTrackService) {
+        await this.loadSelectedSprintData();
       }
-      await this.loadSelectedSprintData();
     }
     this.updateTitle();
     this.setLoadingEnabled(false);
@@ -93,6 +85,13 @@ class Widget extends Component {
     return dashboardApi.fetch(youTrack.id, url, params);
   };
 
+  specifyBoard = (agile, sprint) => {
+    this.setState({
+      agile,
+      sprint: sprint || (agile && agile.sprints || [])[0]
+    });
+  };
+
   setYouTrack(youTrackService) {
     this.setState({
       youTrack: {
@@ -107,16 +106,19 @@ class Widget extends Component {
     this.setState({isLoading});
   }
 
-  saveConfig = async () => {
-    const {selectedAgile, selectedSprint, youTrack} = this.state;
+  saveConfig = async (agile, sprint, youTrack) => {
     await this.props.dashboardApi.storeConfig({
-      selectedAgile,
-      selectedSprint,
+      agile,
+      sprint,
       youTrack
     });
-    await this.loadSelectedSprintData();
-    this.setState({isConfiguring: false});
-    this.updateTitle();
+    this.setState({
+      isConfiguring: false,
+      agile, sprint, youTrack
+    }, () => {
+      this.loadSelectedSprintData();
+      this.updateTitle();
+    });
   };
 
   cancelConfig = async () => {
@@ -125,75 +127,45 @@ class Widget extends Component {
     this.initialize(this.props.dashboardApi);
   };
 
-  changeAgile = selected => {
-    const selectedAgile = selected.model || selected;
-    const sprints = selectedAgile && selectedAgile.sprints || [];
-    if (sprints.length) {
-      this.changeSprint(sprints[0]);
-    }
-    this.setState({selectedAgile});
-  };
-
-  changeSprint = selected => {
-    this.setState({
-      selectedSprint: selected.model || selected
-    });
-  };
-
   updateTitle() {
-    const {selectedAgile, selectedSprint, youTrack} = this.state;
-    if (selectedAgile) {
-      let title = `Board ${selectedAgile.name}`;
-      let link = `${youTrack.homeUrl}/agiles/${selectedAgile.id}`;
-      if (selectedSprint && areSprintsEnabled(selectedAgile)) {
-        title += `: ${selectedSprint.name}`;
-        link += `/${selectedSprint.id}`;
+    const {agile, sprint, youTrack} = this.state;
+    if (agile) {
+      let title = `Board ${agile.name}`;
+      let link = `${youTrack.homeUrl}/agiles/${agile.id}`;
+      if (sprint && areSprintsEnabled(agile)) {
+        title += `: ${sprint.name}`;
+        link += `/${sprint.id}`;
       }
       this.props.dashboardApi.setTitle(title, link);
     }
   }
 
   renderConfiguration() {
-    const toSelectItem = it => it && {key: it.id, label: it.name, model: it};
-    const {agiles, selectedAgile, selectedSprint} = this.state;
+    const {
+      agile,
+      sprint,
+      youTrack
+    } = this.state;
 
     return (
       <div className={styles.widget}>
-        <div className={classNames('ring-form', styles.widgetEditForm)}>
-          <div className="ring-form__group">
-            <Select
-              data={agiles.map(toSelectItem)}
-              selected={toSelectItem(selectedAgile)}
-              onSelect={this.changeAgile}
-              filter={true}
-              label="Select board"
-            />
-          </div>
-          {areSprintsEnabled(selectedAgile) &&
-            <div className="ring-form__group">
-              <Select
-                data={(selectedAgile.sprints || []).map(toSelectItem)}
-                selected={toSelectItem(selectedSprint)}
-                onSelect={this.changeSprint}
-                filter={true}
-                label="Select sprint"
-              />
-            </div>
-          }
-        </div>
-        <Panel>
-          <Button blue={true} onClick={this.saveConfig}>{'Save'}</Button>
-          <Button onClick={this.cancelConfig}>{'Cancel'}</Button>
-        </Panel>
+        <BoardStatusEditForm
+          agile={agile}
+          sprint={sprint}
+          onSubmit={this.saveConfig}
+          onCancel={this.cancelConfig}
+          dashboardApi={this.props.dashboardApi}
+          youTrackId={youTrack.id}
+        />
       </div>
     );
   }
 
   async loadSelectedSprintData() {
-    const {selectedAgile, selectedSprint} = this.state;
+    const {agile, sprint} = this.state;
     try {
       const extendedSprintData = await loadExtendedSprintData(
-        this.fetchYouTrack, selectedAgile.id, selectedSprint.id
+        this.fetchYouTrack, agile.id, sprint.id
       );
       this.setState({extendedSprintData});
     } catch (err) {
@@ -205,7 +177,7 @@ class Widget extends Component {
     return <LoaderInline/>;
   }
 
-  renderWidgetBody(selectedAgile, selectedSprint, extendedSprintData) {
+  renderWidgetBody(agile, sprint, extendedSprintData) {
     const boardData = extendedSprintData.board;
     const boardProgressBars = countBoardProgress(boardData);
 
@@ -234,7 +206,7 @@ class Widget extends Component {
         return '';
       }
       const searchUrl = getColumnSearchUrl(
-        selectedAgile, selectedSprint, column
+        agile, sprint, column
       );
       return `${homeUrl}/issues?q=${searchUrl}`;
     };
@@ -242,7 +214,7 @@ class Widget extends Component {
     const dashboardApi = this.props.dashboardApi;
     const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
     const userSource = () =>
-      getHubUser(fetchHub, selectedAgile.owner.ringId, homeUrl);
+      getHubUser(fetchHub, agile.owner.ringId, homeUrl);
 
     return (
       <div className={styles.widget}>
@@ -256,9 +228,9 @@ class Widget extends Component {
           <b>{'Owner:'}</b>&nbsp;
           <SmartUserCardTooltip userDataSource={userSource}>
             <Link
-              href={`${homeUrl}/users/${selectedAgile.owner.ringId}`}
+              href={`${homeUrl}/users/${agile.owner.ringId}`}
             >
-              {selectedAgile.owner.fullName}
+              {agile.owner.fullName}
             </Link>
           </SmartUserCardTooltip>
         </div>
@@ -321,8 +293,8 @@ class Widget extends Component {
   render() {
     const {
       isConfiguring,
-      selectedAgile,
-      selectedSprint,
+      agile,
+      sprint,
       isLoading,
       extendedSprintData,
       isLoadDataError
@@ -337,7 +309,7 @@ class Widget extends Component {
     if (isConfiguring) {
       return this.renderConfiguration();
     }
-    if (!selectedAgile || !selectedSprint) {
+    if (!agile || !sprint) {
       this.props.dashboardApi.enterConfigMode();
       return this.renderConfiguration();
     }
@@ -345,7 +317,7 @@ class Widget extends Component {
       return this.renderLoader();
     }
     return this.renderWidgetBody(
-      selectedAgile, selectedSprint, extendedSprintData
+      agile, sprint, extendedSprintData
     );
   }
 }
