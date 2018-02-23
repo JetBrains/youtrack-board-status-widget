@@ -18,11 +18,13 @@ import {
   countBoardProgress,
   getColumnSearchUrl,
   areSprintsEnabled,
+  isCurrentSprint,
   MAX_PROGRESS_BAR_HEIGHT
 } from './agile-board-model';
 import {
   getYouTrackService,
   loadExtendedSprintData,
+  loadAgile,
   getHubUser
 } from './resources';
 import ServiceUnavailableScreen from './service-unavailable-screen';
@@ -61,14 +63,13 @@ class Widget extends Component {
     const youTrackService = await this.getYouTrack(config);
     if (youTrackService && youTrackService.id) {
       this.setYouTrack(youTrackService);
-    }
-    if (config && config.agile) {
-      this.specifyBoard(config.agile, config.sprint);
-      if (youTrackService) {
-        await this.loadSelectedSprintData();
+      if (config && config.agile) {
+        const agile = await loadAgile(this.fetchYouTrack, config.agile.id);
+        this.specifyBoard(
+          agile, config.sprint, config.currentSprintMode
+        );
       }
     }
-    this.updateTitle();
     this.setLoadingEnabled(false);
   }
 
@@ -85,10 +86,17 @@ class Widget extends Component {
     return dashboardApi.fetch(youTrack.id, url, params);
   };
 
-  specifyBoard = (agile, sprint) => {
+  specifyBoard = (agile, sprint, currentSprintMode) => {
+    const selectedSprint = currentSprintMode
+      ? (agile.sprints || []).filter(isCurrentSprint)[0]
+      : sprint || (agile && agile.sprints || [])[0];
     this.setState({
       agile,
-      sprint: sprint || (agile && agile.sprints || [])[0]
+      sprint: selectedSprint,
+      currentSprintMode
+    }, () => {
+      this.loadSelectedSprintData();
+      this.updateTitle();
     });
   };
 
@@ -106,18 +114,19 @@ class Widget extends Component {
     this.setState({isLoading});
   }
 
-  saveConfig = async (agile, sprint, youTrack) => {
+  saveConfig = async formModel => {
+    const {agile, sprint, youTrack, currentSprintMode} = formModel;
     await this.props.dashboardApi.storeConfig({
       agile,
       sprint,
+      currentSprintMode,
       youTrack
     });
     this.setState({
       isConfiguring: false,
-      agile, sprint, youTrack
+      youTrack
     }, () => {
-      this.loadSelectedSprintData();
-      this.updateTitle();
+      this.specifyBoard(agile, sprint, currentSprintMode);
     });
   };
 
@@ -128,13 +137,21 @@ class Widget extends Component {
   };
 
   updateTitle() {
-    const {agile, sprint, youTrack} = this.state;
+    const {
+      agile, sprint, currentSprintMode, youTrack
+    } = this.state;
     if (agile) {
       let title = `Board ${agile.name}`;
       let link = `${youTrack.homeUrl}/agiles/${agile.id}`;
-      if (sprint && areSprintsEnabled(agile)) {
-        title += `: ${sprint.name}`;
-        link += `/${sprint.id}`;
+      if (areSprintsEnabled(agile)) {
+        if (sprint) {
+          title += currentSprintMode
+            ? `: Current sprint (${sprint.name})`
+            : `: ${sprint.name}`;
+          link += `/${sprint.id}`;
+        } else if (currentSprintMode) {
+          title += ': No current sprint found';
+        }
       }
       this.props.dashboardApi.setTitle(title, link);
     }

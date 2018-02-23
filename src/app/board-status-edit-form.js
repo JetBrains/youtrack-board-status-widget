@@ -5,13 +5,17 @@ import PropTypes from 'prop-types';
 import Panel from '@jetbrains/ring-ui/components/panel/panel';
 import Button from '@jetbrains/ring-ui/components/button/button';
 import Select from '@jetbrains/ring-ui/components/select/select';
+import List from '@jetbrains/ring-ui/components/list/list';
 import classNames from 'classnames';
 
 import {
   getYouTrackServices,
   loadAgiles
 } from './resources';
-import {areSprintsEnabled} from './agile-board-model';
+import {
+  areSprintsEnabled,
+  isCurrentSprint
+} from './agile-board-model';
 import {responseErrorMessage} from './response-error-message';
 import styles from './app.css';
 
@@ -31,6 +35,12 @@ export default class BoardStatusEditForm extends React.Component {
     description: it.homeUrl,
     model: it
   };
+
+  static getCurrentSprintSelectOption = currentSprint => ({
+    key: 'current-sprint',
+    label: 'Always display current sprint',
+    description: currentSprint ? currentSprint.name : ''
+  });
 
   constructor(props) {
     super(props);
@@ -119,8 +129,15 @@ export default class BoardStatusEditForm extends React.Component {
   };
 
   submitForm = async () => {
-    const {selectedAgile, selectedSprint, selectedYouTrack} = this.state;
-    await this.props.onSubmit(selectedAgile, selectedSprint, selectedYouTrack);
+    const {
+      selectedAgile, selectedSprint, selectedYouTrack, currentSprintMode
+    } = this.state;
+    await this.props.onSubmit({
+      agile: selectedAgile,
+      sprint: selectedSprint,
+      youTrack: selectedYouTrack,
+      currentSprintMode
+    });
   };
 
   fetchYouTrack = async (url, params) => {
@@ -139,9 +156,17 @@ export default class BoardStatusEditForm extends React.Component {
   };
 
   changeSprint = selected => {
-    this.setState({
-      selectedSprint: selected.model || selected
-    });
+    if (selected.key === 'current-sprint') {
+      this.setState({
+        selectedSprint: null,
+        currentSprintMode: true
+      });
+    } else {
+      this.setState({
+        selectedSprint: selected.model || selected,
+        currentSprintMode: false
+      });
+    }
   };
 
   renderNoBoardsMessage() {
@@ -156,8 +181,24 @@ export default class BoardStatusEditForm extends React.Component {
     const {
       selectedAgile,
       selectedSprint,
+      currentSprintMode,
       agiles
     } = this.state;
+
+    const getSprintsOptions = () => {
+      const sprints = (selectedAgile.sprints || []);
+      const sprintsOptions = sprints.map(BoardStatusEditForm.toSelectItem);
+      const currentSprint = sprints.filter(isCurrentSprint)[0];
+      if (currentSprint) {
+        sprintsOptions.unshift({
+          rgItemType: List.ListProps.Type.SEPARATOR
+        });
+        sprintsOptions.unshift(
+          BoardStatusEditForm.getCurrentSprintSelectOption(currentSprint)
+        );
+      }
+      return sprintsOptions;
+    };
 
     return (
       <div>
@@ -174,11 +215,12 @@ export default class BoardStatusEditForm extends React.Component {
           areSprintsEnabled(selectedAgile) &&
           <div className="ring-form__group">
             <Select
-              data={
-                (selectedAgile.sprints || []).
-                  map(BoardStatusEditForm.toSelectItem)
+              data={getSprintsOptions()}
+              selected={
+                currentSprintMode
+                  ? BoardStatusEditForm.getCurrentSprintSelectOption()
+                  : BoardStatusEditForm.toSelectItem(selectedSprint)
               }
-              selected={BoardStatusEditForm.toSelectItem(selectedSprint)}
               onSelect={this.changeSprint}
               filter={true}
               label="Select sprint"
