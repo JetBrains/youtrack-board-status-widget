@@ -17,7 +17,7 @@ import {
   isCurrentSprint
 } from './agile-board-model';
 import {responseErrorMessage} from './response-error-message';
-import styles from './app.css';
+import styles from './agile-board-widget.css';
 
 export default class BoardStatusEditForm extends React.Component {
   static propTypes = {
