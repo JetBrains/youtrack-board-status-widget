@@ -23,6 +23,7 @@ export default class BoardStatusEditForm extends React.Component {
   static propTypes = {
     agile: PropTypes.object,
     sprint: PropTypes.object,
+    currentSprintMode: PropTypes.bool,
     onSubmit: PropTypes.func,
     onCancel: PropTypes.func,
     dashboardApi: PropTypes.object,
@@ -51,6 +52,7 @@ export default class BoardStatusEditForm extends React.Component {
     this.state = {
       selectedAgile: props.agile,
       selectedSprint: props.sprint,
+      currentSprintMode: props.currentSprintMode,
       agiles: [],
       selectedYouTrack,
       youTracks: [selectedYouTrack]
@@ -150,7 +152,12 @@ export default class BoardStatusEditForm extends React.Component {
     const selectedAgile = selected.model || selected;
     const sprints = selectedAgile && selectedAgile.sprints || [];
     if (sprints.length) {
-      this.changeSprint(sprints[0]);
+      const hasCurrentSprint = sprints.some(isCurrentSprint);
+      this.changeSprint(
+        hasCurrentSprint
+          ? BoardStatusEditForm.getCurrentSprintSelectOption()
+          : sprints[0]
+      );
     }
     this.setState({selectedAgile});
   };

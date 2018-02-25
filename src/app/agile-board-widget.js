@@ -162,6 +162,7 @@ export default class AgileBoardWidget extends Component {
     const {
       agile,
       sprint,
+      currentSprintMode,
       youTrack
     } = this.state;
 
@@ -170,6 +171,7 @@ export default class AgileBoardWidget extends Component {
         <BoardStatusEditForm
           agile={agile}
           sprint={sprint}
+          currentSprintMode={currentSprintMode}
           onSubmit={this.saveConfig}
           onCancel={this.cancelConfig}
           dashboardApi={this.props.dashboardApi}
