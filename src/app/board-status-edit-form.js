@@ -87,7 +87,7 @@ export default class BoardStatusEditForm extends React.Component {
       filter(yt => yt.id === selectedYouTrack.id)[0];
     this.setState({
       youTracks, selectedYouTrack: selectedYouTrackWithAllFields
-    }, () => this.onAfterYouTrackChanged());
+    }, async () => await this.onAfterYouTrackChanged());
   }
 
   async onAfterYouTrackChanged() {

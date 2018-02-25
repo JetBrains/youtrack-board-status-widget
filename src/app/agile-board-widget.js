@@ -44,7 +44,10 @@ export default class AgileBoardWidget extends Component {
 
     registerWidgetApi({
       onConfigure: () => this.setState({isConfiguring: true}),
-      onRefresh: () => this.loadSelectedSprintData()
+      onRefresh: async () => {
+        await this.loadSelectedSprintData();
+        this.updateTitle();
+      }
     });
   }
 
@@ -58,11 +61,12 @@ export default class AgileBoardWidget extends Component {
     const youTrackService = await this.getYouTrack(config);
     if (youTrackService && youTrackService.id) {
       this.setYouTrack(youTrackService);
-      if (config && config.agile) {
-        const agile = await loadAgile(this.fetchYouTrack, config.agile.id);
-        this.specifyBoard(
-          agile, config.sprint, config.currentSprintMode
+      if (config && config.agileId) {
+        await this.specifyBoard(
+          config.agileId, config.sprintId, config.currentSprintMode
         );
+      } else {
+        this.setState({isConfiguring: true});
       }
     }
     this.setLoadingEnabled(false);
@@ -81,19 +85,19 @@ export default class AgileBoardWidget extends Component {
     return dashboardApi.fetch(youTrack.id, url, params);
   };
 
-  specifyBoard = (agile, sprint, currentSprintMode) => {
-    const selectedSprint = currentSprintMode
-      ? (agile.sprints || []).filter(isCurrentSprint)[0]
-      : sprint || (agile && agile.sprints || [])[0];
+  async specifyBoard(agileId, sprintId, currentSprintMode) {
+    const agile = await loadAgile(this.fetchYouTrack, agileId);
+    const selectedSprintId = currentSprintMode
+      ? ((agile.sprints || []).filter(isCurrentSprint)[0] || {}).id
+      : sprintId;
     this.setState({
       agile,
-      sprint: selectedSprint,
       currentSprintMode
-    }, () => {
-      this.loadSelectedSprintData();
+    }, async () => {
+      await this.loadSelectedSprintData(selectedSprintId);
       this.updateTitle();
     });
-  };
+  }
 
   setYouTrack(youTrackService) {
     this.setState({
@@ -111,17 +115,19 @@ export default class AgileBoardWidget extends Component {
 
   saveConfig = async formModel => {
     const {agile, sprint, youTrack, currentSprintMode} = formModel;
+    const agileId = agile.id;
+    const sprintId = sprint && sprint.id;
     await this.props.dashboardApi.storeConfig({
-      agile,
-      sprint,
+      agileId,
+      sprintId,
       currentSprintMode,
       youTrack
     });
     this.setState({
       isConfiguring: false,
       youTrack
-    }, () => {
-      this.specifyBoard(agile, sprint, currentSprintMode);
+    }, async () => {
+      await this.specifyBoard(agileId, sprintId, currentSprintMode);
     });
   };
 
@@ -173,13 +179,14 @@ export default class AgileBoardWidget extends Component {
     );
   }
 
-  async loadSelectedSprintData() {
-    const {agile, sprint} = this.state;
+  async loadSelectedSprintData(selectedSprintId) {
+    const {agile} = this.state;
     try {
-      const extendedSprintData = await loadExtendedSprintData(
-        this.fetchYouTrack, agile.id, sprint.id
+      const sprintId = selectedSprintId || (this.state.sprint || {}).id;
+      const sprint = await loadExtendedSprintData(
+        this.fetchYouTrack, agile.id, sprintId
       );
-      this.setState({extendedSprintData});
+      this.setState({sprint});
     } catch (err) {
       this.setState({isLoadDataError: true});
     }
@@ -189,8 +196,8 @@ export default class AgileBoardWidget extends Component {
     return <LoaderInline/>;
   }
 
-  renderWidgetBody(agile, sprint, extendedSprintData) {
-    const boardData = extendedSprintData.board;
+  renderWidgetBody(agile, sprint) {
+    const boardData = sprint.board;
     const boardProgressBars = countBoardProgress(boardData);
 
     const progressBarWrapperStyle = {
@@ -231,9 +238,9 @@ export default class AgileBoardWidget extends Component {
     return (
       <div className={styles.widget}>
         {
-          extendedSprintData.goal &&
+          sprint.goal &&
           <div className={styles.sprintCommonInfo}>
-            {extendedSprintData.goal}
+            {sprint.goal}
           </div>
         }
         <div className={styles.sprintCommonInfo}>
@@ -308,7 +315,6 @@ export default class AgileBoardWidget extends Component {
       agile,
       sprint,
       isLoading,
-      extendedSprintData,
       isLoadDataError
     } = this.state;
 
@@ -322,14 +328,10 @@ export default class AgileBoardWidget extends Component {
       return this.renderConfiguration();
     }
     if (!agile || !sprint) {
-      this.props.dashboardApi.enterConfigMode();
-      return this.renderConfiguration();
-    }
-    if (!extendedSprintData) {
       return this.renderLoader();
     }
     return this.renderWidgetBody(
-      agile, sprint, extendedSprintData
+      agile, sprint
     );
   }
 }
