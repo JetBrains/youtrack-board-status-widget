@@ -78,3 +78,12 @@
 
   color: error-color;
 }
+
+.formPanel.formPanel {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 16px 24px;
+}

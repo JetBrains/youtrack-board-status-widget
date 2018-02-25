@@ -260,7 +260,7 @@ export default class BoardStatusEditForm extends React.Component {
               : this.renderNoBoardsMessage()
           }
         </div>
-        <Panel>
+        <Panel className={styles.formPanel}>
           {
             this.state.errorMessage &&
             <div className={styles.formPanelError}>
