@@ -2,7 +2,7 @@
   "key": "youtrack-board-status-widget",
   "name": "Agile Board Status",
   "version": "0.0.3",
-  "description": "Shows youtrack agile board status",
+  "description": "Shows youtrack agile board status.",
   "author": "Ekaterina Zaikina <katriyna@gmail.com>",
   "applicationName": "YouTrack",
   "dependencies": {
