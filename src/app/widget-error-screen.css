@@ -1,0 +1,36 @@
+@value unit, text-color, font-size-smaller, font from "@jetbrains/ring-ui/components/global/global.css";
+
+.widgetErrorScreen {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+
+  transform: translate(0, -50%);
+
+  text-align: center;
+}
+
+.widgetErrorSmile {
+  text-align: center;
+  white-space: nowrap;
+
+  color: text-color;
+
+  font-size: 19px;
+}
+
+.widgetErrorMessage {
+  margin-top: calc(unit * 3);
+
+  color: text-color;
+
+  font-size: 13px;
+}
+
+.widgetErrorAdditional {
+  margin-top: unit;
+
+  font-size: font-size-smaller;
+}

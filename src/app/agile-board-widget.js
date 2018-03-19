@@ -22,7 +22,7 @@ import {
   loadAgile,
   getHubUser
 } from './resources';
-import ServiceUnavailableScreen from './service-unavailable-screen';
+import WidgetErrorScreen from './widget-error-screen';
 import BoardStatusEditForm from './board-status-edit-form';
 
 
@@ -39,6 +39,7 @@ export default class AgileBoardWidget extends Component {
     this.state = {
       isConfiguring: false,
       isLoading: true,
+      noCurrentSprintError: false,
       isLoadDataError: false
     };
 
@@ -94,8 +95,12 @@ export default class AgileBoardWidget extends Component {
       agile,
       currentSprintMode
     }, async () => {
-      await this.loadSelectedSprintData(selectedSprintId);
-      this.updateTitle();
+      if (selectedSprintId) {
+        await this.loadSelectedSprintData(selectedSprintId);
+        this.updateTitle();
+      } else if (currentSprintMode) {
+        this.setState({noCurrentSprintError: true});
+      }
     });
   }
 
@@ -125,6 +130,7 @@ export default class AgileBoardWidget extends Component {
     });
     this.setState({
       isConfiguring: false,
+      noCurrentSprintError: false,
       youTrack
     }, async () => {
       await this.specifyBoard(agileId, sprintId, currentSprintMode);
@@ -306,10 +312,33 @@ export default class AgileBoardWidget extends Component {
   renderLoadDataError() {
     return (
       <div className={styles.widget}>
-        <ServiceUnavailableScreen/>
+        <WidgetErrorScreen/>
       </div>
     );
   }
+
+  renderNoCurrentSprintError = () => {
+    const editWidgetSettings = () => {
+      this.props.dashboardApi.enterConfigMode();
+      this.setState({isConfiguring: true});
+    };
+
+    return (
+      <div className={styles.widget}>
+        <WidgetErrorScreen
+          smile={'(・_・)'}
+          text={'No current sprint found'}
+        >
+          <Link
+            pseudo={true}
+            onClick={editWidgetSettings}
+          >
+            {'Select sprint'}
+          </Link>
+        </WidgetErrorScreen>
+      </div>
+    );
+  };
 
   render() {
     const {
@@ -317,7 +346,8 @@ export default class AgileBoardWidget extends Component {
       agile,
       sprint,
       isLoading,
-      isLoadDataError
+      isLoadDataError,
+      noCurrentSprintError
     } = this.state;
 
     if (isLoadDataError) {
@@ -328,6 +358,9 @@ export default class AgileBoardWidget extends Component {
     }
     if (isConfiguring) {
       return this.renderConfiguration();
+    }
+    if (noCurrentSprintError) {
+      return this.renderNoCurrentSprintError();
     }
     if (!agile || !sprint) {
       return this.renderLoader();
