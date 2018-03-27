@@ -6,6 +6,7 @@ import Panel from '@jetbrains/ring-ui/components/panel/panel';
 import Button from '@jetbrains/ring-ui/components/button/button';
 import Select from '@jetbrains/ring-ui/components/select/select';
 import List from '@jetbrains/ring-ui/components/list/list';
+import Link from '@jetbrains/ring-ui/components/link/link';
 import classNames from 'classnames';
 
 import {
@@ -177,9 +178,16 @@ export default class BoardStatusEditForm extends React.Component {
   };
 
   renderNoBoardsMessage() {
+    const {selectedYouTrack} = this.state;
+
     return (
       <div className="ring-form__group">
-        {'No sprints found'}
+        <span>{'No boards found.'}</span>&nbsp;
+        <Link
+          href={`${(selectedYouTrack || {}).homeUrl}/agiles/create`}
+        >
+          {'Create board'}
+        </Link>
       </div>
     );
   }

@@ -63,6 +63,7 @@ export default class AgileBoardWidget extends Component {
     if (youTrackService && youTrackService.id) {
       this.setYouTrack(youTrackService);
       if (config && config.agileId) {
+        await this.showBoardFromCache(config.agileId);
         await this.specifyBoard(
           config.agileId, config.sprintId, config.currentSprintMode
         );
@@ -86,6 +87,18 @@ export default class AgileBoardWidget extends Component {
     return dashboardApi.fetch(youTrack.id, url, params);
   };
 
+  async showBoardFromCache(agileId) {
+    const {dashboardApi} = this.props;
+    const cache = (await dashboardApi.readCache() || {}).result;
+    if (cache && (cache.agile || {}).id === agileId) {
+      this.setState({
+        agile: cache.agile,
+        sprint: cache.sprint,
+        fromCache: true
+      });
+    }
+  }
+
   async specifyBoard(agileId, sprintId, currentSprintMode) {
     const agile = await loadAgile(this.fetchYouTrack, agileId);
     const selectedSprintId = currentSprintMode
@@ -96,8 +109,11 @@ export default class AgileBoardWidget extends Component {
       currentSprintMode
     }, async () => {
       if (selectedSprintId) {
-        await this.loadSelectedSprintData(selectedSprintId);
+        const sprint = await this.loadSelectedSprintData(selectedSprintId);
         this.updateTitle();
+        if (sprint && agile) {
+          this.props.dashboardApi.storeCache({sprint, agile});
+        }
       } else if (currentSprintMode) {
         this.setState({noCurrentSprintError: true});
       }
@@ -194,9 +210,11 @@ export default class AgileBoardWidget extends Component {
       const sprint = await loadExtendedSprintData(
         this.fetchYouTrack, agile.id, sprintId
       );
-      this.setState({sprint});
+      this.setState({sprint, fromCache: false});
+      return sprint;
     } catch (err) {
       this.setState({isLoadDataError: true});
+      return null;
     }
   }
 
@@ -205,6 +223,10 @@ export default class AgileBoardWidget extends Component {
   }
 
   renderWidgetBody(agile, sprint) {
+    if (!agile || !sprint) {
+      return this.renderLoadDataError();
+    }
+
     const boardData = sprint.board;
     const boardProgressBars = countBoardProgress(boardData);
 
@@ -346,6 +368,7 @@ export default class AgileBoardWidget extends Component {
       agile,
       sprint,
       isLoading,
+      fromCache,
       isLoadDataError,
       noCurrentSprintError
     } = this.state;
@@ -353,7 +376,7 @@ export default class AgileBoardWidget extends Component {
     if (isLoadDataError) {
       return this.renderLoadDataError();
     }
-    if (isLoading) {
+    if (isLoading && !fromCache) {
       return this.renderLoader();
     }
     if (isConfiguring) {
@@ -361,9 +384,6 @@ export default class AgileBoardWidget extends Component {
     }
     if (noCurrentSprintError) {
       return this.renderNoCurrentSprintError();
-    }
-    if (!agile || !sprint) {
-      return this.renderLoader();
     }
     return this.renderWidgetBody(
       agile, sprint
