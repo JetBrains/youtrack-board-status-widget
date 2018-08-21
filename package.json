@@ -14,7 +14,8 @@
     "lint": "eslint . && npm run stylelint",
     "stylelint": "stylelint --ignore-path .gitignore **/*.css",
     "ci-test": "npm run lint && karma start --teamcity",
-    "start": "webpack-dev-server -d --history-api-fallback --inline --hot --colors --port 9010"
+    "start": "webpack-dev-server -d --history-api-fallback --inline --hot --colors --port 9010",
+    "i18n:extract": "angular-gettext-cli --files \"src/**/*.js\" --dest src/app/translations/default.pot --marker-name=i18n"
   },
   "babel": {
     "presets": "@jetbrains/jetbrains"
@@ -24,6 +25,7 @@
     "@jetbrains/icons": "1.12.0",
     "@jetbrains/logos": "0.1.6",
     "@jetbrains/ring-ui": "0.4.14",
+    "angular-gettext-cli": "1.2.0",
     "angular-gettext-loader": "1.0.1",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",

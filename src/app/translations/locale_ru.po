@@ -12,26 +12,92 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 1.6.8\n"
 
-#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:60
+#: src/app/agile-board-widget.js:173
+msgid ": Current sprint ({{name}})"
+msgstr ": Текущий спринт ({{name}})"
+
+#: src/app/board-status-edit-form.js:44
+msgid "Always display current sprint"
+msgstr "Всегда отображать текущий спринт"
+
+#: src/app/agile-board-widget.js:168
+msgid "Board {{name}}"
+msgstr "Доска {{name}}"
+
+#: src/app/widget-error-screen.js:17
+msgid "Can't load information from service."
+msgstr "Ошибка загрузки информации с сервиса"
+
+#: src/app/board-status-edit-form.js:298
+msgid "Cancel"
+msgstr "Закрыть"
+
+#: src/app/board-status-edit-form.js:190
+msgid "Create board"
+msgstr "Создать доску"
+
+#: src/app/board-status-edit-form.js:77
+msgid "Failed to connect to server"
+msgstr "Ошибка соединения с сервером"
+
+#: src/app/i18n-translate.js:88
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr "Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь"
+msgstr ""
 
-#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:59
+#: src/app/i18n-translate.js:87
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr "Янв|Фев|Мар|Апр|Май|Июн|Июл|Авг|Сен|Окт|Ноя|Дек"
+msgstr ""
 
-#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:58
+#: src/app/board-status-edit-form.js:186
+msgid "No boards found."
+msgstr "Доски не найдены"
+
+#: src/app/agile-board-widget.js:177
+#: src/app/agile-board-widget.js:353
+msgid "No current sprint found"
+msgstr "Не найдено текущего спринта"
+
+#: src/app/agile-board-model.js:77
+msgid "One card in state {{stateName}}"
+msgstr "Одна карточка в колонке {{stateName}}"
+
+#: src/app/agile-board-widget.js:278
+msgid "Owner:"
+msgstr "Владелец:"
+
+#: src/app/board-status-edit-form.js:292
+msgid "Save"
+msgstr "Сохранить"
+
+#: src/app/board-status-edit-form.js:269
+msgid "Select YouTrack Server"
+msgstr "Выберете YouTrack"
+
+#: src/app/board-status-edit-form.js:227
+msgid "Select board"
+msgstr "Выберите доску"
+
+#: src/app/agile-board-widget.js:359
+#: src/app/board-status-edit-form.js:242
+msgid "Select sprint"
+msgstr "Выберите спринт"
+
+#: src/app/response-error-message.js:4
+msgid "Something went wrong =("
+msgstr "Что-то пошло не так =("
+
+#: src/app/i18n-translate.js:86
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "Воскресенье|Понедельник|Вторник|Среда|Четверг|Пятница|Суббота"
 
-#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:57
-msgid "Sun|Mon|Tue|Wed|Thur|Fri|Sat"
+#: src/app/i18n-translate.js:85
+msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "Вс|Пн|Вт|Ср|Чт|Пт|Сб"
 
-#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:61
+#: src/app/i18n-translate.js:89
 msgid "am|pm"
-msgstr ""
+msgstr "ДП|ПП"
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:242
-msgid "Issues per {{issueFieldPresentation}}"
-msgstr "Задачи по {{issueFieldPresentation}}"
+#: src/app/agile-board-model.js:78
+msgid "{{amount}} cards in state {{stateName}}"
+msgstr "{{amount}} карточек в колонке {{stateName}}"

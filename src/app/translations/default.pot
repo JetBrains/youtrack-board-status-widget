@@ -4,207 +4,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:286
-msgid "About report"
+#: src/app/agile-board-widget.js:173
+msgid ": Current sprint ({{name}})"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:317
-msgid "Add project"
+#: src/app/board-status-edit-form.js:44
+msgid "Always display current sprint"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:318
-msgid "Calculate for all projects"
+#: src/app/agile-board-widget.js:168
+msgid "Board {{name}}"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:345
-msgid "Calculation is in progress..."
-msgstr ""
-
-#: app/lib/dashboard-widgets/components/errors/src/widget-error-screen.js:18
+#: src/app/widget-error-screen.js:17
 msgid "Can't load information from service."
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:448
+#: src/app/board-status-edit-form.js:298
 msgid "Cancel"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:272
-msgid "Cannot find YouTrack installation"
+#: src/app/board-status-edit-form.js:190
+msgid "Create board"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:277
-msgid "Cannot find any issue distribution report"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:281
-msgid "Cannot load selected report"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:96
-msgid "Create new report"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:266
-msgid "Edit report \"Issues per field"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:255
-msgid "Edit report \"Issues per {{issueFieldPresentation}}\""
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:263
-msgid "Edit settings"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:148
+#: src/app/board-status-edit-form.js:77
 msgid "Failed to connect to server"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:330
-msgid "Filter issues"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:152
-msgid "Issues Distribution Report"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:242
-msgid "Issues per {{issueFieldPresentation}}"
-msgstr ""
-
-#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:88
+#: src/app/i18n-translate.js:88
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr ""
 
-#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:87
+#: src/app/i18n-translate.js:87
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:94
-msgid "Me only"
+#: src/app/board-status-edit-form.js:186
+msgid "No boards found."
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:306
-msgid "Name"
+#: src/app/agile-board-widget.js:177
+#: src/app/agile-board-widget.js:353
+msgid "No current sprint found"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:267
-msgid "New report \"Issues per field"
+#: src/app/agile-board-model.js:77
+msgid "One card in state {{stateName}}"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:256
-msgid "New report \"Issues per {{issueFieldPresentation}}\""
+#: src/app/agile-board-widget.js:278
+msgid "Owner:"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:379
-msgid "No issues found matching the report's settings"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-filter-fields-selector.js:26
-msgid "No value"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-filter-fields-selector.js:47
-msgid "Not set"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:284
-msgid "Oops... Something went wrong =("
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:247
-msgid "Remove widget"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:242
-msgid "Report"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:353
-msgid "Report is visible to {{visibilityPresentation}}"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:442
+#: src/app/board-status-edit-form.js:292
 msgid "Save"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:418
-msgid "Select YouTrack"
+#: src/app/board-status-edit-form.js:269
+msgid "Select YouTrack Server"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:355
-msgid "Select report"
+#: src/app/board-status-edit-form.js:227
+msgid "Select board"
 msgstr ""
 
-#: app/lib/dashboard-widgets/components/errors/src/response-error-message.js:4
+#: src/app/agile-board-widget.js:359
+#: src/app/board-status-edit-form.js:242
+msgid "Select sprint"
+msgstr ""
+
+#: src/app/response-error-message.js:4
 msgid "Something went wrong =("
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:338
-msgid "Split bars by field"
-msgstr ""
-
-#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:86
+#: src/app/i18n-translate.js:86
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr ""
 
-#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:85
+#: src/app/i18n-translate.js:85
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:325
-msgid "To customize settings clone it first"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-chart.js:118
-msgid "Total"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:95
-msgid "Unnamed"
-msgstr ""
-
-#: app/lib/dashboard-widgets/components/configuration/src/widget-refresh-period.js:63
-msgid "Widget is updating data each {{refreshPeriodInMin}} min"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:320
-msgid "You are not allowed edit non-own report."
-msgstr ""
-
-#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:89
+#: src/app/i18n-translate.js:89
 msgid "am|pm"
 msgstr ""
 
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/ditribution-report-types.js:33
-msgid "assignee"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:306
-msgid "clone"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:73
-msgid "existing reports"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-chart.js:112
-msgid "issue"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-chart.js:112
-msgid "issues"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:89
-msgid "me"
-msgstr ""
-
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:56
-#: app/lib/dashboard-widgets/widgets/distribution-reports/src/ditribution-report-types.js:30
-msgid "project"
-msgstr ""
-
-#: app/lib/dashboard-widgets/components/configuration/src/widget-refresh-period.js:67
-msgid "{{refreshPeriodInMin}} min"
+#: src/app/agile-board-model.js:78
+msgid "{{amount}} cards in state {{stateName}}"
 msgstr ""
