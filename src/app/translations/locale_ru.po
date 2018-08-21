@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Client\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.6.8\n"
+
+#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:60
+msgid "January|February|March|April|May|June|July|August|September|October|November|December"
+msgstr "Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь"
+
+#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:59
+msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
+msgstr "Янв|Фев|Мар|Апр|Май|Июн|Июл|Авг|Сен|Окт|Ноя|Дек"
+
+#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:58
+msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
+msgstr "Воскресенье|Понедельник|Вторник|Среда|Четверг|Пятница|Суббота"
+
+#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:57
+msgid "Sun|Mon|Tue|Wed|Thur|Fri|Sat"
+msgstr "Вс|Пн|Вт|Ср|Чт|Пт|Сб"
+
+#: app/lib/dashboard-widgets/issues-list/src/i18n-translate.js:61
+msgid "am|pm"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:242
+msgid "Issues per {{issueFieldPresentation}}"
+msgstr "Задачи по {{issueFieldPresentation}}"

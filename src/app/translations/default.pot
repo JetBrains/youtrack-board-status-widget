@@ -1,0 +1,210 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:286
+msgid "About report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:317
+msgid "Add project"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:318
+msgid "Calculate for all projects"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:345
+msgid "Calculation is in progress..."
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/errors/src/widget-error-screen.js:18
+msgid "Can't load information from service."
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:448
+msgid "Cancel"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:272
+msgid "Cannot find YouTrack installation"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:277
+msgid "Cannot find any issue distribution report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:281
+msgid "Cannot load selected report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:96
+msgid "Create new report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:266
+msgid "Edit report \"Issues per field"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:255
+msgid "Edit report \"Issues per {{issueFieldPresentation}}\""
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:263
+msgid "Edit settings"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:148
+msgid "Failed to connect to server"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:330
+msgid "Filter issues"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:152
+msgid "Issues Distribution Report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:242
+msgid "Issues per {{issueFieldPresentation}}"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:88
+msgid "January|February|March|April|May|June|July|August|September|October|November|December"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:87
+msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:94
+msgid "Me only"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:306
+msgid "Name"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:267
+msgid "New report \"Issues per field"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:256
+msgid "New report \"Issues per {{issueFieldPresentation}}\""
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:379
+msgid "No issues found matching the report's settings"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-filter-fields-selector.js:26
+msgid "No value"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-filter-fields-selector.js:47
+msgid "Not set"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:284
+msgid "Oops... Something went wrong =("
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-widget.js:247
+msgid "Remove widget"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:242
+msgid "Report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:353
+msgid "Report is visible to {{visibilityPresentation}}"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:442
+msgid "Save"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:418
+msgid "Select YouTrack"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:355
+msgid "Select report"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/errors/src/response-error-message.js:4
+msgid "Something went wrong =("
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-report-form.js:338
+msgid "Split bars by field"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:86
+msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:85
+msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:325
+msgid "To customize settings clone it first"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-chart.js:118
+msgid "Total"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:95
+msgid "Unnamed"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/configuration/src/widget-refresh-period.js:63
+msgid "Widget is updating data each {{refreshPeriodInMin}} min"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:320
+msgid "You are not allowed edit non-own report."
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/localization/src/i18n-translate.js:89
+msgid "am|pm"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/ditribution-report-types.js:33
+msgid "assignee"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:306
+msgid "clone"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:73
+msgid "existing reports"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-chart.js:112
+msgid "issue"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/report-chart.js:112
+msgid "issues"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:89
+msgid "me"
+msgstr ""
+
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/distribution-reports-configuration-form.js:56
+#: app/lib/dashboard-widgets/widgets/distribution-reports/src/ditribution-report-types.js:30
+msgid "project"
+msgstr ""
+
+#: app/lib/dashboard-widgets/components/configuration/src/widget-refresh-period.js:67
+msgid "{{refreshPeriodInMin}} min"
+msgstr ""
