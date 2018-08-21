@@ -18,6 +18,7 @@ import {
   isCurrentSprint
 } from './agile-board-model';
 import {responseErrorMessage} from './response-error-message';
+import {i18n} from './i18n-translate';
 import styles from './agile-board-widget.css';
 
 export default class BoardStatusEditForm extends React.Component {
@@ -40,7 +41,7 @@ export default class BoardStatusEditForm extends React.Component {
 
   static getCurrentSprintSelectOption = currentSprint => ({
     key: 'current-sprint',
-    label: 'Always display current sprint',
+    label: i18n('Always display current sprint'),
     description: currentSprint ? currentSprint.name : ''
   });
 
@@ -73,7 +74,7 @@ export default class BoardStatusEditForm extends React.Component {
         if (this.state.isLoading) {
           this.setState({
             isLoading: false,
-            errorMessage: 'Failed to connect to server',
+            errorMessage: i18n('Failed to connect to server'),
             noConnection: true
           });
         }
@@ -182,11 +183,11 @@ export default class BoardStatusEditForm extends React.Component {
 
     return (
       <div className="ring-form__group">
-        <span>{'No boards found.'}</span>&nbsp;
+        <span>{i18n('No boards found.')}</span>&nbsp;
         <Link
           href={`${(selectedYouTrack || {}).homeUrl}/agiles/create`}
         >
-          {'Create board'}
+          {i18n('Create board')}
         </Link>
       </div>
     );
@@ -223,7 +224,7 @@ export default class BoardStatusEditForm extends React.Component {
             selected={BoardStatusEditForm.toSelectItem(selectedAgile)}
             onSelect={this.changeAgile}
             filter={true}
-            label="Select board"
+            label={i18n('Select board')}
           />
         </div>
         {
@@ -238,7 +239,7 @@ export default class BoardStatusEditForm extends React.Component {
               }
               onSelect={this.changeSprint}
               filter={true}
-              label="Select sprint"
+              label={i18n('Select sprint')}
             />
           </div>
         }
@@ -265,7 +266,7 @@ export default class BoardStatusEditForm extends React.Component {
                 selected={BoardStatusEditForm.toSelectItem(selectedYouTrack)}
                 onSelect={this.changeYouTrack}
                 filter={true}
-                label="Select YouTrack Server"
+                label={i18n('Select YouTrack Server')}
               />
             </div>
           }
@@ -288,13 +289,13 @@ export default class BoardStatusEditForm extends React.Component {
             disabled={this.state.errorMessage || !selectedAgile}
             onClick={this.submitForm}
           >
-            {'Save'}
+            { i18n('Save') }
           </Button>
           <Button
             loader={this.state.isLoading}
             onClick={this.props.onCancel}
           >
-            {'Cancel'}
+            { i18n('Cancel') }
           </Button>
         </Panel>
       </div>

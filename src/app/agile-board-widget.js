@@ -22,6 +22,7 @@ import {
   loadAgile,
   getHubUser
 } from './resources';
+import {i18n} from './i18n-translate';
 import WidgetErrorScreen from './widget-error-screen';
 import BoardStatusEditForm from './board-status-edit-form';
 
@@ -164,16 +165,16 @@ export default class AgileBoardWidget extends Component {
       agile, sprint, currentSprintMode, youTrack
     } = this.state;
     if (agile) {
-      let title = `Board ${agile.name}`;
+      let title = i18n('Board {{name}}', {name: agile.name});
       let link = `${youTrack.homeUrl}/agiles/${agile.id}`;
       if (areSprintsEnabled(agile)) {
         if (sprint) {
           title += currentSprintMode
-            ? `: Current sprint (${sprint.name})`
+            ? i18n(': Current sprint ({{name}})', {name: sprint.name})
             : `: ${sprint.name}`;
           link += `/${sprint.id}`;
         } else if (currentSprintMode) {
-          title += ': No current sprint found';
+          title += `: ${i18n('No current sprint found')}`;
         }
       }
       this.props.dashboardApi.setTitle(title, link);
@@ -274,7 +275,7 @@ export default class AgileBoardWidget extends Component {
           </div>
         }
         <div className={styles.sprintCommonInfo}>
-          <b>{'Owner:'}</b>&nbsp;
+          <b>{i18n('Owner:')}</b>&nbsp;
           <SmartUserCardTooltip userDataSource={userSource}>
             <Link
               href={`${homeUrl}/users/${agile.owner.ringId}`}
@@ -349,13 +350,13 @@ export default class AgileBoardWidget extends Component {
       <div className={styles.widget}>
         <WidgetErrorScreen
           smile={'(・_・)'}
-          text={'No current sprint found'}
+          text={i18n('No current sprint found')}
         >
           <Link
             pseudo={true}
             onClick={editWidgetSettings}
           >
-            {'Select sprint'}
+            {i18n('Select sprint')}
           </Link>
         </WidgetErrorScreen>
       </div>

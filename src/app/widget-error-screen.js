@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import {i18n} from './i18n-translate';
 import styles from './widget-error-screen.css';
 
 export default class WidgetErrorScreen extends Component {
@@ -13,7 +14,7 @@ export default class WidgetErrorScreen extends Component {
 
   static defaultProps = {
     smile: '{{ (>_<) }}',
-    text: 'Can\'t load information from service.'
+    text: i18n('Can\'t load information from service.')
   };
 
   render() {

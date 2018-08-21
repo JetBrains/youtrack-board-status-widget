@@ -1,3 +1,5 @@
+import {i18n} from './i18n-translate';
+
 export const MAX_PROGRESS_BAR_HEIGHT = 160;
 const PROGRESS_BAR_TOP_MARGIN = 2;
 
@@ -72,8 +74,11 @@ export function countBoardProgress(boardData) {
 
   return progress.map(bar => {
     const title = bar.amount === 1
-      ? `${bar.amount} card in state ${bar.columnName}`
-      : `${bar.amount} cards in state ${bar.columnName}`;
+      ? i18n('One card in state {{stateName}}', {stateName: bar.columnName})
+      : i18n('{{amount}} cards in state {{stateName}}', {
+        stateName: bar.columnName,
+        amount: bar.amount
+      }, bar.amount);
     let height = Math.ceil(
       (bar.amount * MAX_PROGRESS_BAR_HEIGHT) / (max || MAX_PROGRESS_BAR_HEIGHT)
     );

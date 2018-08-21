@@ -1,5 +1,7 @@
+import {i18n} from './i18n-translate';
+
 export function getDefaultResponseErrorMessage() {
-  return 'Something went wrong =(';
+  return i18n('Something went wrong =(');
 }
 
 export function responseErrorMessage(responseError) {
