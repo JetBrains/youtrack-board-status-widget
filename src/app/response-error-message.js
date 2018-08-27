@@ -1,4 +1,4 @@
-import {i18n} from './i18n-translate';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 export function getDefaultResponseErrorMessage() {
   return i18n('Something went wrong =(');

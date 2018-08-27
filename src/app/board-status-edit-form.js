@@ -18,7 +18,7 @@ import {
   isCurrentSprint
 } from './agile-board-model';
 import {responseErrorMessage} from './response-error-message';
-import {i18n} from './i18n-translate';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 import styles from './agile-board-widget.css';
 
 export default class BoardStatusEditForm extends React.Component {

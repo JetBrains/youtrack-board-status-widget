@@ -22,7 +22,7 @@ import {
   loadAgile,
   getHubUser
 } from './resources';
-import {i18n} from './i18n-translate';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 import WidgetErrorScreen from './widget-error-screen';
 import BoardStatusEditForm from './board-status-edit-form';
 

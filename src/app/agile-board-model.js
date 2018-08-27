@@ -1,4 +1,4 @@
-import {i18n} from './i18n-translate';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 export const MAX_PROGRESS_BAR_HEIGHT = 160;
 const PROGRESS_BAR_TOP_MARGIN = 2;
