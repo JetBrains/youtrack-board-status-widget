@@ -2,102 +2,86 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Project-Id-Version: Client\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Language: ru\n"
-"X-Generator: Poedit 1.6.8\n"
+"Project-Id-Version: youtrack-widgets\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: youtrack-widgets\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: revoke-user-access-widget.pot\n"
+"Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"PO-Revision-Date: 2018-08-31 16:07\n"
 
-#: src/app/agile-board-widget.js:173
-msgid ": Current sprint ({{name}})"
-msgstr ": Текущий спринт ({{name}})"
+#: src/app/LoginsTable.js:22
+msgid "Auth Module"
+msgstr "Auth модуль"
 
-#: src/app/board-status-edit-form.js:44
-msgid "Always display current sprint"
-msgstr "Всегда отображать текущий спринт"
+#: src/app/SelectedUserForm.js:65
+msgid "Finish"
+msgstr ""
 
-#: src/app/agile-board-widget.js:168
-msgid "Board {{name}}"
-msgstr "Доска {{name}}"
+#: src/app/GroupsTable.js:12
+msgid "Groups"
+msgstr "Группы"
 
-#: src/app/widget-error-screen.js:17
-msgid "Can't load information from service."
-msgstr "Ошибка загрузки информации с сервиса"
-
-#: src/app/board-status-edit-form.js:298
-msgid "Cancel"
-msgstr "Закрыть"
-
-#: src/app/board-status-edit-form.js:190
-msgid "Create board"
-msgstr "Создать доску"
-
-#: src/app/board-status-edit-form.js:77
-msgid "Failed to connect to server"
-msgstr "Ошибка соединения с сервером"
-
-#: src/app/i18n-translate.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь"
 
-#: src/app/i18n-translate.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
+msgstr "Янв|Фев|Мар|Апр|Май|Июн|Июл|Авг|Сеп|Окт|Ноя|Дек"
+
+#: src/app/UserSearch.js:68
+msgid "Load more"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:186
-msgid "No boards found."
-msgstr "Доски не найдены"
+#: src/app/LoginsTable.js:11
+msgid "Logins"
+msgstr ""
 
-#: src/app/agile-board-widget.js:177
-#: src/app/agile-board-widget.js:353
-msgid "No current sprint found"
-msgstr "Не найдено текущего спринта"
+#: src/app/ProjectRolesTable.js:23
+msgid "Project"
+msgstr "Проект"
 
-#: src/app/agile-board-model.js:77
-msgid "One card in state {{stateName}}"
-msgstr "Одна карточка в колонке {{stateName}}"
+#: src/app/ProjectRolesTable.js:12
+msgid "Project Roles"
+msgstr ""
 
-#: src/app/agile-board-widget.js:278
-msgid "Owner:"
-msgstr "Владелец:"
+#: src/app/SelectedUserForm.js:62
+msgid "Revoke selected items"
+msgstr ""
 
-#: src/app/board-status-edit-form.js:292
-msgid "Save"
-msgstr "Сохранить"
+#: src/app/UserSearch.js:46
+msgid "Search user"
+msgstr "Поиск пользователя"
 
-#: src/app/board-status-edit-form.js:269
-msgid "Select YouTrack Server"
-msgstr "Выберете YouTrack"
-
-#: src/app/board-status-edit-form.js:227
-msgid "Select board"
-msgstr "Выберите доску"
-
-#: src/app/agile-board-widget.js:359
-#: src/app/board-status-edit-form.js:242
-msgid "Select sprint"
-msgstr "Выберите спринт"
-
-#: src/app/response-error-message.js:4
-msgid "Something went wrong =("
-msgstr "Что-то пошло не так =("
-
-#: src/app/i18n-translate.js:86
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "Воскресенье|Понедельник|Вторник|Среда|Четверг|Пятница|Суббота"
 
-#: src/app/i18n-translate.js:85
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "Вс|Пн|Вт|Ср|Чт|Пт|Сб"
 
-#: src/app/i18n-translate.js:89
+#: src/app/TeamsTable.js:12
+msgid "Teams"
+msgstr ""
+
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
 msgstr "ДП|ПП"
 
-#: src/app/agile-board-model.js:78
-msgid "{{amount}} cards in state {{stateName}}"
-msgstr "{{amount}} карточек в колонке {{stateName}}"
+#: src/app/UserProperties.js:37
+msgid "banned"
+msgstr ""
+
+#: src/app/UserProperties.js:57
+msgid "email not verified"
+msgstr ""
+
+#: src/app/UserProperties.js:57
+msgid "email verified"
+msgstr ""
+
