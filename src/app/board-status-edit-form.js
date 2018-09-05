@@ -8,6 +8,7 @@ import Select from '@jetbrains/ring-ui/components/select/select';
 import List from '@jetbrains/ring-ui/components/list/list';
 import Link from '@jetbrains/ring-ui/components/link/link';
 import classNames from 'classnames';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import {
   getYouTrackServices,
@@ -18,7 +19,6 @@ import {
   isCurrentSprint
 } from './agile-board-model';
 import {responseErrorMessage} from './response-error-message';
-import {i18n} from 'hub-dashboard-addons/dist/localization';
 import styles from './agile-board-widget.css';
 
 export default class BoardStatusEditForm extends React.Component {

@@ -5,6 +5,7 @@ import Tooltip from '@jetbrains/ring-ui/components/tooltip/tooltip';
 import Link from '@jetbrains/ring-ui/components/link/link';
 import {SmartUserCardTooltip} from '@jetbrains/ring-ui/components/user-card/user-card';
 import classNames from 'classnames';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import '@jetbrains/ring-ui/components/form/form.scss';
 import '@jetbrains/ring-ui/components/input-size/input-size.scss';
@@ -22,7 +23,6 @@ import {
   loadAgile,
   getHubUser
 } from './resources';
-import {i18n} from 'hub-dashboard-addons/dist/localization';
 import WidgetErrorScreen from './widget-error-screen';
 import BoardStatusEditForm from './board-status-edit-form';
 
