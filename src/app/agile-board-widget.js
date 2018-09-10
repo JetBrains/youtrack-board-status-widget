@@ -6,7 +6,7 @@ import Link from '@jetbrains/ring-ui/components/link/link';
 import {SmartUserCardTooltip} from '@jetbrains/ring-ui/components/user-card/user-card';
 import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
-import EmptyWidget, {EmptyWidgetSmiles} from '@jetbrains/hub-widget-ui/dist/empty-widget';
+import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty-widget';
 
 import '@jetbrains/ring-ui/components/form/form.scss';
 import '@jetbrains/ring-ui/components/input-size/input-size.scss';
@@ -345,7 +345,7 @@ export default class AgileBoardWidget extends Component {
     return (
       <div className={styles.widget}>
         <EmptyWidget
-          smile={EmptyWidgetSmiles.ERROR}
+          face={EmptyWidgetFaces.ERROR}
           message={i18n('Can\'t load information from service.')}
         />
       </div>
@@ -361,7 +361,7 @@ export default class AgileBoardWidget extends Component {
     return (
       <div className={styles.widget}>
         <EmptyWidget
-          smile={EmptyWidgetSmiles.OK}
+          face={EmptyWidgetFaces.OK}
           message={i18n('No current sprint found')}
         >
           <Link
