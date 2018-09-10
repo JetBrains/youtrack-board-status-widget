@@ -6,6 +6,7 @@ import Link from '@jetbrains/ring-ui/components/link/link';
 import {SmartUserCardTooltip} from '@jetbrains/ring-ui/components/user-card/user-card';
 import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
+import EmptyWidget, {EmptyWidgetSmiles} from '@jetbrains/hub-widget-ui/dist/empty-widget';
 
 import '@jetbrains/ring-ui/components/form/form.scss';
 import '@jetbrains/ring-ui/components/input-size/input-size.scss';
@@ -23,7 +24,6 @@ import {
   loadAgile,
   getHubUser
 } from './resources';
-import WidgetErrorScreen from './widget-error-screen';
 import BoardStatusEditForm from './board-status-edit-form';
 
 
@@ -45,7 +45,10 @@ export default class AgileBoardWidget extends Component {
     };
 
     registerWidgetApi({
-      onConfigure: () => this.setState({isConfiguring: true}),
+      onConfigure: () => this.setState({
+        isConfiguring: true,
+        isLoadDataError: false
+      }),
       onRefresh: async () => {
         await this.loadSelectedSprintData();
         this.updateTitle();
@@ -101,7 +104,13 @@ export default class AgileBoardWidget extends Component {
   }
 
   async specifyBoard(agileId, sprintId, currentSprintMode) {
-    const agile = await loadAgile(this.fetchYouTrack, agileId);
+    let agile;
+    try {
+      agile = await loadAgile(this.fetchYouTrack, agileId);
+    } catch (err) {
+      this.setState({isLoadDataError: true});
+      return;
+    }
     const selectedSprintId = currentSprintMode
       ? ((agile.sprints || []).filter(isCurrentSprint)[0] || {}).id
       : sprintId;
@@ -335,7 +344,10 @@ export default class AgileBoardWidget extends Component {
   renderLoadDataError() {
     return (
       <div className={styles.widget}>
-        <WidgetErrorScreen/>
+        <EmptyWidget
+          smile={EmptyWidgetSmiles.ERROR}
+          message={i18n('Can\'t load information from service.')}
+        />
       </div>
     );
   }
@@ -348,9 +360,9 @@ export default class AgileBoardWidget extends Component {
 
     return (
       <div className={styles.widget}>
-        <WidgetErrorScreen
-          smile={'(・_・)'}
-          text={i18n('No current sprint found')}
+        <EmptyWidget
+          smile={EmptyWidgetSmiles.OK}
+          message={i18n('No current sprint found')}
         >
           <Link
             pseudo={true}
@@ -358,7 +370,7 @@ export default class AgileBoardWidget extends Component {
           >
             {i18n('Select sprint')}
           </Link>
-        </WidgetErrorScreen>
+        </EmptyWidget>
       </div>
     );
   };
