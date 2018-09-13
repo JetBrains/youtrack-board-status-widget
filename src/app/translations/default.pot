@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: src/app/agile-board-widget.js:173
+#: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
 msgstr ""
 
@@ -12,11 +12,11 @@ msgstr ""
 msgid "Always display current sprint"
 msgstr ""
 
-#: src/app/agile-board-widget.js:168
+#: src/app/agile-board-widget.js:177
 msgid "Board {{name}}"
 msgstr ""
 
-#: src/app/widget-error-screen.js:17
+#: src/app/agile-board-widget.js:349
 msgid "Can't load information from service."
 msgstr ""
 
@@ -32,11 +32,11 @@ msgstr ""
 msgid "Failed to connect to server"
 msgstr ""
 
-#: src/app/i18n-translate.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr ""
 
-#: src/app/i18n-translate.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
@@ -44,8 +44,8 @@ msgstr ""
 msgid "No boards found."
 msgstr ""
 
-#: src/app/agile-board-widget.js:177
-#: src/app/agile-board-widget.js:353
+#: src/app/agile-board-widget.js:186
+#: src/app/agile-board-widget.js:365
 msgid "No current sprint found"
 msgstr ""
 
@@ -53,7 +53,7 @@ msgstr ""
 msgid "One card in state {{stateName}}"
 msgstr ""
 
-#: src/app/agile-board-widget.js:278
+#: src/app/agile-board-widget.js:287
 msgid "Owner:"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Select board"
 msgstr ""
 
-#: src/app/agile-board-widget.js:359
+#: src/app/agile-board-widget.js:371
 #: src/app/board-status-edit-form.js:242
 msgid "Select sprint"
 msgstr ""
@@ -78,15 +78,15 @@ msgstr ""
 msgid "Something went wrong =("
 msgstr ""
 
-#: src/app/i18n-translate.js:86
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr ""
 
-#: src/app/i18n-translate.js:85
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
-#: src/app/i18n-translate.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
 msgstr ""
 
