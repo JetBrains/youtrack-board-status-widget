@@ -6,8 +6,8 @@
 
 files: [
  {
-  "source" : "/src/app/translations/default.pot",
+  "source" : "/youtrack-board-status-widget/src/app/translations/default.pot",
   "dest": "/widgets/youtrack-board-status-widget/default.pot",
-  "translation" : "/src/app/translations/locale_%two_letters_code%.po",
+  "translation" : "/youtrack-board-status-widget/src/app/translations/locale_%two_letters_code%.po",
  }
 ]
