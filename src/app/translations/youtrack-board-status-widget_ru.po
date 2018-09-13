@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-09-13 19:15\n"
+"PO-Revision-Date: 2018-09-13 19:23\n"
 
 #: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: src/app/agile-board-widget.js:177
 msgid "Board {{name}}"
-msgstr ""
+msgstr "Доска {{name}}"
 
 #: src/app/agile-board-widget.js:349
 msgid "Can't load information from service."
@@ -31,11 +31,11 @@ msgstr ""
 
 #: src/app/board-status-edit-form.js:298
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: src/app/board-status-edit-form.js:190
 msgid "Create board"
-msgstr ""
+msgstr "Создать доску"
 
 #: src/app/board-status-edit-form.js:77
 msgid "Failed to connect to server"
