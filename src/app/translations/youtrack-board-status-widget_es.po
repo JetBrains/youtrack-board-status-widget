@@ -2,19 +2,43 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: youtrack-widgets\n"
+"Project-Id-Version: youtrackjetbrains\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: youtrack-widgets\n"
+"X-Crowdin-Project: youtrackjetbrains\n"
 "X-Crowdin-Language: es-ES\n"
-"X-Crowdin-File: hub-project-team-widget.pot\n"
+"X-Crowdin-File: /widgets/youtrack-board-status-widget/default.pot\n"
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2018-09-06 13:40\n"
+"PO-Revision-Date: 2018-09-13 17:56\n"
 
-#: src/app/app.js:172
+#: src/app/agile-board-widget.js:182
+msgid ": Current sprint ({{name}})"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:44
+msgid "Always display current sprint"
+msgstr ""
+
+#: src/app/agile-board-widget.js:177
+msgid "Board {{name}}"
+msgstr ""
+
+#: src/app/agile-board-widget.js:349
+msgid "Can't load information from service."
+msgstr ""
+
+#: src/app/board-status-edit-form.js:298
 msgid "Cancel"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:190
+msgid "Create board"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:77
+msgid "Failed to connect to server"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
@@ -25,12 +49,42 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/app.js:170
+#: src/app/board-status-edit-form.js:186
+msgid "No boards found."
+msgstr ""
+
+#: src/app/agile-board-widget.js:186
+#: src/app/agile-board-widget.js:365
+msgid "No current sprint found"
+msgstr ""
+
+#: src/app/agile-board-model.js:77
+msgid "One card in state {{stateName}}"
+msgstr ""
+
+#: src/app/agile-board-widget.js:287
+msgid "Owner:"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:292
 msgid "Save"
 msgstr ""
 
-#: src/app/app.js:161
-msgid "Select a project"
+#: src/app/board-status-edit-form.js:269
+msgid "Select YouTrack Server"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:227
+msgid "Select board"
+msgstr ""
+
+#: src/app/agile-board-widget.js:371
+#: src/app/board-status-edit-form.js:242
+msgid "Select sprint"
+msgstr ""
+
+#: src/app/response-error-message.js:4
+msgid "Something went wrong =("
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
@@ -45,7 +99,7 @@ msgstr ""
 msgid "am|pm"
 msgstr ""
 
-#: src/app/app.js:203
-msgid "project owner"
+#: src/app/agile-board-model.js:78
+msgid "{{amount}} cards in state {{stateName}}"
 msgstr ""
 

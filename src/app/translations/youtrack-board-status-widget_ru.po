@@ -2,50 +2,104 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: youtrack-widgets\n"
+"Project-Id-Version: youtrackjetbrains\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: youtrack-widgets\n"
+"X-Crowdin-Project: youtrackjetbrains\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: hub-project-team-widget.pot\n"
+"X-Crowdin-File: /widgets/youtrack-board-status-widget/default.pot\n"
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-09-06 13:40\n"
+"PO-Revision-Date: 2018-09-13 17:56\n"
 
-#: src/app/app.js:172
+#: src/app/agile-board-widget.js:182
+msgid ": Current sprint ({{name}})"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:44
+msgid "Always display current sprint"
+msgstr ""
+
+#: src/app/agile-board-widget.js:177
+msgid "Board {{name}}"
+msgstr ""
+
+#: src/app/agile-board-widget.js:349
+msgid "Can't load information from service."
+msgstr ""
+
+#: src/app/board-status-edit-form.js:298
 msgid "Cancel"
-msgstr "Закрыть"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:190
+msgid "Create board"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:77
+msgid "Failed to connect to server"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr "Январь|Февраль|Март|Апрель|Май|Июнь|Июль|Август|Сентябрь|Октябрь|Ноябрь|Декабрь"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr "Янв|Фев|Мар|Апр|Май|Июн|Июл|Авг|Сеп|Окт|Ноя|Дек"
+msgstr ""
 
-#: src/app/app.js:170
+#: src/app/board-status-edit-form.js:186
+msgid "No boards found."
+msgstr ""
+
+#: src/app/agile-board-widget.js:186
+#: src/app/agile-board-widget.js:365
+msgid "No current sprint found"
+msgstr ""
+
+#: src/app/agile-board-model.js:77
+msgid "One card in state {{stateName}}"
+msgstr ""
+
+#: src/app/agile-board-widget.js:287
+msgid "Owner:"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:292
 msgid "Save"
-msgstr "Сохранить"
+msgstr ""
 
-#: src/app/app.js:161
-msgid "Select a project"
-msgstr "Выберите проект"
+#: src/app/board-status-edit-form.js:269
+msgid "Select YouTrack Server"
+msgstr ""
+
+#: src/app/board-status-edit-form.js:227
+msgid "Select board"
+msgstr ""
+
+#: src/app/agile-board-widget.js:371
+#: src/app/board-status-edit-form.js:242
+msgid "Select sprint"
+msgstr ""
+
+#: src/app/response-error-message.js:4
+msgid "Something went wrong =("
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr "Воскресенье|Понедельник|Вторник|Среда|Четверг|Пятница|Суббота"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr "Вс|Пн|Вт|Ср|Чт|Пт|Сб"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
-msgstr "ДП|ПП"
+msgstr ""
 
-#: src/app/app.js:203
-msgid "project owner"
-msgstr "владелец проекта"
+#: src/app/agile-board-model.js:78
+msgid "{{amount}} cards in state {{stateName}}"
+msgstr ""
 
