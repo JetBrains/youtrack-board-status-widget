@@ -57,16 +57,12 @@ const webpackConfig = () => ({
       },
       {
         test: /\.po$/,
-        include: [
-          componentsPath
-        ],
+        include: componentsPath,
         use: [
           'json-loader',
           {
             loader: 'angular-gettext-loader',
-            options: {
-              format: 'json'
-            }
+            options: {format: 'json'}
           }
         ]
       }
