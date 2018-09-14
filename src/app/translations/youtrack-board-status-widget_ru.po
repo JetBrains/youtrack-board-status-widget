@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-09-13 19:23\n"
+"PO-Revision-Date: 2018-09-13 21:11\n"
 
 #: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
