@@ -9,6 +9,7 @@ import List from '@jetbrains/ring-ui/components/list/list';
 import Link from '@jetbrains/ring-ui/components/link/link';
 import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
+import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
 
 import {
   getYouTrackServices,
@@ -125,9 +126,9 @@ export default class BoardStatusEditForm extends React.Component {
     }
   }
 
-  changeYouTrack = selected => {
+  changeYouTrack = selectedYouTrack => {
     this.setState({
-      selectedYouTrack: selected.model,
+      selectedYouTrack,
       errorMessage: ''
     }, () => this.onAfterYouTrackChanged());
   };
@@ -220,6 +221,7 @@ export default class BoardStatusEditForm extends React.Component {
       <div>
         <div className="ring-form__group">
           <Select
+            size={Select.Size.FULL}
             data={agiles.map(BoardStatusEditForm.toSelectItem)}
             selected={BoardStatusEditForm.toSelectItem(selectedAgile)}
             onSelect={this.changeAgile}
@@ -231,6 +233,7 @@ export default class BoardStatusEditForm extends React.Component {
           areSprintsEnabled(selectedAgile) &&
           <div className="ring-form__group">
             <Select
+              size={Select.Size.FULL}
               data={getSprintsOptions()}
               selected={
                 currentSprintMode
@@ -261,11 +264,10 @@ export default class BoardStatusEditForm extends React.Component {
           {
             (youTracks || []).length > 1 &&
             <div className="ring-form__group">
-              <Select
-                data={youTracks.map(BoardStatusEditForm.toSelectItem)}
-                selected={BoardStatusEditForm.toSelectItem(selectedYouTrack)}
-                onSelect={this.changeYouTrack}
-                filter={true}
+              <ServiceSelect
+                serviceList={youTracks}
+                selectedService={selectedYouTrack}
+                onServiceSelect={this.changeYouTrack}
                 label={i18n('Select YouTrack Server')}
               />
             </div>
