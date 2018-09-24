@@ -10,6 +10,7 @@ import Link from '@jetbrains/ring-ui/components/link/link';
 import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
+import HttpErrorHandler from '@jetbrains/hub-widget-ui/dist/http-error-handler';
 
 import {
   getYouTrackServices,
@@ -19,7 +20,6 @@ import {
   areSprintsEnabled,
   isCurrentSprint
 } from './agile-board-model';
-import {responseErrorMessage} from './response-error-message';
 import styles from './agile-board-widget.css';
 
 export default class BoardStatusEditForm extends React.Component {
@@ -102,7 +102,7 @@ export default class BoardStatusEditForm extends React.Component {
     } catch (err) {
       this.setState({
         isLoading: false,
-        errorMessage: responseErrorMessage(err)
+        errorMessage: HttpErrorHandler.getMessage(err)
       });
       return;
     }
@@ -268,7 +268,7 @@ export default class BoardStatusEditForm extends React.Component {
                 serviceList={youTracks}
                 selectedService={selectedYouTrack}
                 onServiceSelect={this.changeYouTrack}
-                label={i18n('Select YouTrack Server')}
+                placeholder={i18n('Select YouTrack Server')}
               />
             </div>
           }
@@ -286,7 +286,7 @@ export default class BoardStatusEditForm extends React.Component {
             </div>
           }
           <Button
-            blue={true}
+            primary={true}
             loader={this.state.isLoading}
             disabled={this.state.errorMessage || !selectedAgile}
             onClick={this.submitForm}
