@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-09-13 21:11\n"
+"PO-Revision-Date: 2018-09-24 16:39\n"
 
 #: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:44
+#: src/app/board-status-edit-form.js:45
 msgid "Always display current sprint"
 msgstr ""
 
@@ -29,15 +29,16 @@ msgstr "Доска {{name}}"
 msgid "Can't load information from service."
 msgstr ""
 
-#: src/app/board-status-edit-form.js:298
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: src/app/board-status-edit-form.js:300
 msgid "Cancel"
 msgstr "Отмена"
 
-#: src/app/board-status-edit-form.js:190
+#: src/app/board-status-edit-form.js:191
 msgid "Create board"
 msgstr "Создать доску"
 
-#: src/app/board-status-edit-form.js:77
+#: src/app/board-status-edit-form.js:78
 msgid "Failed to connect to server"
 msgstr ""
 
@@ -49,7 +50,7 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:186
+#: src/app/board-status-edit-form.js:187
 msgid "No boards found."
 msgstr ""
 
@@ -62,29 +63,30 @@ msgstr ""
 msgid "One card in state {{stateName}}"
 msgstr ""
 
+#: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
+msgid "Oops! Something went wrong..."
+msgstr ""
+
 #: src/app/agile-board-widget.js:287
 msgid "Owner:"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:292
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: src/app/board-status-edit-form.js:294
 msgid "Save"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:269
+#: src/app/board-status-edit-form.js:271
 msgid "Select YouTrack Server"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:227
+#: src/app/board-status-edit-form.js:229
 msgid "Select board"
 msgstr ""
 
 #: src/app/agile-board-widget.js:371
-#: src/app/board-status-edit-form.js:242
+#: src/app/board-status-edit-form.js:245
 msgid "Select sprint"
-msgstr ""
-
-#: src/app/response-error-message.js:4
-msgid "Something went wrong =("
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
@@ -95,11 +97,23 @@ msgstr ""
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
+#: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
+msgid "Widget refreshes every minute"
+msgstr ""
+
+#: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
+msgid "Widget refreshes every {{minutesCount}} minutes"
+msgstr ""
+
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
 msgstr ""
 
 #: src/app/agile-board-model.js:78
 msgid "{{amount}} cards in state {{stateName}}"
+msgstr ""
+
+#: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
+msgid "{{minutesCount}} min"
 msgstr ""
 
