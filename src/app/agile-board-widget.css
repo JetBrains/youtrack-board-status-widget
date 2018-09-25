@@ -16,10 +16,6 @@
   padding: 0;
 }
 
-.widgetEditForm {
-  margin-left: unit;
-}
-
 .sprintProgress {
   height: unit;
   margin-top: 32px;
@@ -71,19 +67,4 @@
 
 .sprintCommonInfo {
   margin-bottom: unit;
-}
-
-.formPanelError {
-  margin-bottom: unit;
-
-  color: error-color;
-}
-
-.formPanel.formPanel {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  padding: 16px 24px;
 }

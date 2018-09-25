@@ -2,15 +2,13 @@ import '@jetbrains/ring-ui/components/form/form.scss';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Panel from '@jetbrains/ring-ui/components/panel/panel';
-import Button from '@jetbrains/ring-ui/components/button/button';
 import Select from '@jetbrains/ring-ui/components/select/select';
 import List from '@jetbrains/ring-ui/components/list/list';
 import Link from '@jetbrains/ring-ui/components/link/link';
-import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
 import HttpErrorHandler from '@jetbrains/hub-widget-ui/dist/http-error-handler';
+import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
 
 import {
   getYouTrackServices,
@@ -20,7 +18,6 @@ import {
   areSprintsEnabled,
   isCurrentSprint
 } from './agile-board-model';
-import styles from './agile-board-widget.css';
 
 export default class BoardStatusEditForm extends React.Component {
   static propTypes = {
@@ -259,48 +256,30 @@ export default class BoardStatusEditForm extends React.Component {
     } = this.state;
 
     return (
-      <div>
-        <div className={classNames('ring-form', styles.widgetEditForm)}>
-          {
-            (youTracks || []).length > 1 &&
-            <div className="ring-form__group">
-              <ServiceSelect
-                serviceList={youTracks}
-                selectedService={selectedYouTrack}
-                onServiceSelect={this.changeYouTrack}
-                placeholder={i18n('Select YouTrack Server')}
-              />
-            </div>
-          }
-          {
-            ((agiles || []).length > 0)
-              ? this.renderBoardsSelectors()
-              : this.renderNoBoardsMessage()
-          }
-        </div>
-        <Panel className={styles.formPanel}>
-          {
-            this.state.errorMessage &&
-            <div className={styles.formPanelError}>
-              {this.state.errorMessage}
-            </div>
-          }
-          <Button
-            primary={true}
-            loader={this.state.isLoading}
-            disabled={this.state.errorMessage || !selectedAgile}
-            onClick={this.submitForm}
-          >
-            { i18n('Save') }
-          </Button>
-          <Button
-            loader={this.state.isLoading}
-            onClick={this.props.onCancel}
-          >
-            { i18n('Cancel') }
-          </Button>
-        </Panel>
-      </div>
+      <ConfigurationForm
+        className="ring-form"
+        warning={this.state.errorMessage}
+        isInvalid={this.state.errorMessage || !selectedAgile}
+        isLoading={this.state.isLoading}
+        onSave={this.submitForm}
+        onCancel={this.props.onCancel}
+      >
+        {
+          (youTracks || []).length > 1 &&
+          <ServiceSelect
+            className="ring-form__group"
+            serviceList={youTracks}
+            selectedService={selectedYouTrack}
+            onServiceSelect={this.changeYouTrack}
+            placeholder={i18n('Select YouTrack Server')}
+          />
+        }
+        {
+          ((agiles || []).length > 0)
+            ? this.renderBoardsSelectors()
+            : this.renderNoBoardsMessage()
+        }
+      </ConfigurationForm>
     );
   }
 }
