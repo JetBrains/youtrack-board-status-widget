@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-24 16:38\n"
+"PO-Revision-Date: 2018-09-25 16:44\n"
 
 #: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:45
+#: src/app/board-status-edit-form.js:42
 msgid "Always display current sprint"
 msgstr ""
 
@@ -29,16 +29,15 @@ msgstr ""
 msgid "Can't load information from service."
 msgstr ""
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
-#: src/app/board-status-edit-form.js:300
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:191
+#: src/app/board-status-edit-form.js:188
 msgid "Create board"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:78
+#: src/app/board-status-edit-form.js:75
 msgid "Failed to connect to server"
 msgstr ""
 
@@ -50,7 +49,7 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:187
+#: src/app/board-status-edit-form.js:184
 msgid "No boards found."
 msgstr ""
 
@@ -71,21 +70,20 @@ msgstr ""
 msgid "Owner:"
 msgstr ""
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
-#: src/app/board-status-edit-form.js:294
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:271
+#: src/app/board-status-edit-form.js:274
 msgid "Select YouTrack Server"
 msgstr ""
 
-#: src/app/board-status-edit-form.js:229
+#: src/app/board-status-edit-form.js:226
 msgid "Select board"
 msgstr ""
 
 #: src/app/agile-board-widget.js:371
-#: src/app/board-status-edit-form.js:245
+#: src/app/board-status-edit-form.js:242
 msgid "Select sprint"
 msgstr ""
 

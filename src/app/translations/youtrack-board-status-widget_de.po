@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-24 16:38\n"
+"PO-Revision-Date: 2018-09-25 16:44\n"
 
 #: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
 msgstr ": Aktueller Sprint ({{name}})"
 
-#: src/app/board-status-edit-form.js:45
+#: src/app/board-status-edit-form.js:42
 msgid "Always display current sprint"
 msgstr "Aktuellen Sprint immer anzeigen"
 
@@ -29,16 +29,15 @@ msgstr "Board {{name}}"
 msgid "Can't load information from service."
 msgstr "Daten aus Service können nicht geladen werden."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
-#: src/app/board-status-edit-form.js:300
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/app/board-status-edit-form.js:191
+#: src/app/board-status-edit-form.js:188
 msgid "Create board"
 msgstr "Board erstellen"
 
-#: src/app/board-status-edit-form.js:78
+#: src/app/board-status-edit-form.js:75
 msgid "Failed to connect to server"
 msgstr "Verbindung zum Server fehlgeschlagen"
 
@@ -50,7 +49,7 @@ msgstr "Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|Novemb
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez"
 
-#: src/app/board-status-edit-form.js:187
+#: src/app/board-status-edit-form.js:184
 msgid "No boards found."
 msgstr "Keine Boards gefunden."
 
@@ -71,21 +70,20 @@ msgstr ""
 msgid "Owner:"
 msgstr "Besitzer:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
-#: src/app/board-status-edit-form.js:294
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
 msgstr "Speichern"
 
-#: src/app/board-status-edit-form.js:271
+#: src/app/board-status-edit-form.js:274
 msgid "Select YouTrack Server"
 msgstr "YouTrack-Server auswählen"
 
-#: src/app/board-status-edit-form.js:229
+#: src/app/board-status-edit-form.js:226
 msgid "Select board"
 msgstr "Board auswählen"
 
 #: src/app/agile-board-widget.js:371
-#: src/app/board-status-edit-form.js:245
+#: src/app/board-status-edit-form.js:242
 msgid "Select sprint"
 msgstr "Sprint auswählen"
 

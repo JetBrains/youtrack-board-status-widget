@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2018-09-24 16:39\n"
+"PO-Revision-Date: 2018-09-25 16:44\n"
 
 #: src/app/agile-board-widget.js:182
 msgid ": Current sprint ({{name}})"
 msgstr ": 現在のスプリント（{{name}}）"
 
-#: src/app/board-status-edit-form.js:45
+#: src/app/board-status-edit-form.js:42
 msgid "Always display current sprint"
 msgstr "常に現在のスプリントを表示"
 
@@ -29,16 +29,15 @@ msgstr "ボード「{{name}}」"
 msgid "Can't load information from service."
 msgstr "サービスから情報を読み込むことができません。"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
-#: src/app/board-status-edit-form.js:300
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
 msgstr "取り消す"
 
-#: src/app/board-status-edit-form.js:191
+#: src/app/board-status-edit-form.js:188
 msgid "Create board"
 msgstr "ボードの作成"
 
-#: src/app/board-status-edit-form.js:78
+#: src/app/board-status-edit-form.js:75
 msgid "Failed to connect to server"
 msgstr "サーバーに接続できませんでした"
 
@@ -50,7 +49,7 @@ msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 
-#: src/app/board-status-edit-form.js:187
+#: src/app/board-status-edit-form.js:184
 msgid "No boards found."
 msgstr "ボードは見つかりませんでした。"
 
@@ -71,21 +70,20 @@ msgstr ""
 msgid "Owner:"
 msgstr "オーナー："
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
-#: src/app/board-status-edit-form.js:294
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
 msgstr "保存"
 
-#: src/app/board-status-edit-form.js:271
+#: src/app/board-status-edit-form.js:274
 msgid "Select YouTrack Server"
 msgstr "YouTrackサーバーを選択"
 
-#: src/app/board-status-edit-form.js:229
+#: src/app/board-status-edit-form.js:226
 msgid "Select board"
 msgstr "ボードの選択"
 
 #: src/app/agile-board-widget.js:371
-#: src/app/board-status-edit-form.js:245
+#: src/app/board-status-edit-form.js:242
 msgid "Select sprint"
 msgstr "スプリントの選択"
 
