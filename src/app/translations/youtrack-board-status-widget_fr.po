@@ -11,107 +11,107 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-25 16:44\n"
+"PO-Revision-Date: 2018-11-06 12:52\n"
 
-#: src/app/agile-board-widget.js:182
+#: src/app/agile-board-widget.js:183
 msgid ": Current sprint ({{name}})"
-msgstr ""
+msgstr ": sprint ({{name}}) actuel"
 
 #: src/app/board-status-edit-form.js:42
 msgid "Always display current sprint"
-msgstr ""
+msgstr "Toujours afficher le sprint actuel"
 
-#: src/app/agile-board-widget.js:177
+#: src/app/agile-board-widget.js:178
 msgid "Board {{name}}"
-msgstr ""
+msgstr "Tableau {{name}}"
 
-#: src/app/agile-board-widget.js:349
+#: src/app/agile-board-widget.js:350
 msgid "Can't load information from service."
-msgstr ""
+msgstr "Impossible de charger les informations du service."
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
-#: src/app/board-status-edit-form.js:188
+#: src/app/board-status-edit-form.js:189
 msgid "Create board"
-msgstr ""
+msgstr "Créer un tableau"
 
 #: src/app/board-status-edit-form.js:75
 msgid "Failed to connect to server"
-msgstr ""
+msgstr "Échec de la connexion au serveur"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "Janvier|Février|Mars|Avril|Mai|Juin|Juillet|Août|Septembre|Octobre|Novembre|Décembre"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "Jan|Fév|Mar|Avr|Mai|Jun|Jul|Aoû|Sep|Oct|Nov|Déc"
 
-#: src/app/board-status-edit-form.js:184
+#: src/app/board-status-edit-form.js:185
 msgid "No boards found."
-msgstr ""
+msgstr "Aucun tableau trouvé."
 
-#: src/app/agile-board-widget.js:186
-#: src/app/agile-board-widget.js:365
+#: src/app/agile-board-widget.js:187
+#: src/app/agile-board-widget.js:366
 msgid "No current sprint found"
-msgstr ""
+msgstr "Aucun sprint actuel trouvé"
 
 #: src/app/agile-board-model.js:77
 msgid "One card in state {{stateName}}"
-msgstr ""
+msgstr "Une carte dans l'état {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Oups ! Un problème est survenu..."
 
-#: src/app/agile-board-widget.js:287
+#: src/app/agile-board-widget.js:288
 msgid "Owner:"
-msgstr ""
+msgstr "Propriétaire :"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
-#: src/app/board-status-edit-form.js:274
+#: src/app/board-status-edit-form.js:276
 msgid "Select YouTrack Server"
-msgstr ""
+msgstr "Sélectionner le serveur YouTrack"
 
-#: src/app/board-status-edit-form.js:226
+#: src/app/board-status-edit-form.js:228
 msgid "Select board"
-msgstr ""
+msgstr "Sélectionner un tableau"
 
-#: src/app/agile-board-widget.js:371
-#: src/app/board-status-edit-form.js:242
+#: src/app/agile-board-widget.js:372
+#: src/app/board-status-edit-form.js:244
 msgid "Select sprint"
-msgstr ""
+msgstr "Sélectionner un sprint"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr ""
+msgstr "Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr ""
+msgstr "Dim|Lun|Mar|Mer|Jeu|Ven|Sam"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Le widget s'actualise chaque minute"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Le widget s'actualise toutes les {{minutesCount}} minutes"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
-msgstr ""
+msgstr "am|pm"
 
 #: src/app/agile-board-model.js:78
 msgid "{{amount}} cards in state {{stateName}}"
-msgstr ""
+msgstr "{{amount}} cartes ayant l'état {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} mn"
 

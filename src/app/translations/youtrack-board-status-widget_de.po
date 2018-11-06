@@ -11,9 +11,9 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-25 16:44\n"
+"PO-Revision-Date: 2018-11-06 12:52\n"
 
-#: src/app/agile-board-widget.js:182
+#: src/app/agile-board-widget.js:183
 msgid ": Current sprint ({{name}})"
 msgstr ": Aktueller Sprint ({{name}})"
 
@@ -21,11 +21,11 @@ msgstr ": Aktueller Sprint ({{name}})"
 msgid "Always display current sprint"
 msgstr "Aktuellen Sprint immer anzeigen"
 
-#: src/app/agile-board-widget.js:177
+#: src/app/agile-board-widget.js:178
 msgid "Board {{name}}"
 msgstr "Board {{name}}"
 
-#: src/app/agile-board-widget.js:349
+#: src/app/agile-board-widget.js:350
 msgid "Can't load information from service."
 msgstr "Daten aus Service können nicht geladen werden."
 
@@ -33,7 +33,7 @@ msgstr "Daten aus Service können nicht geladen werden."
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/app/board-status-edit-form.js:188
+#: src/app/board-status-edit-form.js:189
 msgid "Create board"
 msgstr "Board erstellen"
 
@@ -49,12 +49,12 @@ msgstr "Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|Novemb
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez"
 
-#: src/app/board-status-edit-form.js:184
+#: src/app/board-status-edit-form.js:185
 msgid "No boards found."
 msgstr "Keine Boards gefunden."
 
-#: src/app/agile-board-widget.js:186
-#: src/app/agile-board-widget.js:365
+#: src/app/agile-board-widget.js:187
+#: src/app/agile-board-widget.js:366
 msgid "No current sprint found"
 msgstr "Kein aktueller Sprint gefunden"
 
@@ -64,9 +64,9 @@ msgstr "Eine Karte mit Status {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Entschuldigung! Etwas ist schiefgegangen."
 
-#: src/app/agile-board-widget.js:287
+#: src/app/agile-board-widget.js:288
 msgid "Owner:"
 msgstr "Besitzer:"
 
@@ -74,16 +74,16 @@ msgstr "Besitzer:"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/app/board-status-edit-form.js:274
+#: src/app/board-status-edit-form.js:276
 msgid "Select YouTrack Server"
 msgstr "YouTrack-Server auswählen"
 
-#: src/app/board-status-edit-form.js:226
+#: src/app/board-status-edit-form.js:228
 msgid "Select board"
 msgstr "Board auswählen"
 
-#: src/app/agile-board-widget.js:371
-#: src/app/board-status-edit-form.js:242
+#: src/app/agile-board-widget.js:372
+#: src/app/board-status-edit-form.js:244
 msgid "Select sprint"
 msgstr "Sprint auswählen"
 
@@ -97,11 +97,11 @@ msgstr "So|Mo|Di|Mi|Do|Fr|Sa"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Widget wird jede Minute aktualisiert"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Widget wird alle {{minutesCount}} Minuten aktualisiert"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
@@ -113,5 +113,5 @@ msgstr "{{amount}} Karten mit Status {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} Min."
 
