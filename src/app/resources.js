@@ -10,7 +10,7 @@ const SPRINT_BOARD_FIELDS = `id,name,columns(${SPRINT_BOARD_COLUMN_FIELDS}),swim
 const SPRINT_EXTENDED_FIELDS = `${SPRINT_FIELDS},board(${SPRINT_BOARD_FIELDS}),goal`;
 
 export async function loadAgiles(fetchYouTrack) {
-  return await fetchYouTrack(`api/agiles?fields=${AGILE_FIELDS}`);
+  return await fetchYouTrack(`api/agiles?fields=${AGILE_FIELDS}&$top=-1`);
 }
 
 export async function loadAgile(fetchYouTrack, agileId) {
