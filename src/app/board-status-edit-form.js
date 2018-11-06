@@ -152,7 +152,8 @@ export default class BoardStatusEditForm extends React.Component {
     const selectedAgile = selected.model || selected;
     const sprints = selectedAgile && selectedAgile.sprints || [];
     if (sprints.length) {
-      const hasCurrentSprint = sprints.some(isCurrentSprint);
+      const hasCurrentSprint = selectedAgile.currentSprint ||
+        sprints.some(isCurrentSprint);
       this.changeSprint(
         hasCurrentSprint
           ? BoardStatusEditForm.getCurrentSprintSelectOption()
@@ -202,7 +203,8 @@ export default class BoardStatusEditForm extends React.Component {
     const getSprintsOptions = () => {
       const sprints = (selectedAgile.sprints || []);
       const sprintsOptions = sprints.map(BoardStatusEditForm.toSelectItem);
-      const currentSprint = sprints.filter(isCurrentSprint)[0];
+      const currentSprint = (selectedAgile && selectedAgile.currentSprint) ||
+        sprints.filter(isCurrentSprint)[0];
       if (currentSprint) {
         sprintsOptions.unshift({
           rgItemType: List.ListProps.Type.SEPARATOR

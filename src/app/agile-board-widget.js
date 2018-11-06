@@ -112,7 +112,8 @@ export default class AgileBoardWidget extends Component {
       return;
     }
     const selectedSprintId = currentSprintMode
-      ? ((agile.sprints || []).filter(isCurrentSprint)[0] || {}).id
+      ? (agile.currentSprint ||
+        (agile.sprints || []).filter(isCurrentSprint)[0] || {}).id
       : sprintId;
     this.setState({
       agile,
