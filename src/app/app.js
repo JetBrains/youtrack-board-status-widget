@@ -1,5 +1,4 @@
 import 'babel-polyfill';
-import 'file-loader?name=[name].[ext]!../../manifest.json'; // eslint-disable-line import/no-unresolved
 
 import DashboardAddons from 'hub-dashboard-addons/dist/dashboard-api';
 import {setLocale} from 'hub-dashboard-addons/dist/localization';

@@ -1,6 +1,7 @@
 const {join, resolve} = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ringUiWebpackConfig = require('@jetbrains/ring-ui/webpack.config');
 
 const pkgConfig = require('./package.json').config;
@@ -77,6 +78,7 @@ const webpackConfig = () => ({
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
+    disableHostCheck: true,
     stats: {
       assets: false,
       children: false,
@@ -88,7 +90,10 @@ const webpackConfig = () => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: 'html-loader?interpolate!src/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      'manifest.json'
+    ], {})
   ]
 });
 
