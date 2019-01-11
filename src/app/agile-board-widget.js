@@ -387,14 +387,14 @@ export default class AgileBoardWidget extends Component {
       noCurrentSprintError
     } = this.state;
 
+    if (isConfiguring) {
+      return this.renderConfiguration();
+    }
     if (isLoadDataError) {
       return this.renderLoadDataError();
     }
     if (isLoading && !fromCache) {
       return this.renderLoader();
-    }
-    if (isConfiguring) {
-      return this.renderConfiguration();
     }
     if (noCurrentSprintError) {
       return this.renderNoCurrentSprintError();
