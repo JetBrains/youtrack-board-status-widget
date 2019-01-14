@@ -7,6 +7,7 @@ import {SmartUserCardTooltip} from '@jetbrains/ring-ui/components/user-card/user
 import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty-widget';
+import ConfigurableWidget from '@jetbrains/hub-widget-ui/dist/configurable-widget';
 
 import '@jetbrains/ring-ui/components/form/form.scss';
 import '@jetbrains/ring-ui/components/input-size/input-size.scss';
@@ -32,6 +33,29 @@ export default class AgileBoardWidget extends Component {
     dashboardApi: PropTypes.object,
     registerWidgetApi: PropTypes.func
   };
+
+  static getDefaultWidgetTitle = () =>
+    i18n('Agile Board Status');
+
+  static getContentWidgetTitle =
+    (agile, sprint, currentSprintMode, youTrack) => {
+      if (agile) {
+        let text = i18n('Board {{name}}', {name: agile.name});
+        let href = `${youTrack.homeUrl}/agiles/${agile.id}`;
+        if (areSprintsEnabled(agile)) {
+          if (sprint) {
+            text += currentSprintMode
+              ? i18n(': Current sprint ({{name}})', {name: sprint.name})
+              : `: ${sprint.name}`;
+            href += `/${sprint.id}`;
+          } else if (currentSprintMode) {
+            text += `: ${i18n('No current sprint found')}`;
+          }
+        }
+        return {text, href};
+      }
+      return AgileBoardWidget.getDefaultWidgetTitle();
+    };
 
   constructor(props) {
     super(props);
@@ -171,24 +195,7 @@ export default class AgileBoardWidget extends Component {
   };
 
   updateTitle() {
-    const {
-      agile, sprint, currentSprintMode, youTrack
-    } = this.state;
-    if (agile) {
-      let title = i18n('Board {{name}}', {name: agile.name});
-      let link = `${youTrack.homeUrl}/agiles/${agile.id}`;
-      if (areSprintsEnabled(agile)) {
-        if (sprint) {
-          title += currentSprintMode
-            ? i18n(': Current sprint ({{name}})', {name: sprint.name})
-            : `: ${sprint.name}`;
-          link += `/${sprint.id}`;
-        } else if (currentSprintMode) {
-          title += `: ${i18n('No current sprint found')}`;
-        }
-      }
-      this.props.dashboardApi.setTitle(title, link);
-    }
+
   }
 
   renderConfiguration() {
@@ -376,9 +383,8 @@ export default class AgileBoardWidget extends Component {
     );
   };
 
-  render() {
+  renderContent() {
     const {
-      isConfiguring,
       agile,
       sprint,
       isLoading,
@@ -387,9 +393,6 @@ export default class AgileBoardWidget extends Component {
       noCurrentSprintError
     } = this.state;
 
-    if (isConfiguring) {
-      return this.renderConfiguration();
-    }
     if (isLoadDataError) {
       return this.renderLoadDataError();
     }
@@ -401,6 +404,33 @@ export default class AgileBoardWidget extends Component {
     }
     return this.renderWidgetBody(
       agile, sprint
+    );
+  }
+
+  render() {
+    const {
+      agile,
+      sprint,
+      currentSprintMode,
+      youTrack
+    } = this.state;
+
+    const widgetTitle = this.state.isConfiguring
+      ? AgileBoardWidget.getDefaultWidgetTitle()
+      : AgileBoardWidget.getContentWidgetTitle(
+        agile, sprint, currentSprintMode, youTrack
+      );
+    const configuration = () => this.renderConfiguration();
+    const content = () => this.renderContent();
+
+    return (
+      <ConfigurableWidget
+        isConfiguring={this.state.isConfiguring}
+        dashboardApi={this.props.dashboardApi}
+        widgetTitle={widgetTitle}
+        Configuration={configuration}
+        Content={content}
+      />
     );
   }
 }
