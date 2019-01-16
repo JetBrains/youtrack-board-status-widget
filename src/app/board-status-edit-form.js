@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Select from '@jetbrains/ring-ui/components/select/select';
 import List from '@jetbrains/ring-ui/components/list/list';
 import Link from '@jetbrains/ring-ui/components/link/link';
+import LoaderInline from '@jetbrains/ring-ui/components/loader-inline/loader-inline';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
 import HttpErrorHandler from '@jetbrains/hub-widget-ui/dist/http-error-handler';
@@ -63,23 +64,6 @@ export default class BoardStatusEditForm extends React.Component {
     this.loadYouTrackList();
   }
 
-  setFormLoaderEnabled(isLoading) {
-    this.setState({isLoading});
-    if (isLoading) {
-      this.setState({noConnection: false});
-      const showLoaderDuration = 2000;
-      setTimeout(() => {
-        if (this.state.isLoading) {
-          this.setState({
-            isLoading: false,
-            errorMessage: i18n('Failed to connect to server'),
-            noConnection: true
-          });
-        }
-      }, showLoaderDuration);
-    }
-  }
-
   async loadYouTrackList() {
     const {selectedYouTrack} = this.state;
     const youTracks = await getYouTrackServices(
@@ -93,7 +77,7 @@ export default class BoardStatusEditForm extends React.Component {
   }
 
   async onAfterYouTrackChanged() {
-    this.setFormLoaderEnabled(true);
+    this.setState({isLoading: true});
     try {
       await this.loadAgiles();
     } catch (err) {
@@ -103,7 +87,7 @@ export default class BoardStatusEditForm extends React.Component {
       });
       return;
     }
-    this.setFormLoaderEnabled(false);
+    this.setState({isLoading: false});
   }
 
   async loadAgiles() {
@@ -192,6 +176,14 @@ export default class BoardStatusEditForm extends React.Component {
     );
   }
 
+  renderCannotLoadBoardsMessage() {
+    return (
+      <div className="ring-form__group">
+        <span>{i18n('Failed to load agile boards from YouTrack.')}</span>
+      </div>
+    );
+  }
+
   renderBoardsSelectors() {
     const {
       selectedAgile,
@@ -249,10 +241,28 @@ export default class BoardStatusEditForm extends React.Component {
     );
   }
 
+  renderFormBody() {
+    const {
+      isLoading,
+      errorMessage,
+      agiles
+    } = this.state;
+
+    if ((agiles || []).length > 0) {
+      return this.renderBoardsSelectors();
+    }
+    if (isLoading) {
+      return (<LoaderInline/>);
+    }
+    if (errorMessage) {
+      return this.renderCannotLoadBoardsMessage();
+    }
+    return this.renderNoBoardsMessage();
+  }
+
   render() {
     const {
       selectedAgile,
-      agiles,
       youTracks,
       selectedYouTrack
     } = this.state;
@@ -276,11 +286,7 @@ export default class BoardStatusEditForm extends React.Component {
             placeholder={i18n('Select YouTrack Server')}
           />
         }
-        {
-          ((agiles || []).length > 0)
-            ? this.renderBoardsSelectors()
-            : this.renderNoBoardsMessage()
-        }
+        { this.renderFormBody() }
       </ConfigurationForm>
     );
   }
