@@ -20,7 +20,7 @@ import {
   isCurrentSprint
 } from './agile-board-model';
 
-export default class BoardStatusEditForm extends React.Component {
+export default class Configuration extends React.Component {
   static propTypes = {
     agile: PropTypes.object,
     sprint: PropTypes.object,
@@ -140,7 +140,7 @@ export default class BoardStatusEditForm extends React.Component {
         sprints.some(isCurrentSprint);
       this.changeSprint(
         hasCurrentSprint
-          ? BoardStatusEditForm.getCurrentSprintSelectOption()
+          ? Configuration.getCurrentSprintSelectOption()
           : sprints[0]
       );
     }
@@ -194,7 +194,7 @@ export default class BoardStatusEditForm extends React.Component {
 
     const getSprintsOptions = () => {
       const sprints = (selectedAgile.sprints || []);
-      const sprintsOptions = sprints.map(BoardStatusEditForm.toSelectItem);
+      const sprintsOptions = sprints.map(Configuration.toSelectItem);
       const currentSprint = (selectedAgile && selectedAgile.currentSprint) ||
         sprints.filter(isCurrentSprint)[0];
       if (currentSprint) {
@@ -202,7 +202,7 @@ export default class BoardStatusEditForm extends React.Component {
           rgItemType: List.ListProps.Type.SEPARATOR
         });
         sprintsOptions.unshift(
-          BoardStatusEditForm.getCurrentSprintSelectOption(currentSprint)
+          Configuration.getCurrentSprintSelectOption(currentSprint)
         );
       }
       return sprintsOptions;
@@ -213,8 +213,8 @@ export default class BoardStatusEditForm extends React.Component {
         <div className="ring-form__group">
           <Select
             size={Select.Size.FULL}
-            data={agiles.map(BoardStatusEditForm.toSelectItem)}
-            selected={BoardStatusEditForm.toSelectItem(selectedAgile)}
+            data={agiles.map(Configuration.toSelectItem)}
+            selected={Configuration.toSelectItem(selectedAgile)}
             onSelect={this.changeAgile}
             filter={true}
             label={i18n('Select board')}
@@ -228,8 +228,8 @@ export default class BoardStatusEditForm extends React.Component {
               data={getSprintsOptions()}
               selected={
                 currentSprintMode
-                  ? BoardStatusEditForm.getCurrentSprintSelectOption()
-                  : BoardStatusEditForm.toSelectItem(selectedSprint)
+                  ? Configuration.getCurrentSprintSelectOption()
+                  : Configuration.toSelectItem(selectedSprint)
               }
               onSelect={this.changeSprint}
               filter={true}
