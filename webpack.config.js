@@ -59,7 +59,16 @@ const webpackConfig = () => ({
           join(__dirname, 'node_modules/chai-as-promised'),
           componentsPath
         ],
-        loader: 'babel-loader?cacheDirectory'
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+          plugins: ['@babel/plugin-transform-react-jsx'],
+          presets: [
+            ['@jetbrains/jetbrains', {
+              useBuiltIns: 'usage'
+            }]
+          ]
+        }
       },
       {
         test: /\.po$/,
