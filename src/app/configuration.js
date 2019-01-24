@@ -21,15 +21,6 @@ import {
 } from './agile-board-model';
 
 export default class Configuration extends React.Component {
-  static propTypes = {
-    agile: PropTypes.object,
-    sprint: PropTypes.object,
-    currentSprintMode: PropTypes.bool,
-    onSubmit: PropTypes.func,
-    onCancel: PropTypes.func,
-    dashboardApi: PropTypes.object,
-    youTrackId: PropTypes.string
-  };
 
   static toSelectItem = it => it && {
     key: it.id,
@@ -43,6 +34,16 @@ export default class Configuration extends React.Component {
     label: i18n('Always display current sprint'),
     description: currentSprint ? currentSprint.name : ''
   });
+
+  static propTypes = {
+    agile: PropTypes.object,
+    sprint: PropTypes.object,
+    currentSprintMode: PropTypes.bool,
+    onSubmit: PropTypes.func,
+    onCancel: PropTypes.func,
+    dashboardApi: PropTypes.object,
+    youTrackId: PropTypes.string
+  };
 
   constructor(props) {
     super(props);
@@ -216,12 +217,13 @@ export default class Configuration extends React.Component {
             data={agiles.map(Configuration.toSelectItem)}
             selected={Configuration.toSelectItem(selectedAgile)}
             onSelect={this.changeAgile}
-            filter={true}
+            filter
             label={i18n('Select board')}
           />
         </div>
         {
           areSprintsEnabled(selectedAgile) &&
+        (
           <div className="ring-form__group">
             <Select
               size={Select.Size.FULL}
@@ -232,10 +234,11 @@ export default class Configuration extends React.Component {
                   : Configuration.toSelectItem(selectedSprint)
               }
               onSelect={this.changeSprint}
-              filter={true}
+              filter
               label={i18n('Select sprint')}
             />
           </div>
+        )
         }
       </div>
     );
@@ -271,13 +274,14 @@ export default class Configuration extends React.Component {
       <ConfigurationForm
         className="ring-form"
         warning={this.state.errorMessage}
-        isInvalid={this.state.errorMessage || !selectedAgile}
+        isInvalid={!!this.state.errorMessage || !selectedAgile}
         isLoading={this.state.isLoading}
         onSave={this.submitForm}
         onCancel={this.props.onCancel}
       >
         {
           (youTracks || []).length > 1 &&
+        (
           <ServiceSelect
             className="ring-form__group"
             serviceList={youTracks}
@@ -285,8 +289,9 @@ export default class Configuration extends React.Component {
             onServiceSelect={this.changeYouTrack}
             placeholder={i18n('Select YouTrack Server')}
           />
+        )
         }
-        { this.renderFormBody() }
+        {this.renderFormBody()}
       </ConfigurationForm>
     );
   }

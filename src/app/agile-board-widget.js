@@ -29,10 +29,6 @@ import Configuration from './configuration';
 
 
 export default class AgileBoardWidget extends Component {
-  static propTypes = {
-    dashboardApi: PropTypes.object,
-    registerWidgetApi: PropTypes.func
-  };
 
   static getDefaultWidgetTitle = () =>
     i18n('Agile Board Status');
@@ -56,6 +52,11 @@ export default class AgileBoardWidget extends Component {
       }
       return AgileBoardWidget.getDefaultWidgetTitle();
     };
+
+  static propTypes = {
+    dashboardApi: PropTypes.object,
+    registerWidgetApi: PropTypes.func
+  };
 
   constructor(props) {
     super(props);
@@ -182,13 +183,25 @@ export default class AgileBoardWidget extends Component {
     });
   };
 
+  loadAgileOwner = async () => {
+    const {agile, youTrack} = this.state;
+
+    if (agile && agile.owner && youTrack) {
+      const dashboardApi = this.props.dashboardApi;
+      const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
+      return await getHubUser(fetchHub, agile.owner.ringId, youTrack.homeUrl);
+    }
+
+    return {};
+  };
+
   cancelConfig = async () => {
     this.setState({isConfiguring: false});
     await this.props.dashboardApi.exitConfigMode();
     this.initialize(this.props.dashboardApi);
   };
 
-  renderConfiguration() {
+  renderConfiguration = () => {
     const {
       agile,
       sprint,
@@ -233,6 +246,11 @@ export default class AgileBoardWidget extends Component {
     }
   }
 
+  editWidgetSettings() {
+    this.props.dashboardApi.enterConfigMode();
+    this.setState({isConfiguring: true});
+  }
+
   renderLoader() {
     return <LoaderInline/>;
   }
@@ -275,22 +293,19 @@ export default class AgileBoardWidget extends Component {
       return `${homeUrl}/issues?q=${searchUrl}`;
     };
 
-    const dashboardApi = this.props.dashboardApi;
-    const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
-    const userSource = () =>
-      getHubUser(fetchHub, agile.owner.ringId, homeUrl);
-
     return (
       <div className={styles.widget}>
         {
           sprint.goal &&
+        (
           <div className={styles.sprintCommonInfo}>
             {sprint.goal}
           </div>
+        )
         }
         <div className={styles.sprintCommonInfo}>
           <b>{i18n('Owner:')}</b>&nbsp;
-          <SmartUserCardTooltip userDataSource={userSource}>
+          <SmartUserCardTooltip userDataSource={this.loadAgileOwner}>
             <Link
               href={`${homeUrl}/users/${agile.owner.ringId}`}
             >
@@ -357,30 +372,23 @@ export default class AgileBoardWidget extends Component {
     );
   }
 
-  renderNoCurrentSprintError = () => {
-    const editWidgetSettings = () => {
-      this.props.dashboardApi.enterConfigMode();
-      this.setState({isConfiguring: true});
-    };
-
-    return (
-      <div className={styles.widget}>
-        <EmptyWidget
-          face={EmptyWidgetFaces.OK}
-          message={i18n('No current sprint found')}
+  renderNoCurrentSprintError = () => (
+    <div className={styles.widget}>
+      <EmptyWidget
+        face={EmptyWidgetFaces.OK}
+        message={i18n('No current sprint found')}
+      >
+        <Link
+          pseudo
+          onClick={this.editWidgetSettings}
         >
-          <Link
-            pseudo={true}
-            onClick={editWidgetSettings}
-          >
-            {i18n('Select sprint')}
-          </Link>
-        </EmptyWidget>
-      </div>
-    );
-  };
+          {i18n('Select sprint')}
+        </Link>
+      </EmptyWidget>
+    </div>
+  );
 
-  renderContent() {
+  renderContent = () => {
     const {
       agile,
       sprint,
@@ -402,7 +410,7 @@ export default class AgileBoardWidget extends Component {
     return this.renderWidgetBody(
       agile, sprint
     );
-  }
+  };
 
   render() {
     const {
@@ -418,8 +426,6 @@ export default class AgileBoardWidget extends Component {
       : AgileBoardWidget.getContentWidgetTitle(
         agile, sprint, currentSprintMode, youTrack
       );
-    const configuration = () => this.renderConfiguration();
-    const content = () => this.renderContent();
 
     return (
       <ConfigurableWidget
@@ -427,8 +433,8 @@ export default class AgileBoardWidget extends Component {
         dashboardApi={this.props.dashboardApi}
         widgetTitle={widgetTitle}
         widgetLoader={isLoading}
-        Configuration={configuration}
-        Content={content}
+        Configuration={this.renderConfiguration}
+        Content={this.renderContent}
       />
     );
   }
