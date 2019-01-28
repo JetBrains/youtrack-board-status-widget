@@ -55,10 +55,7 @@ const webpackConfig = () => ({
       },
       {
         test: /\.js$/,
-        include: [
-          join(__dirname, 'node_modules/chai-as-promised'),
-          componentsPath
-        ],
+        include: [componentsPath],
         loader: 'babel-loader',
         options: {
           cacheDirectory: true,
