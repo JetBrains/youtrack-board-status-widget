@@ -11,21 +11,25 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-12-22 21:02\n"
+"PO-Revision-Date: 2019-01-28 10:28\n"
 
-#: src/app/agile-board-widget.js:183
+#: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
 msgstr ": Aktueller Sprint ({{name}})"
 
-#: src/app/board-status-edit-form.js:42
+#: src/app/agile-board-widget.js:34
+msgid "Agile Board Status"
+msgstr ""
+
+#: src/app/configuration.js:34
 msgid "Always display current sprint"
 msgstr "Aktuellen Sprint immer anzeigen"
 
-#: src/app/agile-board-widget.js:178
+#: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
 msgstr "Board {{name}}"
 
-#: src/app/agile-board-widget.js:350
+#: src/app/agile-board-widget.js:369
 msgid "Can't load information from service."
 msgstr "Daten aus Service können nicht geladen werden."
 
@@ -33,13 +37,13 @@ msgstr "Daten aus Service können nicht geladen werden."
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/app/board-status-edit-form.js:189
+#: src/app/configuration.js:174
 msgid "Create board"
 msgstr "Board erstellen"
 
-#: src/app/board-status-edit-form.js:75
-msgid "Failed to connect to server"
-msgstr "Verbindung zum Server fehlgeschlagen"
+#: src/app/configuration.js:183
+msgid "Failed to load agile boards from YouTrack."
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -49,12 +53,12 @@ msgstr "Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|Novemb
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez"
 
-#: src/app/board-status-edit-form.js:185
+#: src/app/configuration.js:170
 msgid "No boards found."
 msgstr "Keine Boards gefunden."
 
-#: src/app/agile-board-widget.js:187
-#: src/app/agile-board-widget.js:366
+#: src/app/agile-board-widget.js:379
+#: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "Kein aktueller Sprint gefunden"
 
@@ -66,7 +70,7 @@ msgstr "Eine Karte mit Status {{stateName}}"
 msgid "Oops! Something went wrong..."
 msgstr "Entschuldigung! Etwas ist schiefgegangen."
 
-#: src/app/agile-board-widget.js:288
+#: src/app/agile-board-widget.js:307
 msgid "Owner:"
 msgstr "Besitzer:"
 
@@ -74,16 +78,16 @@ msgstr "Besitzer:"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/app/board-status-edit-form.js:276
+#: src/app/configuration.js:290
 msgid "Select YouTrack Server"
 msgstr "YouTrack-Server auswählen"
 
-#: src/app/board-status-edit-form.js:228
+#: src/app/configuration.js:221
 msgid "Select board"
 msgstr "Board auswählen"
 
-#: src/app/agile-board-widget.js:372
-#: src/app/board-status-edit-form.js:244
+#: src/app/agile-board-widget.js:385
+#: src/app/configuration.js:238
 msgid "Select sprint"
 msgstr "Sprint auswählen"
 

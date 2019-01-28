@@ -11,21 +11,25 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-12-26 21:03\n"
+"PO-Revision-Date: 2019-01-28 10:29\n"
 
-#: src/app/agile-board-widget.js:183
+#: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
 msgstr ": текущий спринт ({{name}})"
 
-#: src/app/board-status-edit-form.js:42
+#: src/app/agile-board-widget.js:34
+msgid "Agile Board Status"
+msgstr ""
+
+#: src/app/configuration.js:34
 msgid "Always display current sprint"
 msgstr "Всегда отображать текущий спринт"
 
-#: src/app/agile-board-widget.js:178
+#: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
 msgstr "Доска {{name}}"
 
-#: src/app/agile-board-widget.js:350
+#: src/app/agile-board-widget.js:369
 msgid "Can't load information from service."
 msgstr "Не удается загрузить информацию от сервиса."
 
@@ -33,13 +37,13 @@ msgstr "Не удается загрузить информацию от сер�
 msgid "Cancel"
 msgstr "Отмена"
 
-#: src/app/board-status-edit-form.js:189
+#: src/app/configuration.js:174
 msgid "Create board"
 msgstr "Создать доску"
 
-#: src/app/board-status-edit-form.js:75
-msgid "Failed to connect to server"
-msgstr "Ошибка доступа к серверу"
+#: src/app/configuration.js:183
+msgid "Failed to load agile boards from YouTrack."
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -49,12 +53,12 @@ msgstr "январь|февраль|март|апрель|май|июнь|июл
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|ноя|дек"
 
-#: src/app/board-status-edit-form.js:185
+#: src/app/configuration.js:170
 msgid "No boards found."
 msgstr "Доски не найдены."
 
-#: src/app/agile-board-widget.js:187
-#: src/app/agile-board-widget.js:366
+#: src/app/agile-board-widget.js:379
+#: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "Текущий спринт не найден"
 
@@ -66,7 +70,7 @@ msgstr "Одна карточка с состоянием «{{stateName}}»"
 msgid "Oops! Something went wrong..."
 msgstr "К сожалению, возникла какая-то проблема..."
 
-#: src/app/agile-board-widget.js:288
+#: src/app/agile-board-widget.js:307
 msgid "Owner:"
 msgstr "Владелец:"
 
@@ -74,16 +78,16 @@ msgstr "Владелец:"
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/app/board-status-edit-form.js:276
+#: src/app/configuration.js:290
 msgid "Select YouTrack Server"
 msgstr "Выберите сервер YouTrack"
 
-#: src/app/board-status-edit-form.js:228
+#: src/app/configuration.js:221
 msgid "Select board"
 msgstr "Выберите доску"
 
-#: src/app/agile-board-widget.js:372
-#: src/app/board-status-edit-form.js:244
+#: src/app/agile-board-widget.js:385
+#: src/app/configuration.js:238
 msgid "Select sprint"
 msgstr "Выберите спринт"
 

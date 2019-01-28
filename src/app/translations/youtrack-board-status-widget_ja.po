@@ -11,21 +11,25 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2018-12-25 16:43\n"
+"PO-Revision-Date: 2019-01-28 10:28\n"
 
-#: src/app/agile-board-widget.js:183
+#: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
 msgstr ": 現在のスプリント（{{name}}）"
 
-#: src/app/board-status-edit-form.js:42
+#: src/app/agile-board-widget.js:34
+msgid "Agile Board Status"
+msgstr ""
+
+#: src/app/configuration.js:34
 msgid "Always display current sprint"
 msgstr "常に現在のスプリントを表示"
 
-#: src/app/agile-board-widget.js:178
+#: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
 msgstr "ボード「{{name}}」"
 
-#: src/app/agile-board-widget.js:350
+#: src/app/agile-board-widget.js:369
 msgid "Can't load information from service."
 msgstr "サービスから情報を読み込むことができません。"
 
@@ -33,13 +37,13 @@ msgstr "サービスから情報を読み込むことができません。"
 msgid "Cancel"
 msgstr "取り消す"
 
-#: src/app/board-status-edit-form.js:189
+#: src/app/configuration.js:174
 msgid "Create board"
 msgstr "ボードの作成"
 
-#: src/app/board-status-edit-form.js:75
-msgid "Failed to connect to server"
-msgstr "サーバーに接続できませんでした"
+#: src/app/configuration.js:183
+msgid "Failed to load agile boards from YouTrack."
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -49,12 +53,12 @@ msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 
-#: src/app/board-status-edit-form.js:185
+#: src/app/configuration.js:170
 msgid "No boards found."
 msgstr "ボードは見つかりませんでした。"
 
-#: src/app/agile-board-widget.js:187
-#: src/app/agile-board-widget.js:366
+#: src/app/agile-board-widget.js:379
+#: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "現在のスプリントは見つかりませんでした"
 
@@ -66,7 +70,7 @@ msgstr "状態が{{stateName}}の1枚のカード"
 msgid "Oops! Something went wrong..."
 msgstr "エラー！不明なエラーが発生しました…"
 
-#: src/app/agile-board-widget.js:288
+#: src/app/agile-board-widget.js:307
 msgid "Owner:"
 msgstr "オーナー："
 
@@ -74,16 +78,16 @@ msgstr "オーナー："
 msgid "Save"
 msgstr "保存"
 
-#: src/app/board-status-edit-form.js:276
+#: src/app/configuration.js:290
 msgid "Select YouTrack Server"
 msgstr "YouTrackサーバーを選択"
 
-#: src/app/board-status-edit-form.js:228
+#: src/app/configuration.js:221
 msgid "Select board"
 msgstr "ボードの選択"
 
-#: src/app/agile-board-widget.js:372
-#: src/app/board-status-edit-form.js:244
+#: src/app/agile-board-widget.js:385
+#: src/app/configuration.js:238
 msgid "Select sprint"
 msgstr "スプリントの選択"
 
