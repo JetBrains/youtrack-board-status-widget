@@ -55,7 +55,8 @@ export default class AgileBoardWidget extends Component {
 
   static propTypes = {
     dashboardApi: PropTypes.object,
-    registerWidgetApi: PropTypes.func
+    registerWidgetApi: PropTypes.func,
+    editable: PropTypes.bool
   };
 
   constructor(props) {
@@ -378,12 +379,17 @@ export default class AgileBoardWidget extends Component {
         face={EmptyWidgetFaces.OK}
         message={i18n('No current sprint found')}
       >
-        <Link
-          pseudo
-          onClick={this.editWidgetSettings}
-        >
-          {i18n('Select sprint')}
-        </Link>
+        {
+          this.props.editable &&
+        (
+          <Link
+            pseudo
+            onClick={this.editWidgetSettings}
+          >
+            {i18n('Select sprint')}
+          </Link>
+        )
+        }
       </EmptyWidget>
     </div>
   );

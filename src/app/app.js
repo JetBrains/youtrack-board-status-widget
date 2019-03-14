@@ -15,6 +15,7 @@ DashboardAddons.registerWidget(async (dashboardApi, registerWidgetApi) => {
     <AgileBoardWidget
       dashboardApi={dashboardApi}
       registerWidgetApi={registerWidgetApi}
+      editable={DashboardAddons.editable}
     />,
     document.getElementById('app-container')
   );
