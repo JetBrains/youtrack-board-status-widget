@@ -56,6 +56,7 @@ export default class AgileBoardWidget extends Component {
   static propTypes = {
     dashboardApi: PropTypes.object,
     registerWidgetApi: PropTypes.func,
+    configWrapper: PropTypes.object,
     editable: PropTypes.bool
   };
 
@@ -76,25 +77,38 @@ export default class AgileBoardWidget extends Component {
         isLoadDataError: false
       }),
       onRefresh: async () => {
-        await this.loadSelectedSprintData();
+        const {configWrapper} = this.props;
+        const agileId = configWrapper.getFieldValue('agileId');
+        const sprintId = configWrapper.getFieldValue('sprintId');
+        const currentSprintMode =
+          configWrapper.getFieldValue('currentSprintMode');
+        if (agileId) {
+          await this.specifyAgile(agileId, sprintId, currentSprintMode);
+        }
       }
     });
   }
 
   componentDidMount() {
-    this.initialize(this.props.dashboardApi);
+    this.initialize(this.props.configWrapper);
   }
 
-  async initialize(dashboardApi) {
+  async initialize(configWrapper) {
     this.setState({isLoading: true});
-    const config = await dashboardApi.readConfig();
-    const youTrackService = await this.getYouTrack(config);
+
+    await configWrapper.init();
+
+    const youTrackService = await this.getYouTrack(
+      configWrapper.getFieldValue('youTrack')
+    );
     if (youTrackService && youTrackService.id) {
       this.setYouTrack(youTrackService);
-      if (config && config.agileId) {
-        await this.showBoardFromCache(config.agileId);
-        await this.specifyBoard(
-          config.agileId, config.sprintId, config.currentSprintMode
+      const agileId = configWrapper.getFieldValue('agileId');
+      if (agileId) {
+        await this.specifyAgile(
+          agileId,
+          configWrapper.getFieldValue('sprintId'),
+          configWrapper.getFieldValue('currentSprintMode')
         );
       } else {
         this.setState({isConfiguring: true});
@@ -103,11 +117,11 @@ export default class AgileBoardWidget extends Component {
     this.setState({isLoading: false});
   }
 
-  async getYouTrack(config) {
+  async getYouTrack(predefinedYouTrack) {
     const {dashboardApi} = this.props;
-    const configYouTrackId = config && config.youTrack && config.youTrack.id;
+    const predefinedYouTrackId = predefinedYouTrack && predefinedYouTrack.id;
     const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
-    return await getYouTrackService(fetchHub, configYouTrackId);
+    return await getYouTrackService(fetchHub, predefinedYouTrackId);
   }
 
   fetchYouTrack = async (url, params) => {
@@ -126,6 +140,11 @@ export default class AgileBoardWidget extends Component {
         fromCache: true
       });
     }
+  }
+
+  async specifyAgile(agileId, sprintId, currentSprintMode) {
+    await this.showBoardFromCache(agileId);
+    await this.specifyBoard(agileId, sprintId, currentSprintMode);
   }
 
   async specifyBoard(agileId, sprintId, currentSprintMode) {
@@ -169,11 +188,8 @@ export default class AgileBoardWidget extends Component {
     const {agile, sprint, youTrack, currentSprintMode} = formModel;
     const agileId = agile.id;
     const sprintId = sprint && sprint.id;
-    await this.props.dashboardApi.storeConfig({
-      agileId,
-      sprintId,
-      currentSprintMode,
-      youTrack
+    await this.props.configWrapper.replace({
+      agileId, sprintId, currentSprintMode, youTrack
     });
     this.setState({
       isConfiguring: false,
@@ -198,8 +214,12 @@ export default class AgileBoardWidget extends Component {
 
   cancelConfig = async () => {
     this.setState({isConfiguring: false});
-    await this.props.dashboardApi.exitConfigMode();
-    this.initialize(this.props.dashboardApi);
+    if (this.props.configWrapper.isNewConfig()) {
+      await this.props.dashboardApi.removeWidget();
+    } else {
+      await this.props.dashboardApi.exitConfigMode();
+      this.initialize(this.props.configWrapper);
+    }
   };
 
   renderConfiguration = () => {
