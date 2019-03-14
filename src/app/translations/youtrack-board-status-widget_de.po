@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2019-01-28 10:28\n"
+"PO-Revision-Date: 2019-03-14 19:44\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -19,7 +19,7 @@ msgstr ": Aktueller Sprint ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Agile-Board-Status"
 
 #: src/app/configuration.js:34
 msgid "Always display current sprint"
@@ -29,7 +29,7 @@ msgstr "Aktuellen Sprint immer anzeigen"
 msgid "Board {{name}}"
 msgstr "Board {{name}}"
 
-#: src/app/agile-board-widget.js:369
+#: src/app/agile-board-widget.js:390
 msgid "Can't load information from service."
 msgstr "Daten aus Service können nicht geladen werden."
 
@@ -43,7 +43,7 @@ msgstr "Board erstellen"
 
 #: src/app/configuration.js:183
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Laden der Agile-Boards von YouTrack fehlgeschlagen."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -57,7 +57,7 @@ msgstr "Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez"
 msgid "No boards found."
 msgstr "Keine Boards gefunden."
 
-#: src/app/agile-board-widget.js:379
+#: src/app/agile-board-widget.js:400
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "Kein aktueller Sprint gefunden"
@@ -70,7 +70,7 @@ msgstr "Eine Karte mit Status {{stateName}}"
 msgid "Oops! Something went wrong..."
 msgstr "Entschuldigung! Etwas ist schiefgegangen."
 
-#: src/app/agile-board-widget.js:307
+#: src/app/agile-board-widget.js:328
 msgid "Owner:"
 msgstr "Besitzer:"
 
@@ -86,7 +86,7 @@ msgstr "YouTrack-Server auswählen"
 msgid "Select board"
 msgstr "Board auswählen"
 
-#: src/app/agile-board-widget.js:385
+#: src/app/agile-board-widget.js:409
 #: src/app/configuration.js:238
 msgid "Select sprint"
 msgstr "Sprint auswählen"

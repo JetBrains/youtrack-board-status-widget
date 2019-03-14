@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2019-01-28 10:27\n"
+"PO-Revision-Date: 2019-03-14 19:44\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -19,7 +19,7 @@ msgstr ": sprint ({{name}}) actuel"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Statut du tableau Agile"
 
 #: src/app/configuration.js:34
 msgid "Always display current sprint"
@@ -29,7 +29,7 @@ msgstr "Toujours afficher le sprint actuel"
 msgid "Board {{name}}"
 msgstr "Tableau {{name}}"
 
-#: src/app/agile-board-widget.js:369
+#: src/app/agile-board-widget.js:390
 msgid "Can't load information from service."
 msgstr "Impossible de charger les informations du service."
 
@@ -43,7 +43,7 @@ msgstr "Créer un tableau"
 
 #: src/app/configuration.js:183
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Impossible de charger les tableaux Agile depuis YouTrack."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -57,7 +57,7 @@ msgstr "Jan|Fév|Mar|Avr|Mai|Jun|Jul|Aoû|Sep|Oct|Nov|Déc"
 msgid "No boards found."
 msgstr "Aucun tableau trouvé."
 
-#: src/app/agile-board-widget.js:379
+#: src/app/agile-board-widget.js:400
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "Aucun sprint actuel trouvé"
@@ -70,7 +70,7 @@ msgstr "Une carte dans l'état {{stateName}}"
 msgid "Oops! Something went wrong..."
 msgstr "Oups ! Un problème est survenu..."
 
-#: src/app/agile-board-widget.js:307
+#: src/app/agile-board-widget.js:328
 msgid "Owner:"
 msgstr "Propriétaire :"
 
@@ -86,7 +86,7 @@ msgstr "Sélectionner le serveur YouTrack"
 msgid "Select board"
 msgstr "Sélectionner un tableau"
 
-#: src/app/agile-board-widget.js:385
+#: src/app/agile-board-widget.js:409
 #: src/app/configuration.js:238
 msgid "Select sprint"
 msgstr "Sélectionner un sprint"

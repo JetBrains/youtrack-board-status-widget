@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2019-01-28 10:29\n"
+"PO-Revision-Date: 2019-03-14 19:44\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -19,7 +19,7 @@ msgstr ": текущий спринт ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Статус Agile-доски"
 
 #: src/app/configuration.js:34
 msgid "Always display current sprint"
@@ -29,7 +29,7 @@ msgstr "Всегда отображать текущий спринт"
 msgid "Board {{name}}"
 msgstr "Доска {{name}}"
 
-#: src/app/agile-board-widget.js:369
+#: src/app/agile-board-widget.js:390
 msgid "Can't load information from service."
 msgstr "Не удается загрузить информацию от сервиса."
 
@@ -43,7 +43,7 @@ msgstr "Создать доску"
 
 #: src/app/configuration.js:183
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Не удалось загрузить Agile-доски из YouTrack."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -57,7 +57,7 @@ msgstr "янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|н
 msgid "No boards found."
 msgstr "Доски не найдены."
 
-#: src/app/agile-board-widget.js:379
+#: src/app/agile-board-widget.js:400
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "Текущий спринт не найден"
@@ -70,7 +70,7 @@ msgstr "Одна карточка с состоянием «{{stateName}}»"
 msgid "Oops! Something went wrong..."
 msgstr "К сожалению, возникла какая-то проблема..."
 
-#: src/app/agile-board-widget.js:307
+#: src/app/agile-board-widget.js:328
 msgid "Owner:"
 msgstr "Владелец:"
 
@@ -86,7 +86,7 @@ msgstr "Выберите сервер YouTrack"
 msgid "Select board"
 msgstr "Выберите доску"
 
-#: src/app/agile-board-widget.js:385
+#: src/app/agile-board-widget.js:409
 #: src/app/configuration.js:238
 msgid "Select sprint"
 msgstr "Выберите спринт"
