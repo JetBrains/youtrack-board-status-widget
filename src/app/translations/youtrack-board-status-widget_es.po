@@ -8,10 +8,10 @@ msgstr ""
 "X-Crowdin-Project: youtrackjetbrains\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /widgets/youtrack-board-status-widget/default.pot\n"
-"Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
+"Last-Translator: JetBrains (jetbrains)\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2019-03-14 20:25\n"
+"PO-Revision-Date: 2019-12-09 14:49\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -19,7 +19,7 @@ msgstr ": Sprint actual ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Estado del panel de Agile"
 
 #: src/app/configuration.js:34
 msgid "Always display current sprint"
@@ -33,7 +33,7 @@ msgstr "Panel {{name}}"
 msgid "Can't load information from service."
 msgstr "No es posible cargar información desde el servicio."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:58
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -43,7 +43,7 @@ msgstr "Crear panel"
 
 #: src/app/configuration.js:183
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "No se han podido cargar los paneles de Agile desde YouTrack."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -74,7 +74,7 @@ msgstr "¡Uy! Algo ha salido mal..."
 msgid "Owner:"
 msgstr "Propietario:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:47
 msgid "Save"
 msgstr "Guardar"
 
