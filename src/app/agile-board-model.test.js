@@ -13,7 +13,7 @@ describe('agile-board-model', () => {
     const agileBoard = {name: 'Test'};
 
     (getColumnSearchUrl(agileBoard, {}, {})).should.equal(
-      'has%3A%20%7BBoard%20Test%7D%20%20'
+      'has%3A%20%7BBoard%20Test%7D%20'
     );
   });
 

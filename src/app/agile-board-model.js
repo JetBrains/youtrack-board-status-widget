@@ -39,11 +39,11 @@ export function getColumnSearchUrl(agileBoard, sprint, column) {
     : `has: {Board ${agileBoard.name}}`;
   const columnIssuesQuery = createColumnIssuesQuery(agileBoard, column);
   const explicitQuery = (agileBoard.sprintsSettings || {}).explicitQuery;
-  const explicitQuerySuffix = explicitQuery ? `and (${explicitQuery})` : '';
+  const joinedQuery = explicitQuery
+    ? `(${sprintIssuesQuery} ${columnIssuesQuery}) and (${explicitQuery})`
+    : `${sprintIssuesQuery} ${columnIssuesQuery}`;
 
-  return encodeURIComponent(
-    `${sprintIssuesQuery} ${columnIssuesQuery} ${explicitQuerySuffix}`
-  );
+  return encodeURIComponent(joinedQuery);
 }
 
 export function countBoardProgress(boardData) {
