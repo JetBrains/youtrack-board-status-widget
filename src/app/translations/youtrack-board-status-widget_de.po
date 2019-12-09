@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: JetBrains (jetbrains)\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2019-12-09 12:29\n"
+"PO-Revision-Date: 2019-12-09 15:08\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -33,7 +33,7 @@ msgstr "Board {{name}}"
 msgid "Can't load information from service."
 msgstr "Daten aus Service können nicht geladen werden."
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:58
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -74,7 +74,7 @@ msgstr "Entschuldigung! Etwas ist schiefgegangen."
 msgid "Owner:"
 msgstr "Besitzer:"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:47
 msgid "Save"
 msgstr "Speichern"
 
