@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2020-11-02 21:17\n"
+"PO-Revision-Date: 2021-06-25 16:35\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -21,7 +21,7 @@ msgstr ": 現在のスプリント（{{name}}）"
 msgid "Agile Board Status"
 msgstr "アジャイルボードステータス"
 
-#: src/app/configuration.js:34
+#: src/app/configuration.js:32
 msgid "Always display current sprint"
 msgstr "常に現在のスプリントを表示"
 
@@ -29,7 +29,7 @@ msgstr "常に現在のスプリントを表示"
 msgid "Board {{name}}"
 msgstr "ボード「{{name}}」"
 
-#: src/app/agile-board-widget.js:390
+#: src/app/agile-board-widget.js:391
 msgid "Can't load information from service."
 msgstr "サービスから情報を読み込むことができません。"
 
@@ -37,27 +37,27 @@ msgstr "サービスから情報を読み込むことができません。"
 msgid "Cancel"
 msgstr "取り消す"
 
-#: src/app/configuration.js:174
+#: src/app/configuration.js:172
 msgid "Create board"
 msgstr "ボードの作成"
 
-#: src/app/configuration.js:183
+#: src/app/configuration.js:181
 msgid "Failed to load agile boards from YouTrack."
 msgstr "YouTrackからアジャイルボードを読み込めませんでした。"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 
-#: src/app/configuration.js:170
+#: src/app/configuration.js:168
 msgid "No boards found."
 msgstr "ボードは見つかりませんでした。"
 
-#: src/app/agile-board-widget.js:400
+#: src/app/agile-board-widget.js:401
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "現在のスプリントは見つかりませんでした"
@@ -70,7 +70,7 @@ msgstr "状態が{{stateName}}の1枚のカード"
 msgid "Oops! Something went wrong..."
 msgstr "エラー！不明なエラーが発生しました…"
 
-#: src/app/agile-board-widget.js:328
+#: src/app/agile-board-widget.js:329
 msgid "Owner:"
 msgstr "オーナー："
 
@@ -78,24 +78,24 @@ msgstr "オーナー："
 msgid "Save"
 msgstr "保存"
 
-#: src/app/configuration.js:290
+#: src/app/configuration.js:288
 msgid "Select YouTrack Server"
 msgstr "YouTrackサーバーを選択"
 
-#: src/app/configuration.js:221
+#: src/app/configuration.js:219
 msgid "Select board"
 msgstr "ボードの選択"
 
-#: src/app/agile-board-widget.js:409
-#: src/app/configuration.js:238
+#: src/app/agile-board-widget.js:410
+#: src/app/configuration.js:236
 msgid "Select sprint"
 msgstr "スプリントの選択"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "日曜日|月曜日|火曜日|水曜日|木曜日|金曜日|土曜日"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "日|月|火|水|木|金|土"
 
@@ -107,7 +107,7 @@ msgstr "ウィジェットは毎分更新されます"
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr "ウィジェットは{{minutesCount}}分ごとに更新されます"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "am|pm"
 

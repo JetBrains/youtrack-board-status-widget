@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 266646\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2020-11-03 23:55\n"
+"PO-Revision-Date: 2021-06-25 16:36\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "Agile Board Status"
 msgstr ""
 
-#: src/app/configuration.js:34
+#: src/app/configuration.js:32
 msgid "Always display current sprint"
-msgstr ""
+msgstr "始终显示当前冲刺"
 
 #: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
 msgstr ""
 
-#: src/app/agile-board-widget.js:390
+#: src/app/agile-board-widget.js:391
 msgid "Can't load information from service."
 msgstr "无法从服务中加载信息。"
 
@@ -37,27 +37,27 @@ msgstr "无法从服务中加载信息。"
 msgid "Cancel"
 msgstr "取消"
 
-#: src/app/configuration.js:174
+#: src/app/configuration.js:172
 msgid "Create board"
-msgstr ""
+msgstr "创建面板"
 
-#: src/app/configuration.js:183
+#: src/app/configuration.js:181
 msgid "Failed to load agile boards from YouTrack."
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "1 月|2 月|3 月|4 月|5 月|6 月|7 月|8 月|9 月|10 月|11 月|12 月"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1 月|2 月|3 月|4 月|5 月|6 月|7 月|8 月|9 月|10 月|11 月|12 月"
 
-#: src/app/configuration.js:170
+#: src/app/configuration.js:168
 msgid "No boards found."
-msgstr ""
+msgstr "找不到面板。"
 
-#: src/app/agile-board-widget.js:400
+#: src/app/agile-board-widget.js:401
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr ""
@@ -68,34 +68,34 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "哎呀，出了些问题..."
 
-#: src/app/agile-board-widget.js:328
+#: src/app/agile-board-widget.js:329
 msgid "Owner:"
-msgstr ""
+msgstr "所有者："
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:47
 msgid "Save"
 msgstr "保存"
 
-#: src/app/configuration.js:290
+#: src/app/configuration.js:288
 msgid "Select YouTrack Server"
-msgstr ""
+msgstr "选择 YouTrack 服务器"
 
-#: src/app/configuration.js:221
+#: src/app/configuration.js:219
 msgid "Select board"
-msgstr ""
+msgstr "选择面板"
 
-#: src/app/agile-board-widget.js:409
-#: src/app/configuration.js:238
+#: src/app/agile-board-widget.js:410
+#: src/app/configuration.js:236
 msgid "Select sprint"
-msgstr ""
+msgstr "选择冲刺"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "星期日|星期一|星期二|星期三|星期四|星期五|星期六"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "周日|周一|周二|周三|周四|周五|周六"
 
@@ -105,9 +105,9 @@ msgstr "微件每分钟刷新一次"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "微件每 {{minutesCount}} 分钟刷新一次"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "上午|下午"
 
@@ -117,5 +117,5 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} 分钟"
 

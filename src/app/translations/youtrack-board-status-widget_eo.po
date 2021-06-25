@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Esperanto\n"
 "Language: eo_UY\n"
-"PO-Revision-Date: 2020-06-12 21:03\n"
+"PO-Revision-Date: 2021-06-25 16:36\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -21,7 +21,7 @@ msgstr "crwdns738190:0{{name}}crwdne738190:0"
 msgid "Agile Board Status"
 msgstr "crwdns1375850:0crwdne1375850:0"
 
-#: src/app/configuration.js:34
+#: src/app/configuration.js:32
 msgid "Always display current sprint"
 msgstr "crwdns738191:0crwdne738191:0"
 
@@ -29,7 +29,7 @@ msgstr "crwdns738191:0crwdne738191:0"
 msgid "Board {{name}}"
 msgstr "crwdns738192:0{{name}}crwdne738192:0"
 
-#: src/app/agile-board-widget.js:390
+#: src/app/agile-board-widget.js:391
 msgid "Can't load information from service."
 msgstr "crwdns738193:0crwdne738193:0"
 
@@ -37,27 +37,27 @@ msgstr "crwdns738193:0crwdne738193:0"
 msgid "Cancel"
 msgstr "crwdns738194:0crwdne738194:0"
 
-#: src/app/configuration.js:174
+#: src/app/configuration.js:172
 msgid "Create board"
 msgstr "crwdns738195:0crwdne738195:0"
 
-#: src/app/configuration.js:183
+#: src/app/configuration.js:181
 msgid "Failed to load agile boards from YouTrack."
 msgstr "crwdns1375852:0crwdne1375852:0"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "crwdns738338:0crwdne738338:0"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "crwdns738339:0crwdne738339:0"
 
-#: src/app/configuration.js:170
+#: src/app/configuration.js:168
 msgid "No boards found."
 msgstr "crwdns738197:0crwdne738197:0"
 
-#: src/app/agile-board-widget.js:400
+#: src/app/agile-board-widget.js:401
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "crwdns738198:0crwdne738198:0"
@@ -70,7 +70,7 @@ msgstr "crwdns738199:0{{stateName}}crwdne738199:0"
 msgid "Oops! Something went wrong..."
 msgstr "crwdns804281:0crwdne804281:0"
 
-#: src/app/agile-board-widget.js:328
+#: src/app/agile-board-widget.js:329
 msgid "Owner:"
 msgstr "crwdns738200:0crwdne738200:0"
 
@@ -78,24 +78,24 @@ msgstr "crwdns738200:0crwdne738200:0"
 msgid "Save"
 msgstr "crwdns738201:0crwdne738201:0"
 
-#: src/app/configuration.js:290
+#: src/app/configuration.js:288
 msgid "Select YouTrack Server"
 msgstr "crwdns738202:0crwdne738202:0"
 
-#: src/app/configuration.js:221
+#: src/app/configuration.js:219
 msgid "Select board"
 msgstr "crwdns738203:0crwdne738203:0"
 
-#: src/app/agile-board-widget.js:409
-#: src/app/configuration.js:238
+#: src/app/agile-board-widget.js:410
+#: src/app/configuration.js:236
 msgid "Select sprint"
 msgstr "crwdns738204:0crwdne738204:0"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "crwdns738340:0crwdne738340:0"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "crwdns738341:0crwdne738341:0"
 
@@ -107,7 +107,7 @@ msgstr "crwdns804283:0crwdne804283:0"
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr "crwdns804285:0{{minutesCount}}crwdne804285:0"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "crwdns738342:0crwdne738342:0"
 

@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2020-11-02 21:17\n"
+"PO-Revision-Date: 2021-06-25 16:35\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
@@ -21,7 +21,7 @@ msgstr ": текущий спринт ({{name}})"
 msgid "Agile Board Status"
 msgstr "Статус Agile-доски"
 
-#: src/app/configuration.js:34
+#: src/app/configuration.js:32
 msgid "Always display current sprint"
 msgstr "Всегда отображать текущий спринт"
 
@@ -29,7 +29,7 @@ msgstr "Всегда отображать текущий спринт"
 msgid "Board {{name}}"
 msgstr "Доска {{name}}"
 
-#: src/app/agile-board-widget.js:390
+#: src/app/agile-board-widget.js:391
 msgid "Can't load information from service."
 msgstr "Не удается загрузить информацию от сервиса."
 
@@ -37,27 +37,27 @@ msgstr "Не удается загрузить информацию от сер�
 msgid "Cancel"
 msgstr "Отмена"
 
-#: src/app/configuration.js:174
+#: src/app/configuration.js:172
 msgid "Create board"
 msgstr "Создать доску"
 
-#: src/app/configuration.js:183
+#: src/app/configuration.js:181
 msgid "Failed to load agile boards from YouTrack."
 msgstr "Не удалось загрузить Agile-доски из YouTrack."
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "январь|февраль|март|апрель|май|июнь|июль|август|сентябрь|октябрь|ноябрь|декабрь"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|ноя|дек"
 
-#: src/app/configuration.js:170
+#: src/app/configuration.js:168
 msgid "No boards found."
 msgstr "Доски не найдены."
 
-#: src/app/agile-board-widget.js:400
+#: src/app/agile-board-widget.js:401
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
 msgstr "Текущий спринт не найден"
@@ -70,7 +70,7 @@ msgstr "Одна карточка с состоянием «{{stateName}}»"
 msgid "Oops! Something went wrong..."
 msgstr "К сожалению, возникла какая-то проблема..."
 
-#: src/app/agile-board-widget.js:328
+#: src/app/agile-board-widget.js:329
 msgid "Owner:"
 msgstr "Владелец:"
 
@@ -78,24 +78,24 @@ msgstr "Владелец:"
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/app/configuration.js:290
+#: src/app/configuration.js:288
 msgid "Select YouTrack Server"
 msgstr "Выберите сервер YouTrack"
 
-#: src/app/configuration.js:221
+#: src/app/configuration.js:219
 msgid "Select board"
 msgstr "Выберите доску"
 
-#: src/app/agile-board-widget.js:409
-#: src/app/configuration.js:238
+#: src/app/agile-board-widget.js:410
+#: src/app/configuration.js:236
 msgid "Select sprint"
 msgstr "Выберите спринт"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "воскресенье|понедельник|вторник|среда|четверг|пятница|суббота"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr "вск|пнд|втр|срд|чтв|птн|сбт"
 
@@ -107,7 +107,7 @@ msgstr "Виджет обновляется раз в минуту"
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr "Виджет обновляется раз в {{minutesCount}} мин"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "ДП|ПП"
 
