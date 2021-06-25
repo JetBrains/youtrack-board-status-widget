@@ -40,12 +40,29 @@ const webpackConfig = () => ({
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '[name]__[local]__[hash:base64:7]'
+              import: true,
+              modules: {
+                localIdentName: '[name]__[local]__[hash:base64:7]',
+                localIdentContext: resolve('.', './src')
+              },
+              importLoaders: 1
             }
           },
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  ['postcss-preset-env', {
+                    stage: 3,
+                    features: {
+                      'nesting-rules': true
+                    }
+                  }]
+                ]
+              }
+            }
+          }
         ]
       },
       {
@@ -55,17 +72,10 @@ const webpackConfig = () => ({
       },
       {
         test: /\.js$/,
-        include: [componentsPath],
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: true,
-          plugins: ['@babel/plugin-transform-react-jsx'],
-          presets: [
-            ['@jetbrains/jetbrains', {
-              useBuiltIns: 'usage'
-            }]
-          ]
-        }
+        include: [
+          componentsPath
+        ],
+        loader: 'babel-loader?cacheDirectory'
       },
       {
         test: /\.po$/,
