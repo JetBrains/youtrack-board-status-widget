@@ -10,11 +10,9 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
 import HttpErrorHandler from '@jetbrains/hub-widget-ui/dist/http-error-handler';
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
+import ServiceResources from '@jetbrains/hub-widget-ui/dist/service-resources';
 
-import {
-  getYouTrackServices,
-  loadAgiles
-} from './resources';
+import {loadAgiles} from './resources';
 import {
   areSprintsEnabled,
   isCurrentSprint
@@ -67,8 +65,8 @@ export default class Configuration extends React.Component {
 
   async loadYouTrackList() {
     const {selectedYouTrack} = this.state;
-    const youTracks = await getYouTrackServices(
-      this.props.dashboardApi.fetchHub
+    const youTracks = await ServiceResources.getYouTrackServices(
+      this.props.dashboardApi, selectedYouTrack && selectedYouTrack.id
     );
     const selectedYouTrackWithAllFields = youTracks.
       filter(yt => yt.id === selectedYouTrack.id)[0];

@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty-widget';
 import ConfigurableWidget from '@jetbrains/hub-widget-ui/dist/configurable-widget';
+import ServiceResources from '@jetbrains/hub-widget-ui/dist/service-resources';
 
 import '@jetbrains/ring-ui/components/form/form.scss';
 import '@jetbrains/ring-ui/components/input-size/input-size.scss';
@@ -20,7 +21,6 @@ import {
   MAX_PROGRESS_BAR_HEIGHT
 } from './agile-board-model';
 import {
-  getYouTrackService,
   loadExtendedSprintData,
   loadAgile,
   getHubUser
@@ -120,8 +120,9 @@ export default class AgileBoardWidget extends Component {
   async getYouTrack(predefinedYouTrack) {
     const {dashboardApi} = this.props;
     const predefinedYouTrackId = predefinedYouTrack && predefinedYouTrack.id;
-    const fetchHub = dashboardApi.fetchHub.bind(dashboardApi);
-    return await getYouTrackService(fetchHub, predefinedYouTrackId);
+    return await ServiceResources.getYouTrackService(
+      dashboardApi, predefinedYouTrackId
+    );
   }
 
   fetchYouTrack = async (url, params) => {

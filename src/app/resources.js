@@ -1,4 +1,3 @@
-const SERVICE_FIELDS = 'id,name,applicationName,homeUrl';
 const HUB_USER_FIELDS = 'id,name,login,banned,banReason,profile(email/email,avatar/url)';
 
 const SPRINT_FIELDS = 'id,name,start,finish';
@@ -19,23 +18,6 @@ export async function loadAgile(fetchYouTrack, agileId) {
 
 export async function loadExtendedSprintData(fetchYouTrack, boardId, sprintId) {
   return await fetchYouTrack(`api/agiles/${boardId}/sprints/${sprintId}?fields=${SPRINT_EXTENDED_FIELDS}`);
-}
-
-export async function getYouTrackServices(fetchHub) {
-  const data = await fetchHub(`api/rest/services?fields=${SERVICE_FIELDS}`);
-  return (data.services || []).filter(
-    service => service.applicationName === 'YouTrack' && !!service.homeUrl
-  );
-}
-
-export async function getYouTrackService(fetchHub, youTrackId) {
-  const services = await getYouTrackServices(fetchHub);
-  if (youTrackId) {
-    return services.filter(
-      service => service.id === youTrackId
-    )[0];
-  }
-  return services[0];
 }
 
 export async function getHubUser(fetchHub, userHubId, profileBaseUrl) {
