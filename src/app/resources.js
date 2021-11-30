@@ -1,7 +1,7 @@
 const HUB_USER_FIELDS = 'id,name,login,banned,banReason,profile(email/email,avatar/url)';
 
 const SPRINT_FIELDS = 'id,name,start,finish';
-const AGILE_FIELDS = `id,name,sprints(${SPRINT_FIELDS}),currentSprint(${SPRINT_FIELDS}),sprintsSettings(disableSprints,explicitQuery),columnSettings(field(id,name)),owner(id,ringId,fullName)`;
+const AGILE_FIELDS = `id,name,sprints(${SPRINT_FIELDS}),currentSprint(${SPRINT_FIELDS}),sprintsSettings(disableSprints,explicitQuery),columnSettings(field(id,name)),owner(id,ringId,fullName),projects(id,template)`;
 const SPRINT_BOARD_CELL_FIELDS = 'id,column(id),issues(id)';
 const SPRINT_BOARD_ROW_FIELDS = `id,cells(${SPRINT_BOARD_CELL_FIELDS})`;
 const SPRINT_BOARD_COLUMN_FIELDS = 'id,agileColumn(fieldValues(name,presentation),wipLimit(max,min))';
@@ -9,7 +9,8 @@ const SPRINT_BOARD_FIELDS = `id,name,columns(${SPRINT_BOARD_COLUMN_FIELDS}),swim
 const SPRINT_EXTENDED_FIELDS = `${SPRINT_FIELDS},board(${SPRINT_BOARD_FIELDS}),goal`;
 
 export async function loadAgiles(fetchYouTrack) {
-  return await fetchYouTrack(`api/agiles?fields=${AGILE_FIELDS}&$top=-1`);
+  const agiles = await fetchYouTrack(`api/agiles?fields=${AGILE_FIELDS}&$top=-1`);
+  return agiles.filter(({projects}) => !(projects || []).some(project => project.template));
 }
 
 export async function loadAgile(fetchYouTrack, agileId) {
