@@ -2,32 +2,32 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: youtrack-custom-localization\n"
+"Project-Id-Version: youtrackjetbrains\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: youtrack-custom-localization\n"
-"X-Crowdin-Project-ID: 309400\n"
+"X-Crowdin-Project: youtrackjetbrains\n"
+"X-Crowdin-Project-ID: 295498\n"
 "X-Crowdin-Language: pt-BR\n"
 "X-Crowdin-File: /widgets/youtrack-board-status-widget/default.pot\n"
-"X-Crowdin-File-ID: 266646\n"
+"X-Crowdin-File-ID: 28496\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
-"PO-Revision-Date: 2021-06-25 16:59\n"
+"PO-Revision-Date: 2021-11-12 13:22\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
-msgstr ""
+msgstr ": Sprint atual ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Status do board ágil"
 
 #: src/app/configuration.js:32
 msgid "Always display current sprint"
-msgstr ""
+msgstr "Sempre mostrar sprint atual"
 
 #: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
-msgstr ""
+msgstr "Board {{name}}"
 
 #: src/app/agile-board-widget.js:391
 msgid "Can't load information from service."
@@ -43,7 +43,7 @@ msgstr "Criar board"
 
 #: src/app/configuration.js:181
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Não foi possível carregar boards ágeis do YouTrack."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -55,20 +55,20 @@ msgstr "Jan|Fev|Mar|Abr|Maio|Jun|Jul|Ago|Set|Out|Nov|Dez"
 
 #: src/app/configuration.js:168
 msgid "No boards found."
-msgstr ""
+msgstr "Nenhum board encontrado."
 
 #: src/app/agile-board-widget.js:401
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
-msgstr ""
+msgstr "Nenhum sprint atual encontrado"
 
 #: src/app/agile-board-model.js:77
 msgid "One card in state {{stateName}}"
-msgstr ""
+msgstr "Um cartão no estado {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Oops! Algo deu errado..."
 
 #: src/app/agile-board-widget.js:329
 msgid "Owner:"
@@ -80,11 +80,11 @@ msgstr "Salvar"
 
 #: src/app/configuration.js:288
 msgid "Select YouTrack Server"
-msgstr ""
+msgstr "Selecionar servidor YouTrack"
 
 #: src/app/configuration.js:219
 msgid "Select board"
-msgstr ""
+msgstr "Selecionar board"
 
 #: src/app/agile-board-widget.js:410
 #: src/app/configuration.js:236

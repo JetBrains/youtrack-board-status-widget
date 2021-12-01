@@ -2,24 +2,24 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: youtrack-custom-localization\n"
+"Project-Id-Version: youtrackjetbrains\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: youtrack-custom-localization\n"
-"X-Crowdin-Project-ID: 309400\n"
+"X-Crowdin-Project: youtrackjetbrains\n"
+"X-Crowdin-Project-ID: 295498\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /widgets/youtrack-board-status-widget/default.pot\n"
-"X-Crowdin-File-ID: 266646\n"
+"X-Crowdin-File-ID: 28496\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2021-06-25 16:58\n"
+"PO-Revision-Date: 2021-11-12 13:21\n"
 
 #: src/app/agile-board-widget.js:44
 msgid ": Current sprint ({{name}})"
-msgstr ""
+msgstr "： 当前冲刺 （{{name}}）"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "敏捷板状态"
 
 #: src/app/configuration.js:32
 msgid "Always display current sprint"
@@ -27,7 +27,7 @@ msgstr "始终显示当前冲刺"
 
 #: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
-msgstr ""
+msgstr "{{name}} 看板"
 
 #: src/app/agile-board-widget.js:391
 msgid "Can't load information from service."
@@ -43,7 +43,7 @@ msgstr "创建面板"
 
 #: src/app/configuration.js:181
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "未能从 YouTrack 加载敏捷面板。"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -60,11 +60,11 @@ msgstr "找不到面板。"
 #: src/app/agile-board-widget.js:401
 #: src/app/agile-board-widget.js:48
 msgid "No current sprint found"
-msgstr ""
+msgstr "未找到当前冲刺"
 
 #: src/app/agile-board-model.js:77
 msgid "One card in state {{stateName}}"
-msgstr ""
+msgstr "{{stateName}} 状态中有一张卡片"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
@@ -113,7 +113,7 @@ msgstr "上午|下午"
 
 #: src/app/agile-board-model.js:78
 msgid "{{amount}} cards in state {{stateName}}"
-msgstr ""
+msgstr "{{stateName}}状态共有 {{amount}} 个卡片"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
