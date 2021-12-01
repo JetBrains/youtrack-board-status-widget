@@ -10,7 +10,9 @@ const SPRINT_EXTENDED_FIELDS = `${SPRINT_FIELDS},board(${SPRINT_BOARD_FIELDS}),g
 
 export async function loadAgiles(fetchYouTrack) {
   const agiles = await fetchYouTrack(`api/agiles?fields=${AGILE_FIELDS}&$top=-1`);
-  return agiles.filter(({projects}) => (projects || []).some(project => !project.template));
+  return agiles.filter(
+    ({projects}) => (projects || []).some(project => !project.template)
+  );
 }
 
 export async function loadAgile(fetchYouTrack, agileId) {
