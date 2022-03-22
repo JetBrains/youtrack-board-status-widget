@@ -82,13 +82,6 @@ module.exports = config => {
       }
     },
 
-    customLaunchers: {
-      // eslint-disable-next-line camelcase
-      Electron: {
-        flags: ['--no-sandbox']
-      }
-    },
-
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true
