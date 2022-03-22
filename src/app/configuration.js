@@ -162,12 +162,16 @@ export default class Configuration extends React.Component {
 
   renderNoBoardsMessage() {
     const {selectedYouTrack} = this.state;
+    const homeUrl = (selectedYouTrack || {}).homeUrl || '';
+    const normalizedHomeUrl = homeUrl.charAt(homeUrl.length - 1) === '/'
+      ? homeUrl
+      : `${homeUrl}/`;
 
     return (
       <div className="ring-form__group">
         <span>{i18n('No boards found.')}</span>&nbsp;
         <Link
-          href={`${(selectedYouTrack || {}).homeUrl}/agiles/create`}
+          href={`${normalizedHomeUrl}agiles/create`}
         >
           {i18n('Create board')}
         </Link>

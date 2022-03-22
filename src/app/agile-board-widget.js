@@ -37,7 +37,11 @@ export default class AgileBoardWidget extends Component {
     (agile, sprint, currentSprintMode, youTrack) => {
       if (agile) {
         let text = i18n('Board {{name}}', {name: agile.name});
-        let href = `${youTrack.homeUrl}/agiles/${agile.id}`;
+        const homeUrl =
+          youTrack.homeUrl.charAt(youTrack.homeUrl.length - 1) === '/'
+            ? youTrack.homeUrl
+            : `${youTrack.homeUrl}/`;
+        let href = `${homeUrl}agiles/${agile.id}`;
         if (areSprintsEnabled(agile)) {
           if (sprint) {
             text += currentSprintMode
@@ -312,7 +316,7 @@ export default class AgileBoardWidget extends Component {
       const searchUrl = getColumnSearchUrl(
         agile, sprint, column
       );
-      return `${homeUrl}/issues?q=${searchUrl}`;
+      return `${homeUrl}issues?q=${searchUrl}`;
     };
 
     return (
@@ -329,7 +333,7 @@ export default class AgileBoardWidget extends Component {
           <b>{i18n('Owner:')}</b>&nbsp;
           <SmartUserCardTooltip userDataSource={this.loadAgileOwner}>
             <Link
-              href={`${homeUrl}/users/${agile.owner.ringId}`}
+              href={`${homeUrl}users/${agile.owner.ringId}`}
             >
               {agile.owner.fullName}
             </Link>
