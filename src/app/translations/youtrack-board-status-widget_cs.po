@@ -11,25 +11,25 @@ msgstr ""
 "X-Crowdin-File-ID: 266646\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2021-11-12 21:19\n"
+"PO-Revision-Date: 2022-03-22 21:24\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
-msgstr ""
+msgstr ": Aktuální sprint ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Stav agilní tabule"
 
 #: src/app/configuration.js:32
 msgid "Always display current sprint"
-msgstr ""
+msgstr "Vždy zobrazovat aktuální sprint"
 
 #: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
-msgstr ""
+msgstr "Tabule {{name}}"
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
 msgstr "Nelze načíst data ze služby."
 
@@ -37,13 +37,13 @@ msgstr "Nelze načíst data ze služby."
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
-msgstr ""
+msgstr "Vytvořit tabuli"
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Agilní tabule z YouTrack nenačteny."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -53,41 +53,41 @@ msgstr "Leden|Únor|Březen|Duben|Květen|Červen|Červenec|Srpen|Září|Říje
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Led|Úno|Bře|Dub|Kvě|Čer|Čvc|Srp|Zář|Říj|Lis|Pro"
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
-msgstr ""
+msgstr "Nebyly nalezeny žádné tabule."
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
-msgstr ""
+msgstr "Nebyl nalezen žádný aktuální sprint"
 
 #: src/app/agile-board-model.js:77
 msgid "One card in state {{stateName}}"
-msgstr ""
+msgstr "Jedna karta ve stavu {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
 msgstr "Jejda! Něco se pokazilo…"
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
-msgstr ""
+msgstr "Vlastník:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:47
 msgid "Save"
 msgstr "Uložit"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
-msgstr ""
+msgstr "Vybrat server YouTrack"
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
-msgstr ""
+msgstr "Vybrat tabuli"
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr "Vyberte sprint"
 
@@ -113,7 +113,7 @@ msgstr "dopol|odpol"
 
 #: src/app/agile-board-model.js:78
 msgid "{{amount}} cards in state {{stateName}}"
-msgstr ""
+msgstr "{{amount}} karet ve stavu {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"

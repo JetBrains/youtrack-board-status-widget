@@ -11,15 +11,15 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
-"PO-Revision-Date: 2021-11-12 13:22\n"
+"PO-Revision-Date: 2022-03-22 21:23\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
 msgstr ": Sprint atual ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr "Status do board ágil"
+msgstr "Status do board Agile"
 
 #: src/app/configuration.js:32
 msgid "Always display current sprint"
@@ -29,7 +29,7 @@ msgstr "Sempre mostrar sprint atual"
 msgid "Board {{name}}"
 msgstr "Board {{name}}"
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
 msgstr "Não é possível carregar informações do serviço."
 
@@ -37,13 +37,13 @@ msgstr "Não é possível carregar informações do serviço."
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
 msgstr "Criar board"
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
-msgstr "Não foi possível carregar boards ágeis do YouTrack."
+msgstr "Não foi possível carregar boards Agile do YouTrack."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -53,12 +53,12 @@ msgstr "Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Jan|Fev|Mar|Abr|Maio|Jun|Jul|Ago|Set|Out|Nov|Dez"
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
 msgstr "Nenhum board encontrado."
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
 msgstr "Nenhum sprint atual encontrado"
 
@@ -70,7 +70,7 @@ msgstr "Um cartão no estado {{stateName}}"
 msgid "Oops! Something went wrong..."
 msgstr "Oops! Algo deu errado..."
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
 msgstr "Proprietário:"
 
@@ -78,16 +78,16 @@ msgstr "Proprietário:"
 msgid "Save"
 msgstr "Salvar"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
 msgstr "Selecionar servidor YouTrack"
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
 msgstr "Selecionar board"
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr "Selecionar sprint"
 

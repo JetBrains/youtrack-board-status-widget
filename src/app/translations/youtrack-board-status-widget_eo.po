@@ -11,9 +11,9 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Esperanto\n"
 "Language: eo_UY\n"
-"PO-Revision-Date: 2021-06-25 21:12\n"
+"PO-Revision-Date: 2022-03-22 21:23\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
 msgstr "crwdns738190:0{{name}}crwdne738190:0"
 
@@ -29,7 +29,7 @@ msgstr "crwdns738191:0crwdne738191:0"
 msgid "Board {{name}}"
 msgstr "crwdns738192:0{{name}}crwdne738192:0"
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
 msgstr "crwdns738193:0crwdne738193:0"
 
@@ -37,11 +37,11 @@ msgstr "crwdns738193:0crwdne738193:0"
 msgid "Cancel"
 msgstr "crwdns738194:0crwdne738194:0"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
 msgstr "crwdns738195:0crwdne738195:0"
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
 msgstr "crwdns1375852:0crwdne1375852:0"
 
@@ -53,12 +53,12 @@ msgstr "crwdns738338:0crwdne738338:0"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "crwdns738339:0crwdne738339:0"
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
 msgstr "crwdns738197:0crwdne738197:0"
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
 msgstr "crwdns738198:0crwdne738198:0"
 
@@ -70,7 +70,7 @@ msgstr "crwdns738199:0{{stateName}}crwdne738199:0"
 msgid "Oops! Something went wrong..."
 msgstr "crwdns804281:0crwdne804281:0"
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
 msgstr "crwdns738200:0crwdne738200:0"
 
@@ -78,16 +78,16 @@ msgstr "crwdns738200:0crwdne738200:0"
 msgid "Save"
 msgstr "crwdns738201:0crwdne738201:0"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
 msgstr "crwdns738202:0crwdne738202:0"
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
 msgstr "crwdns738203:0crwdne738203:0"
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr "crwdns738204:0crwdne738204:0"
 

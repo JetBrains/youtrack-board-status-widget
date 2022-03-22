@@ -11,9 +11,9 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2021-11-12 13:21\n"
+"PO-Revision-Date: 2022-03-22 21:23\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
 msgstr "： 当前冲刺 （{{name}}）"
 
@@ -29,7 +29,7 @@ msgstr "始终显示当前冲刺"
 msgid "Board {{name}}"
 msgstr "{{name}} 看板"
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
 msgstr "无法从服务中加载信息。"
 
@@ -37,11 +37,11 @@ msgstr "无法从服务中加载信息。"
 msgid "Cancel"
 msgstr "取消"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
 msgstr "创建面板"
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
 msgstr "未能从 YouTrack 加载敏捷面板。"
 
@@ -53,12 +53,12 @@ msgstr "1 月|2 月|3 月|4 月|5 月|6 月|7 月|8 月|9 月|10 月|11 月|12 �
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1 月|2 月|3 月|4 月|5 月|6 月|7 月|8 月|9 月|10 月|11 月|12 月"
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
 msgstr "找不到面板。"
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
 msgstr "未找到当前冲刺"
 
@@ -70,7 +70,7 @@ msgstr "{{stateName}} 状态中有一张卡片"
 msgid "Oops! Something went wrong..."
 msgstr "哎呀，出了些问题..."
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
 msgstr "所有者："
 
@@ -78,16 +78,16 @@ msgstr "所有者："
 msgid "Save"
 msgstr "保存"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
 msgstr "选择 YouTrack 服务器"
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
 msgstr "选择面板"
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr "选择冲刺"
 

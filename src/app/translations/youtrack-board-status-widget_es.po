@@ -11,9 +11,9 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2021-11-12 13:22\n"
+"PO-Revision-Date: 2022-03-22 21:23\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
 msgstr ": Sprint actual ({{name}})"
 
@@ -29,7 +29,7 @@ msgstr "Mostrar siempre sprint actual"
 msgid "Board {{name}}"
 msgstr "Panel {{name}}"
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
 msgstr "No es posible cargar información desde el servicio."
 
@@ -37,11 +37,11 @@ msgstr "No es posible cargar información desde el servicio."
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
 msgstr "Crear panel"
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
 msgstr "No se han podido cargar los paneles de Agile desde YouTrack."
 
@@ -53,12 +53,12 @@ msgstr "Enero|Febrero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Nov
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "Ene|Feb|Mar|Abr|May|Jun|Jul|Ago|Sep|Oct|Nov|Dic"
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
 msgstr "No se han encontrado ningún panel."
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
 msgstr "No se ha encontrado el sprint actual"
 
@@ -70,7 +70,7 @@ msgstr "Una tarjeta con el estado {{stateName}}"
 msgid "Oops! Something went wrong..."
 msgstr "¡Uy! Algo ha salido mal..."
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
 msgstr "Propietario:"
 
@@ -78,16 +78,16 @@ msgstr "Propietario:"
 msgid "Save"
 msgstr "Guardar"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
 msgstr "Seleccionar servidor de YouTrack"
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
 msgstr "Seleccionar panel"
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr "Seleccionar sprint"
 

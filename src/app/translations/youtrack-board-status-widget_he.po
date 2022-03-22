@@ -11,9 +11,9 @@ msgstr ""
 "X-Crowdin-File-ID: 266646\n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
-"PO-Revision-Date: 2021-10-12 21:36\n"
+"PO-Revision-Date: 2022-03-22 21:24\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
 msgstr ""
 
@@ -29,19 +29,19 @@ msgstr ""
 msgid "Board {{name}}"
 msgstr ""
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
-msgstr ""
+msgstr "לא ניתן לטעון מידע מהשירות."
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:58
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
 msgstr ""
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
 msgstr ""
 
@@ -53,12 +53,12 @@ msgstr "ינואר|פברואר|מרץ|אפריל|מאי|יוני|יולי|או�
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
 msgstr ""
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Oops! Something went wrong..."
 msgstr ""
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
 msgstr ""
 
@@ -78,16 +78,16 @@ msgstr ""
 msgid "Save"
 msgstr "שמור"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
 msgstr ""
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
 msgstr ""
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr ""
 
@@ -117,5 +117,5 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} דקות"
 

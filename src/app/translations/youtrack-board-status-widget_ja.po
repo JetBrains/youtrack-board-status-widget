@@ -11,9 +11,9 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2021-11-12 13:21\n"
+"PO-Revision-Date: 2022-03-22 21:23\n"
 
-#: src/app/agile-board-widget.js:44
+#: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
 msgstr ": 現在のスプリント（{{name}}）"
 
@@ -29,7 +29,7 @@ msgstr "常に現在のスプリントを表示"
 msgid "Board {{name}}"
 msgstr "ボード「{{name}}」"
 
-#: src/app/agile-board-widget.js:391
+#: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
 msgstr "サービスから情報を読み込むことができません。"
 
@@ -37,11 +37,11 @@ msgstr "サービスから情報を読み込むことができません。"
 msgid "Cancel"
 msgstr "取り消す"
 
-#: src/app/configuration.js:172
+#: src/app/configuration.js:176
 msgid "Create board"
 msgstr "ボードの作成"
 
-#: src/app/configuration.js:181
+#: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
 msgstr "YouTrackからアジャイルボードを読み込めませんでした。"
 
@@ -53,12 +53,12 @@ msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 
-#: src/app/configuration.js:168
+#: src/app/configuration.js:172
 msgid "No boards found."
 msgstr "ボードは見つかりませんでした。"
 
-#: src/app/agile-board-widget.js:401
-#: src/app/agile-board-widget.js:48
+#: src/app/agile-board-widget.js:405
+#: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
 msgstr "現在のスプリントは見つかりませんでした"
 
@@ -70,7 +70,7 @@ msgstr "状態が{{stateName}}の1枚のカード"
 msgid "Oops! Something went wrong..."
 msgstr "エラー！不明なエラーが発生しました…"
 
-#: src/app/agile-board-widget.js:329
+#: src/app/agile-board-widget.js:333
 msgid "Owner:"
 msgstr "オーナー："
 
@@ -78,16 +78,16 @@ msgstr "オーナー："
 msgid "Save"
 msgstr "保存"
 
-#: src/app/configuration.js:288
+#: src/app/configuration.js:292
 msgid "Select YouTrack Server"
 msgstr "YouTrackサーバーを選択"
 
-#: src/app/configuration.js:219
+#: src/app/configuration.js:223
 msgid "Select board"
 msgstr "ボードの選択"
 
-#: src/app/agile-board-widget.js:410
-#: src/app/configuration.js:236
+#: src/app/agile-board-widget.js:414
+#: src/app/configuration.js:240
 msgid "Select sprint"
 msgstr "スプリントの選択"
 
