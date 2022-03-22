@@ -7,7 +7,6 @@
     "dist": "./dist"
   },
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "postinstall": "npm rebuild node-sass",
     "create-component": "yo @jetbrains/ring-ui:react --path $npm_package_config_components",
     "build": "webpack -p",
@@ -85,8 +84,5 @@
   },
   "engines": {
     "node": ">=6.0.0"
-  },
-  "resolutions": {
-    "lodash": "4.17.12"
   }
 }
