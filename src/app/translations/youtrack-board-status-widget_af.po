@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 266646\n"
 "Language-Team: Afrikaans\n"
 "Language: af_ZA\n"
-"PO-Revision-Date: 2022-03-22 21:24\n"
+"PO-Revision-Date: 2022-03-26 00:17\n"
 
 #: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
