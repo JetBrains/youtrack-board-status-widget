@@ -11,11 +11,11 @@ msgstr ""
 "X-Crowdin-File-ID: 28496\n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
-"PO-Revision-Date: 2023-01-31 23:50\n"
+"PO-Revision-Date: 2023-07-25 12:40\n"
 
 #: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
-msgstr "： 当前冲刺 （{{name}}）"
+msgstr ": 当前冲刺({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
@@ -68,11 +68,11 @@ msgstr "{{stateName}} 状态中有一张卡片"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr "哎呀，出了些问题..."
+msgstr "哎呀，出了些问题…"
 
 #: src/app/agile-board-widget.js:333
 msgid "Owner:"
-msgstr "所有者："
+msgstr "所有者:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:47
 msgid "Save"
