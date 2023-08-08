@@ -11,23 +11,23 @@ msgstr ""
 "X-Crowdin-File-ID: 266646\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2022-06-29 11:13\n"
+"PO-Revision-Date: 2023-08-08 17:47\n"
 
 #: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
-msgstr ""
+msgstr ": Aktuális sprint ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Agilis tábla állapota"
 
 #: src/app/configuration.js:32
 msgid "Always display current sprint"
-msgstr ""
+msgstr "Mindig jelenítse meg az aktuális sprintet"
 
 #: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
-msgstr ""
+msgstr "{{name}} tábla"
 
 #: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
@@ -43,7 +43,7 @@ msgstr "Tábla létrehozása"
 
 #: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Nem sikerült betölteni az agilis táblákat a YouTrackről."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -55,16 +55,16 @@ msgstr "Jan|Febr|Már|Ápr|Máj|Jún|Júl|Aug|Szept|Okt|Nov|Dec"
 
 #: src/app/configuration.js:172
 msgid "No boards found."
-msgstr ""
+msgstr "Nem található tábla."
 
 #: src/app/agile-board-widget.js:405
 #: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
-msgstr ""
+msgstr "Nem található aktuális sprint"
 
 #: src/app/agile-board-model.js:77
 msgid "One card in state {{stateName}}"
-msgstr ""
+msgstr "Egy kártya {{stateName}} állapotban van"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
@@ -80,11 +80,11 @@ msgstr "Mentés"
 
 #: src/app/configuration.js:292
 msgid "Select YouTrack Server"
-msgstr ""
+msgstr "Válasszon YouTrack szervert"
 
 #: src/app/configuration.js:223
 msgid "Select board"
-msgstr ""
+msgstr "Válassza ki a táblát"
 
 #: src/app/agile-board-widget.js:414
 #: src/app/configuration.js:240

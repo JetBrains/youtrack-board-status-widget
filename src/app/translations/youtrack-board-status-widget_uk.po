@@ -11,27 +11,27 @@ msgstr ""
 "X-Crowdin-File-ID: 266646\n"
 "Language-Team: Ukrainian\n"
 "Language: uk_UA\n"
-"PO-Revision-Date: 2022-06-29 11:15\n"
+"PO-Revision-Date: 2023-08-08 17:49\n"
 
 #: src/app/agile-board-widget.js:48
 msgid ": Current sprint ({{name}})"
-msgstr ""
+msgstr ": Поточний спринт ({{name}})"
 
 #: src/app/agile-board-widget.js:34
 msgid "Agile Board Status"
-msgstr ""
+msgstr "Статус дошки Agile"
 
 #: src/app/configuration.js:32
 msgid "Always display current sprint"
-msgstr ""
+msgstr "Завжди показувати поточний спринт"
 
 #: src/app/agile-board-widget.js:39
 msgid "Board {{name}}"
-msgstr ""
+msgstr "Дошка {{name}}"
 
 #: src/app/agile-board-widget.js:395
 msgid "Can't load information from service."
-msgstr "Не вдалося завантажити інформацію з сервісу."
+msgstr "Не вдалося завантажити інформацію із сервісу."
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:58
 msgid "Cancel"
@@ -43,7 +43,7 @@ msgstr "Створити дошку"
 
 #: src/app/configuration.js:185
 msgid "Failed to load agile boards from YouTrack."
-msgstr ""
+msgstr "Не вдалося завантажити дошки Agile з YouTrack."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -55,24 +55,24 @@ msgstr "Січ|Лют|Бер|Кві|Тра|Чер|Лип|Сер|Вер|Жов|Л
 
 #: src/app/configuration.js:172
 msgid "No boards found."
-msgstr ""
+msgstr "Дощок не знайдено."
 
 #: src/app/agile-board-widget.js:405
 #: src/app/agile-board-widget.js:52
 msgid "No current sprint found"
-msgstr ""
+msgstr "Поточного спринту не знайдено"
 
 #: src/app/agile-board-model.js:77
 msgid "One card in state {{stateName}}"
-msgstr ""
+msgstr "Одна картка зі станом {{stateName}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Отакої! Щось пішло не так…"
 
 #: src/app/agile-board-widget.js:333
 msgid "Owner:"
-msgstr ""
+msgstr "Власник:"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:47
 msgid "Save"
@@ -80,16 +80,16 @@ msgstr "Зберегти"
 
 #: src/app/configuration.js:292
 msgid "Select YouTrack Server"
-msgstr ""
+msgstr "Виберіть сервер YouTrack"
 
 #: src/app/configuration.js:223
 msgid "Select board"
-msgstr ""
+msgstr "Виберіть дошку"
 
 #: src/app/agile-board-widget.js:414
 #: src/app/configuration.js:240
 msgid "Select sprint"
-msgstr ""
+msgstr "Вибрати спринт"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
@@ -101,21 +101,21 @@ msgstr "Нд|Пн|Вт|Ср|Чт|Пт|Сб"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Віджет оновлюється щохвилини"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Віджет оновлюється з інтервалом у {{minutesCount}} хв"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
-msgstr ""
+msgstr "дп|пп"
 
 #: src/app/agile-board-model.js:78
 msgid "{{amount}} cards in state {{stateName}}"
-msgstr ""
+msgstr "Карток зі станом {{stateName}}: {{amount}}"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} хв"
 
